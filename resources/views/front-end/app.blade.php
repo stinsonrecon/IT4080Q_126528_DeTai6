@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    abcd@include('front-end.components.header')
+    @include('front-end.components.header')
     @yield('content')
 </body>
 </html>
