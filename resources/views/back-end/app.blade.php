@@ -1,109 +1,78 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @yield('title')
-    <link rel='icon' href="https://file.hstatic.net/200000280689/file/logo_53e5f5c2a41a431aaf9b9ebb310f2abb.png"  />
-    <!-- Custom fonts for this template-->
-    <link href="{{ asset('back-end/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="{{ asset('back-end/template/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> <!--Replace with your tailwind.css once created-->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> <!--Totally optional : -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
     @yield('css')
 </head>
 
-<body id="page-top">
+<body class="bg-gray-800 font-sans leading-normal tracking-normal mt-12">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+    <!--Nav-->
+    @include('back-end.components.header')
 
-        <!-- Sidebar -->
-        @include('back-end.components.sidebar')
+
+    <div class="flex flex-col md:flex-row">
+            @include('back-end.components.sidebar')
         
-        <!-- End of Sidebar -->
+        <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-                @include('back-end.components.header')
-                
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                @yield('content')
-                
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            @include('back-end.components.footer')
             
-            <!-- End of Footer -->
+           
 
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
+           
+            @yield('back-end.contents')
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('back-end/template/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('back-end/template/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="{{ asset('back-end/template/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="{{ asset('back-end/template/js/sb-admin-2.min.js') }}"></script>
 
-    <!-- Page level plugins -->
-    <script src="{{ asset('back-end/template/vendor/chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('back-end/template/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('back-end/template/js/demo/chart-pie-demo.js') }}"></script>
+    <script>
+        /*Toggle dropdown list*/
+        function toggleDD(myDropMenu) {
+            document.getElementById(myDropMenu).classList.toggle("invisible");
+        }
+        /*Filter dropdown options*/
+        function filterDD(myDropMenu, myDropMenuSearch) {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById(myDropMenuSearch);
+            filter = input.value.toUpperCase();
+            div = document.getElementById(myDropMenu);
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.drop-button') && !event.target.matches('.drop-search')) {
+                var dropdowns = document.getElementsByClassName("dropdownlist");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('invisible')) {
+                        openDropdown.classList.add('invisible');
+                    }
+                }
+            }
+        }
+    </script>   
     @yield('js')
+
 </body>
 
 </html>

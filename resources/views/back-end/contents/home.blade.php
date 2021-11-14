@@ -4,183 +4,299 @@
     Home
 </title>
 @endsection
-@section('content')
-<div class="container-fluid">
+@section('back-end.contents')
 
-                    <!-- Page Heading -->
-                    @include('back-end.components.content-header',['name'=>'Home','key'=>''])
+@include('back-end.components.content-header',['name'=>'Home','key'=>''])
+<div class="flex flex-wrap">
 
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Doanh thu (Tháng)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">30.000.000 vnđ</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Metric Card-->
+                    <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded-full p-5 bg-green-600"><i class="fa fa-wallet fa-2x fa-inverse"></i></div>
                             </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                            Doanh thu (Năm)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">300.000.000 vnđ</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Mục tiêu
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Số đơn hàng đang chờ duyệt</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-600">Total Revenue</h5>
+                                <h3 class="font-bold text-3xl">$3249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Content Row -->
-
-                    <div class="row">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Tổng quan doanh thu</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Nguồn doanh thu</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> SALE
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> ACCESSORIES
-                                        </span>
-                                       
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> TOPS
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> NEW ARRIVALS
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Content Row -->
-                   
-
+                    <!--/Metric Card-->
                 </div>
-@endsection
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Metric Card-->
+                    <div class="bg-gradient-to-b from-pink-200 to-pink-100 border-b-4 border-pink-500 rounded-lg shadow-xl p-5">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded-full p-5 bg-pink-600"><i class="fas fa-users fa-2x fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-600">Total Users</h5>
+                                <h3 class="font-bold text-3xl">249 <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Metric Card-->
+                    <div class="bg-gradient-to-b from-yellow-200 to-yellow-100 border-b-4 border-yellow-600 rounded-lg shadow-xl p-5">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-600">New Users</h5>
+                                <h3 class="font-bold text-3xl">2 <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Metric Card-->
+                    <div class="bg-gradient-to-b from-blue-200 to-blue-100 border-b-4 border-blue-500 rounded-lg shadow-xl p-5">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded-full p-5 bg-blue-600"><i class="fas fa-server fa-2x fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-600">Server Uptime</h5>
+                                <h3 class="font-bold text-3xl">152 days</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Metric Card-->
+                    <div class="bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl p-5">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded-full p-5 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-600">To Do List</h5>
+                                <h3 class="font-bold text-3xl">7 tasks</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Metric Card-->
+                    <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded-full p-5 bg-red-600"><i class="fas fa-inbox fa-2x fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-600">Issues</h5>
+                                <h3 class="font-bold text-3xl">3 <span class="text-red-500"><i class="fas fa-caret-up"></i></span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
+            </div>
+
+
+            <div class="flex flex-row flex-wrap flex-grow mt-2">
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Graph Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-xl">
+                        <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
+                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
+                        </div>
+                        <div class="p-5">
+                            <canvas id="chartjs-7" class="chartjs" width="undefined" height="undefined"></canvas>
+                            <script>
+                                new Chart(document.getElementById("chartjs-7"), {
+                                    "type": "bar",
+                                    "data": {
+                                        "labels": ["January", "February", "March", "April"],
+                                        "datasets": [{
+                                            "label": "Page Impressions",
+                                            "data": [10, 20, 30, 40],
+                                            "borderColor": "rgb(255, 99, 132)",
+                                            "backgroundColor": "rgba(255, 99, 132, 0.2)"
+                                        }, {
+                                            "label": "Adsense Clicks",
+                                            "data": [5, 15, 10, 30],
+                                            "type": "line",
+                                            "fill": false,
+                                            "borderColor": "rgb(54, 162, 235)"
+                                        }]
+                                    },
+                                    "options": {
+                                        "scales": {
+                                            "yAxes": [{
+                                                "ticks": {
+                                                    "beginAtZero": true
+                                                }
+                                            }]
+                                        }
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <!--/Graph Card-->
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Graph Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-xl">
+                        <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
+                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
+                        </div>
+                        <div class="p-5">
+                            <canvas id="chartjs-0" class="chartjs" width="undefined" height="undefined"></canvas>
+                            <script>
+                                new Chart(document.getElementById("chartjs-0"), {
+                                    "type": "line",
+                                    "data": {
+                                        "labels": ["January", "February", "March", "April", "May", "June", "July"],
+                                        "datasets": [{
+                                            "label": "Views",
+                                            "data": [65, 59, 80, 81, 56, 55, 40],
+                                            "fill": false,
+                                            "borderColor": "rgb(75, 192, 192)",
+                                            "lineTension": 0.1
+                                        }]
+                                    },
+                                    "options": {}
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <!--/Graph Card-->
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Graph Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-xl">
+                        <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
+                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
+                        </div>
+                        <div class="p-5">
+                            <canvas id="chartjs-1" class="chartjs" width="undefined" height="undefined"></canvas>
+                            <script>
+                                new Chart(document.getElementById("chartjs-1"), {
+                                    "type": "bar",
+                                    "data": {
+                                        "labels": ["January", "February", "March", "April", "May", "June", "July"],
+                                        "datasets": [{
+                                            "label": "Likes",
+                                            "data": [65, 59, 80, 81, 56, 55, 40],
+                                            "fill": false,
+                                            "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+                                            "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+                                            "borderWidth": 1
+                                        }]
+                                    },
+                                    "options": {
+                                        "scales": {
+                                            "yAxes": [{
+                                                "ticks": {
+                                                    "beginAtZero": true
+                                                }
+                                            }]
+                                        }
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <!--/Graph Card-->
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Graph Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-xl">
+                        <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
+                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
+                        </div>
+                        <div class="p-5"><canvas id="chartjs-4" class="chartjs" width="undefined" height="undefined"></canvas>
+                            <script>
+                                new Chart(document.getElementById("chartjs-4"), {
+                                    "type": "doughnut",
+                                    "data": {
+                                        "labels": ["P1", "P2", "P3"],
+                                        "datasets": [{
+                                            "label": "Issues",
+                                            "data": [300, 50, 100],
+                                            "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+                                        }]
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <!--/Graph Card-->
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Table Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-xl">
+                        <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
+                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
+                        </div>
+                        <div class="p-5">
+                            <table class="w-full p-5 text-gray-700">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left text-blue-900">Name</th>
+                                        <th class="text-left text-blue-900">Side</th>
+                                        <th class="text-left text-blue-900">Role</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Obi Wan Kenobi</td>
+                                        <td>Light</td>
+                                        <td>Jedi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Greedo</td>
+                                        <td>South</td>
+                                        <td>Scumbag</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Darth Vader</td>
+                                        <td>Dark</td>
+                                        <td>Sith</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p class="py-2"><a href="#">See More issues...</a></p>
+
+                        </div>
+                    </div>
+                    <!--/table Card-->
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    <!--Advert Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-xl">
+                        <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
+                            <h5 class="font-bold uppercase text-gray-600">Advert</h5>
+                        </div>
+                        <div class="p-5 text-center">
+
+
+                            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7D52JJ&placement=wwwtailwindtoolboxcom" id="_carbonads_js"></script>
+
+
+                        </div>
+                    </div>
+                    <!--/Advert Card-->
+                </div>
+
+
+            </div>
+ @endsection

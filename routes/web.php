@@ -28,7 +28,7 @@ Route::prefix('admin')->group(function(){
     //home
     Route::get('/home',function(){
         return view('back-end.contents.home');
-    });
+    })->name('admin.home');
 
     //setting
     Route::prefix('slider')->group(function(){

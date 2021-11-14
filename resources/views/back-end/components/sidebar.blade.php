@@ -1,109 +1,32 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<div class="bg-gray-800 shadow-xl h-16 fixed bottom-0 mt-12 md:relative md:h-screen z-10 w-full md:w-48">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-                <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-user-shield"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Admin  <sup></sup></div>
-            </a>
+            <div class="md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
+                <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left">
+                    <li class="mr-3 flex-1">
+                        <a href="{{route('admin.home')}}" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500">
+                            <i class="fas fa-tasks pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Home</span>
+                        </a>
+                    </li>
+                    <li class="mr-3 flex-1">
+                        <a href="{{route('slider.index')}}" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
+                            <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Slider</span>
+                        </a>
+                    </li>
+                    <li class="mr-3 flex-1">
+                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
+                            <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Sản phẩm</span>
+                        </a>
+                    </li>
+                   
+                    <li class="mr-3 flex-1">
+                        <a href="#" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
+                            <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Phân quyền</span>
+                        </a>
+                    </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Home</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-            Manager
+                    
+                </ul>
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-database"></i>
-                    <span>Quản lý dữ liệu</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Chi tiết</h6>
-                        <a class="collapse-item" href="">Setting</a>
-                        <a class="collapse-item" href="">Slider</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Quản lý sản phẩm</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Chi tiết</h6>
-                        <a class="collapse-item" href="">Danh mục sản phẩm</a>
-                        <a class="collapse-item" href="">Sản phẩm</a>
-                        
-                    </div>
-                </div>
-            </li>
-            <!-- Nav Item - Utilities Collapse Menu -->
 
-            
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="" >
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Quản lý đơn hàng</span>
-                </a>
-                
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Admin
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-users"></i>
-                    <span>Quản lý Phân quyền</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Chi tiết</h6>
-                        <a class="collapse-item" href="">Danh sách nhân viên</a>
-                        <a class="collapse-item" href="">Danh sách vai trò</a>
-                    </div>
-                </div>
-
-                
-            </li>
-
-            
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-           
-
-        </ul>
+        </div>
