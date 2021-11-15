@@ -16,3 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front-end.contents.home');
 });
+
+
+
+//back-end
+Route::get('/admin',function(){
+    return view('back-end.login');
+});
+
+Route::prefix('admin')->group(function(){
+    //home
+    Route::get('/home',function(){
+        return view('back-end.contents.home');
+    })->name('admin.home');
+
+    //setting
+    Route::prefix('slider')->group(function(){
+        Route::get('/',function(){
+            return view('back-end.admin.slider.index');
+        })->name('slider.index');
+    });
+});
