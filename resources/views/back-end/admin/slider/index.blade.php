@@ -74,7 +74,7 @@
                                             </svg>
                                         </div>
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <a class="btn btn-danger btn-circle btn-sm action_delete" data-url="" >
+                                            <a class="first"  data-url="" >
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
                                            
@@ -91,5 +91,6 @@
     </div>
  @endsection
  @section('js')
-
+ 
+ <script src="{{asset('back-end/admin/slider/index/index.js')}}"></script>
 @endsection
