@@ -91,6 +91,6 @@
     </div>
  @endsection
  @section('js')
- <script src="{{asset('back-end/vendors/SweetAlert2/sweetalert2@11.js')}}"></script>
+ 
  <script src="{{asset('back-end/admin/slider/index/index.js')}}"></script>
 @endsection
