@@ -4,7 +4,14 @@
 <head>
     <title>Login Form</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto@100;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -34,7 +41,7 @@
                 </div>
                 <a href="#" class="text-xs text-gray-500 float-right mb-4">Forgot Password?</a>
                 <button type="submit"
-                    class="w-full py-2 rounded-full bg-green-600 text-gray-100  focus:outline-none">Button</button>
+                    class="w-full py-2 rounded-full bg-green-600 text-gray-100  focus:outline-none">Login</button>
         </form>
     </div>
 </body>
