@@ -2,60 +2,8 @@
 @section('content')
     <div class="w-full px-6" style="background-color: #fafafa;">
         {{-- banner --}}
-        <div class="flex">
-            {{-- category --}}
-            <div class="w-1/5">
-                <div class="bg-white w-full flex-col">
-                    <div class="h-12 flex justify-between items-center px-4" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div>
-                            <i class="fas fa-leaf" style="color: #B2B2B2"></i>
-                            <span class="text-gray-700">Chè sen Thái Nguyên</span>
-                        </div>
-                        <div><i class="fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center px-4" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div>
-                            <i class="fas fa-mug-hot" style="color: #B2B2B2"></i>                                <span class="text-gray-700">Chè sen Cao Bằng</span>
-                        </div>
-                        <div><i class="fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center px-4" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div>
-                            <i class="fas fa-spa" style="color: #B2B2B2"></i>
-                            <span class="text-gray-700">Chè sen Hà Nội</span>                            
-                        </div>
-                            <div><i class="fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center px-4" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div>
-                            <i class="fas fa-sun" style="color: #B2B2B2"></i>
-                            <span class="text-gray-700">Chè sen cốm</span>
-                        </div>
-                        <div><i class="fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center px-4" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div>
-                            <i class="fas fa-leaf" style="color: #B2B2B2"></i>
-                            <span class="text-gray-700">Chè sen hoa nhài</span>
-                        </div>
-                        <div><i class="fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center px-4" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div>
-                            <i class="fas fa-seedling" style="color: #B2B2B2"></i>
-                            <span class="text-gray-700">Chè sen hoa súng</span>
-                        </div>
-                        <div><i class="fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center px-4" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div>
-                            <i class="fas fa-mug-hot" style="color: #B2B2B2"></i>
-                            <span class="text-gray-700">Chè sen nóng</span>
-                        </div>
-                        <div><i class="fas fa-caret-right" style="color: #B2B2B2"></i></div>                        
-                    </div>
-                </div>
-            </div>
+        <div class="flex justify-items-end">
+            <div class="w-1/5"></div>
             <div class="w-4/5 p-4">
                 <img src="{{ asset('images/banner.jpg') }}"/>
             </div>
@@ -159,4 +107,7 @@
             </div>
         </div>
     </div>
+<script>
+    setVisibleCategory();
+</script>
 @endsection

@@ -16,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front-end.contents.home');
 });
-
-
+Route::get('/home', function () {
+    return view('front-end.contents.home');
+});
+Route::get('/aboutus', function () {
+    return view('front-end.contents.aboutus');
+})->name("aboutus");
 
 //back-end
 Route::get('/admin',function(){
