@@ -74,7 +74,7 @@
                                             </svg>
                                         </div>
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <a class="first" class="btn btn-danger btn-circle btn-sm action_delete" data-url="" >
+                                            <a class="first"  data-url="" >
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
                                            
@@ -91,25 +91,6 @@
     </div>
  @endsection
  @section('js')
- <script src="{{asset('//cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script>
- <script>
-    document.querySelector(".first").addEventListener('click', function(){
-     Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-    Swal.fire(
-      'Deleted!',
-      'Your file has been deleted.',
-      'success'
-    )
-    }
-        }) })
- </script>
+ <script src="{{asset('back-end/vendors/SweetAlert2/sweetalert2@11.js')}}"></script>
+ <script src="{{asset('back-end/admin/slider/index/index.js')}}"></script>
 @endsection
