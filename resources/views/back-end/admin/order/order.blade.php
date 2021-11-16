@@ -1,13 +1,13 @@
 @extends('back-end.app')
 @section('title')
 <title>
-    Product
+    Order
 </title>
 @endsection
 
 @section('back-end.contents')
 
-@include('back-end.components.content-header',['name'=>'product','key'=>''])
+@include('back-end.components.content-header',['name'=>'order','key'=>''])
 <!-- component -->
 <div class="overflow-x-auto flex flex-col">
     <div class="flex flex-row-reverse">
@@ -20,13 +20,12 @@
         <table class=" w-11/12  mx-auto mx-8  table-auto">
                         <thead>
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                <th class="py-3 px-6 text-left">Name</th>
-                                <th class="py-3 px-6 text-left">PriceRoot</th>
-                                <th class="py-3 px-6 text-center">PricePromo</th>
-                                <th class="py-3 px-6 text-center">Image</th>
-                                <th class="py-3 px-6 text-center">Description</th>
-                                <th class="py-3 px-6 text-center">Quantity</th>
-                                <th class="py-3 px-6 text-center">Status</th>
+                                <th class="py-3 px-6 text-left">Customer ID</th>
+                                <th class="py-3 px-6 text-left">Status Pay</th>
+                                <th class="py-3 px-6 text-center">Status Delivery</th>
+                                <th class="py-3 px-6 text-center">Type Pay</th>
+                                <th class="py-3 px-6 text-center">Note</th>
+
                                 <th class="py-3 px-6 text-center">Action</th>
                             </tr>
                         </thead>
@@ -47,28 +46,19 @@
                                 </td>
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
-                                        <span class="font-medium">100000VND</span>
+                                        <span class="font-medium">Chưa trả</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                    <span class="font-medium">75000VND</span>
+                                    <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Đã giao</span>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                <div class="flex items-center">
-                                        <div class="bg-green-300 w-full h-full">
-                                            <img class="object-contain h-48 w-full" src="https://randomuser.me/api/portraits/men/1.jpg"/>
-                                        </div>
-                                    </div>
+                                    <span class="font-medium">Tiền mặt</span>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                <span>Eshal Rosas</span>
+                                    <span class="font-medium">Giao vào thứ 7 và chủ nhật</span>
                                 </td>
-                                <td class="py-3 px-6 text-center">
-                                    <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">100</span>
-                                </td>
-                                <td class="py-3 px-6 text-center">
-                                    <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">New</span>
-                                </td>
+                               
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
