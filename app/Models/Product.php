@@ -15,7 +15,8 @@ class Product extends Model
         'linkImg',
         'description',
         'quantity',
-        'status'
+        'status',
+        'promoID'
     ];
     protected $table = 'product';
     public function promotion()

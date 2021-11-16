@@ -12,7 +12,9 @@ class Orders extends Model
         'statusPay',
         'statusDeli',
         'typePay',
-        'note'
+        'note',
+        'customerID',
+        'idBanking'
     ];
     protected $dates = ['created_at', 'updated_at'];
     protected $table = 'orders';
