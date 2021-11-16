@@ -21,6 +21,24 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/aboutus', function () {
     return view('front-end.contents.aboutus');
 })->name("aboutus");
+Route::get('/payment_method', function(){
+    return view('front-end.contents.paymentMethod');
+})->name("paymentMethod");
+Route::get('/warranty_policy', function(){
+    return view('front-end.contents.warrantyPolicy');
+})->name("warrantyPolicy");
+Route::get('/shipping_policy', function(){
+    return view('front-end.contents.shippingPolicy');
+})->name("shippingPolicy");
+Route::get('/shopping_guide', function(){
+    return view('front-end.contents.shoppingGuide');
+})->name("shoppingGuide");
+Route::get('/refund_regulation', function () {
+    return view('front-end.contents.refundRegulation');
+})->name('refundRegulation');
+Route::get('/payment', function(){
+    return view('front-end.contents.payForm');
+})->name('payment');
 
 //back-end
 Route::get('/admin',function(){
