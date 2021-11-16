@@ -85,11 +85,36 @@
             </div>
             <div class="mr-4"><i class="fas fa-caret-down"></i></div>
         </div>
-        <div id="home" class="{{ (request()->is('home')) ? 'cateActive' : '' }}"><a href="/home">Trang chủ</a></div><div> / </div>
-        <div class="{{ (request()->is('aboutus')) ? 'cateActive' : '' }}"><a href="{{ route('aboutus') }}">Về chúng tôi</a></div><div> / </div>
-        <div>Phương thức thanh toán</div><div> / </div>
-        <div>Chính sách bảo hành</div><div> / </div>
-        <div>Chính sách vận chuyển</div><div> / </div>
+        <div id="home" class="{{ (request()->is('home')) ? 'cateActive' : '' }}">
+            <a href="/home">
+                Trang chủ
+            </a>
+        </div>
+        <div> / </div>
+        <div class="{{ (request()->is('aboutus')) ? 'cateActive' : '' }}">
+            <a href="{{ route('aboutus') }}">
+                Về chúng tôi
+            </a>
+        </div>
+        <div> / </div>
+        <div class="{{ (request()->is('payment_method')) ? 'cateActive' : '' }}">
+            <a href="{{ route('paymentMethod') }}">
+                Phương thức thanh toán
+            </a>
+        </div>
+        <div> / </div>
+        <div class="{{ (request()->is('warranty_policy')) ? 'cateActive' : '' }}">
+            <a href="{{ route('warrantyPolicy') }}">
+                Chính sách bảo hành
+            </a>
+        </div>
+        <div> / </div>
+        <div class="{{ (request()->is('shipping_policy')) ? 'cateActive' : '' }}">
+            <a href="{{ route('shippingPolicy') }}">
+                Chính sách vận chuyển
+            </a>
+        </div>
+        <div> / </div>
         <div class="mr-6">Đăng nhập</div>
     </div>
 </div>
