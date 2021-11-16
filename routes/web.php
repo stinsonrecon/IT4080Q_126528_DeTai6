@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController\BankController;
 use App\Http\Controllers\UserController\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -55,9 +56,24 @@ Route::prefix('admin')->group(function(){
     })->name('admin.home');
 
     //slider
-    Route::prefix('slider')->group(function(){
-        Route::get('/',function(){
-            return view('back-end.admin.slider.index');
-        })->name('slider.index');
+    Route::prefix('bank')->group(function(){
+        Route::get('/',[
+            BankController::class,'index']
+        )->name('bank.index');
+        Route::get('/create', [
+            BankController::class, 'create'
+        ])->name('bank.create');
+        Route::post('/store', [
+            BankController::class, 'store'
+        ])->name('bank.store');
+        Route::get('/edit/{id}', [
+            BankController::class, 'edit'
+        ])->name('bank.edit');
+        Route::post('/update/{id}', [
+            BankController::class, 'update'
+        ])->name('bank.update');
+        Route::get('/delete/{id}', [
+            BankController::class, 'delete'
+        ])->name('bank.delete');
     });
 });
