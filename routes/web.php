@@ -39,4 +39,10 @@ Route::prefix('admin')->group(function(){
             return view('back-end.admin.slider.index');
         })->name('slider.index');
     });
+    //product
+    Route::prefix('product')->group(function(){
+        Route::get('/',function(){
+            return view('back-end.admin.product.product');
+        })->name('product.product');
+    });
 });
