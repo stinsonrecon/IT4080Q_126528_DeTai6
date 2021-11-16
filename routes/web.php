@@ -39,6 +39,9 @@ Route::get('/refund_regulation', function () {
 Route::get('/payment', function(){
     return view('front-end.contents.payForm');
 })->name('payment');
+Route::get('/contact', function(){
+    return view('front-end.contents.contactMap');
+})->name('contact');
 
 //back-end
 Route::get('/admin',function(){
