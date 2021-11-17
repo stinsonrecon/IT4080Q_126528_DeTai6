@@ -41,75 +41,21 @@
                 </div>
 
 
-                <div class=" font-bold text-lg pt-5 pb-3 text-gray-500">Thông tin chuyển khoản</div>
-                <table class="flex justify-around items-center w-full pb-10">
-                    <tr class="w-full">
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" >
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                        <td class="px-10 pb-10 pt-3 border border-gray-400">
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                    </tr>
-                    <tr class="w-full">
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" >
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" >
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                    </tr>
-                    <tr class="w-full">
-                        <td class="px-10 pb-10 pt-3 border border-gray-400">
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" >
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                    </tr>
-                </table>
+                <div class=" font-bold text-lg pt-5 pb-3 text-gray-100">Thông tin chuyển khoản</div>
+                <div class="grid grid-cols-2 justify-around items-center w-full pb-10 px-10" >
+                    @foreach ($banks as $bank)
+                    <div class="px-10 pb-10 pt-3 border border-gray-400">
+                        <div class="pb-10 text-gray-500 font-semibold"><i>{{ ($loop->index) + 1 }}.    {{ $bank->bankName }}</i></div>
+                        <div class="text-gray-500 pb-4">Tên chủ TK: {{ $bank->userName }}</div>
+                        <div class="text-gray-500 pb-4">Số TK: 
+                            <span class="text-red-500 font-semibold">
+                                <i>{{ $bank->bankNumber }}</i>
+                            </span>
+                        </div>
+                        <div class="text-gray-500">{{ $bank->department }}</div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
         </div>
         <div class="w-1/3 bg-white px-10 h-1/2 mt-24 mx-10 shadow-2xl">
