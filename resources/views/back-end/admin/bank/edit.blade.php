@@ -107,5 +107,5 @@
  @endsection
  @section('js')
  
- <script src="{{asset('')}}"></script>
+ 
 @endsection

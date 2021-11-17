@@ -26,7 +26,7 @@ class BankRequest extends FormRequest
         return [
             'bankName'=>'required|max:255',
                 'userName'=>'required|max:255',
-                'bankNumber'=>'required|max:100',
+                'bankNumber'=>'required|numeric',
                 'department'=>'required|max:255'
         ];
     }

@@ -34,6 +34,12 @@
     </div>
     
     <div>
+    <div class=" w-11/12  mx-auto mx-8  table-auto">
+        {{ $banks->links() }}
+        </div>
+
+
+
         <table class=" w-11/12  mx-auto mx-8  table-auto">
         
                         <thead>
@@ -101,9 +107,7 @@
                     </table>
                     
         </div>
-        <div class=" w-11/12  mx-auto mx-8  table-auto">
-        {{ $banks->links() }}
-        </div>
+       
                     
                 
     </div>

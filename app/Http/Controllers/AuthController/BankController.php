@@ -14,7 +14,7 @@ class BankController extends Controller
 {
     
 
-    public $timestamps = false;
+    
     private $bank;
     public function __construct(BankAccount $bank)
     {
@@ -32,7 +32,7 @@ class BankController extends Controller
             DB::beginTransaction();
             $banks=$this->bank->create([
                 'bankName'=>$request->bankName,
-                'userName'=>$request->userName,
+                'userName'=>mb_strtoupper($request->userName),
                 'bankNumber'=>$request->bankNumber,
                 'department'=>$request->department
             ]);
@@ -59,7 +59,7 @@ class BankController extends Controller
             DB::beginTransaction();
             $this->bank->find($id)->update([
                 'bankName'=>$request->bankName,
-                'userName'=>$request->userName,
+                'userName'=>mb_strtoupper($request->userName),
                 'bankNumber'=>$request->bankNumber,
                 'department'=>$request->department
             ]);
@@ -76,6 +76,7 @@ class BankController extends Controller
     }
     public function delete($id){
         $this->bank->find($id)->delete();
+        session()->flash('success', 'Bạn đã xóa thành công.');
         return redirect()->route('bank.index');
     }
 }
