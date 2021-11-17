@@ -112,72 +112,27 @@
                 </p>
                 <div class=" font-bold text-lg pt-5 pb-3 pl-5 text-gray-500">3) Thông tin chuyển khoản</div>
                 <table class="flex justify-around items-center w-full pb-10">
-                    <tr class="w-full">
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" style="border-top: none; border-left: none">
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" style="border-top: none; border-right: none">
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                    </tr>
-                    <tr class="w-full">
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" style="border-top: none; border-left: none">
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" style="border-top: none; border-right: none">
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                    </tr>
-                    <tr class="w-full">
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" style="border-bottom: none; border-left: none">
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" style="border-bottom: none; border-right: none">
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                    </tr>
+                    @for ($i = 0; $i < 6; $i++)
+                        @if (isset($banks[$i]))
+                            @if ($i % 2 == 0)
+                                <tr class="w-full">
+                            @endif
+                                <td class="px-10 pb-10 pt-3 border border-gray-400">
+                                    <div class="pb-10 text-gray-500">{{$i+1}}.    Ngân hàng {{$banks[$i]->bankName}}</div>
+                                    <div class="text-gray-500 pb-4">Tên chủ TK: {{$banks[$i]->userName}}</div>
+                                    <div class="text-gray-500 pb-4">Số TK: 
+                                        <span class="text-red-500 font-semibold">
+                                            <i>{{$banks[$i]->bankNumber}}</i>
+                                        </span>
+                                    </div>
+                                    <div class="text-gray-500">{{$banks[$i]->department}}</div>
+                                </td>
+                            @if ($i % 2 == 1)
+                                </tr>
+                            @endif
+                        @else @break
+                        @endif
+                    @endfor
                 </table>
             </div>
         </div>
