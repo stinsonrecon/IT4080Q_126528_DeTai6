@@ -6,8 +6,8 @@
             <span class="-ml-1.5 p-3 px-4 rounded-r border-2 border-red-500 bg-red-500 w-10 h-10"><i class="text-white fas fa-search"></i></span>
         </div>
         <div><img class="h-12" src="{{ asset('images/hotline.png') }}"/></div>
-        <div class="text-red-500"><i class="text-3xl fas fa-shopping-cart">
-            </i> Giỏ hàng<span>(0)</span>
+        <div class="text-red-500">
+            <i class="text-3xl fas fa-shopping-cart"></i> Giỏ hàng<span>(0)</span>
         </div>
         <div class="text-red-500 {{ (request()->is('contact')) ? 'cateActive' : '' }}">
             <i class="text-3xl fas fa-map-marked-alt"></i> 
