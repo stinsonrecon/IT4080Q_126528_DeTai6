@@ -85,7 +85,7 @@
             </div>
             <div class="mr-4"><i class="fas fa-caret-down"></i></div>
         </div>
-        <div id="home" class="{{ (request()->is('home')) ? 'cateActive' : '' }}">
+        <div id="home" class="{{ (request()->is('home')) ? 'cateActive' : '' }} font-extrabold md:font-normal">
             <a href="/home">
                 Trang chủ
             </a>
