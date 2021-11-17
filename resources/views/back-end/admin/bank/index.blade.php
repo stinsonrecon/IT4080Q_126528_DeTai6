@@ -12,7 +12,7 @@
 <div class="overflow-x-auto flex flex-col">
     <div class="flex flex-row-reverse">
         <div class="m-6"><a href="{{route('bank.create')}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-        Add
+        Thêm số tài khoản
 </a></div>
     
     </div>
