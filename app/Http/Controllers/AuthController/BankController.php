@@ -21,6 +21,22 @@ class BankController extends Controller
         $banks=$this->bank->paginate(5);
         return view('back-end.admin.bank.index',compact('banks'));
     }
+
+    public function paymentMethod(){
+        $banks = $this->bank->paginate(6);
+        return view('front-end.contents.paymentMethod', compact('banks'));
+    }
+
+    public function payment(){
+        $banks = $this->bank->paginate(6);
+        return view('front-end.contents.payForm', compact('banks'));
+    }
+
+    public function test(){
+        $banks = $this->bank->paginate(6);
+        return view('front-end.contents.testQuery', compact('banks'));
+    }
+
     public function create(){
         return view('back-end.admin.bank.add');
     }
