@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController\BankController;
 use App\Http\Controllers\UserController\HomeController;
+use App\Http\Controllers\UserController\PaymentMethodController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +23,7 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/aboutus', function () {
     return view('front-end.contents.aboutus');
 })->name("aboutus");
-Route::get('/payment_method', function(){
-    return view('front-end.contents.paymentMethod');
-})->name("paymentMethod");
+Route::get('/payment_method', [PaymentMethodController::class, 'index'])->name("paymentMethod");
 Route::get('/warranty_policy', function(){
     return view('front-end.contents.warrantyPolicy');
 })->name("warrantyPolicy");
@@ -39,6 +39,9 @@ Route::get('/refund_regulation', function () {
 Route::get('/payment', function(){
     return view('front-end.contents.payForm');
 })->name('payment');
+Route::get('/contact', function(){
+    return view('front-end.contents.contactMap');
+})->name('contact');
 
 //back-end
 Route::get('/admin',function(){
@@ -51,10 +54,25 @@ Route::prefix('admin')->group(function(){
         return view('back-end.contents.home');
     })->name('admin.home');
 
-    //slider
-    Route::prefix('slider')->group(function(){
-        Route::get('/',function(){
-            return view('back-end.admin.slider.index');
-        })->name('slider.index');
+    //bank
+    Route::prefix('bank')->group(function(){
+        Route::get('/',[
+            BankController::class,'index']
+        )->name('bank.index');
+        Route::get('/create', [
+            BankController::class, 'create'
+        ])->name('bank.create');
+        Route::post('/store', [
+            BankController::class, 'store'
+        ])->name('bank.store');
+        Route::get('/edit/{id}', [
+            BankController::class, 'edit'
+        ])->name('bank.edit');
+        Route::post('/update/{id}', [
+            BankController::class, 'update'
+        ])->name('bank.update');
+        Route::get('/delete/{id}', [
+            BankController::class, 'delete'
+        ])->name('bank.delete');
     });
 });

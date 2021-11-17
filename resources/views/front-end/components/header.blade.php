@@ -9,8 +9,9 @@
         <div class="text-red-500">
             <i class="text-3xl fas fa-shopping-cart"></i> Giỏ hàng<span>(0)</span>
         </div>
-        <div class="text-red-500">
-            <i class="text-3xl fas fa-map-marked-alt"></i> Liên hệ
+        <div class="text-red-500 {{ (request()->is('contact')) ? 'cateActive' : '' }}">
+            <i class="text-3xl fas fa-map-marked-alt"></i> 
+            <a href="{{ route('contact') }}">Liên hệ</a>
         </div>
     </div>
     <div class="h-1/3 text-white flex items-center justify-between" style="background-color: #413B49;">
