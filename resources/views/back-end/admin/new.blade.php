@@ -7,7 +7,7 @@
 
 @section('back-end.contents')
 
-@include('back-end.components.content-header',['name'=>'order','key'=>''])
+@include('back-end.components.content-header',['name'=>'new','key'=>''])
 <!-- component -->
 <div class="overflow-x-auto flex flex-col">
     <div class="flex flex-row-reverse">
@@ -20,12 +20,12 @@
         <table class=" w-11/12  mx-auto mx-8  table-auto">
                         <thead>
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                <th class="py-3 px-6 text-left">Customer Name</th>
-                                <th class="py-3 px-6 text-center">Status Delivery</th>
-                                <th class="py-3 px-6 text-center">Phone number</th>
-                                <th class="py-3 px-6 text-center">City</th>
-                                <th class="py-3 px-6 text-center">Order ID</th>
-                                <th class="py-3 px-6 text-center">Note</th>
+                                <th class="py-3 px-6 text-left">Title</th>
+                                <th class="py-3 px-6 text-center">Image</th>
+                                <th class="py-3 px-6 text-center">Description</th>
+                                <th class="py-3 px-6 text-center">Content</th>
+                                <th class="py-3 px-6 text-center">Time</th>
+                                <th class="py-3 px-6 text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-600 text-sm font-light">
@@ -44,24 +44,43 @@
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                    <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Đã giao</span>
-                                </td> 
+                                <div class="flex items-center">
+                                        <div class="bg-green-300 w-full h-full">
+                                            <img class="object-contain h-48 w-full" src="https://randomuser.me/api/portraits/men/1.jpg"/>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="py-3 px-6 text-center">
-                                        <span class="font-medium">0123456789</span>
+                                        <span class="font-medium">abc</span>
                                    
                                 </td>                            
                                 <td class="py-3 px-6 text-center">
-                                    <span class="font-medium">Nghệ An</span>
+                                    <span class="font-medium">abcd</span>
                                 </td>                               
-                                <td class="py-3 px-6 text-center">
-                                    <a href="{{route('order.orderDetail')}}" target="_blank" class="align-middle hover:text-white border-b-2 border-gray-800">
-                                    <span class="font-medium">DH1234</span>
-                                    </a>
+                                <td class="py-3 px-6 text-center">                     
+                                    <span class="font-medium">12:00 21/10/2021</span>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                    <span class="font-medium">Giao vào thứ 7 và chủ nhật</span>
+                                    <div class="flex item-center justify-center">
+                                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </div>
+                                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                            </svg>
+                                        </div>
+                                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                            <a class="first"  data-url="" >
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                           
+                                        </div>
+                                    </div>
                                 </td>
-                               
                                 
                             </tr>
                             

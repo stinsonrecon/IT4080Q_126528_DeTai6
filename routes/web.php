@@ -104,10 +104,10 @@ Route::prefix('admin')->group(function(){
         })->name('order.orderDetail');
     });
 
-    //customer
-    Route::prefix('customer')->group(function(){
+    //new
+    Route::prefix('new')->group(function(){
         Route::get('/',function(){
-            return view('back-end.admin.order.customer');
-        })->name('order.customer');
+            return view('back-end.admin.new');
+        })->name('new');
     });
 });
