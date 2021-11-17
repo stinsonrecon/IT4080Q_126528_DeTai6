@@ -25,7 +25,7 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/aboutus', function () {
     return view('front-end.contents.aboutus');
 })->name("aboutus");
-Route::get('/payment_method', [BankController::class,'paymentMethod'])->name("paymentMethod");
+Route::get('/payment_method', [PaymentMethodController::class,'paymentMethod'])->name("paymentMethod");
 Route::get('/warranty_policy', function(){
     return view('front-end.contents.warrantyPolicy');
 })->name("warrantyPolicy");
@@ -42,14 +42,11 @@ Route::get('/refund_regulation', function () {
     return view('front-end.contents.refundRegulation');
 })->name('refundRegulation');
 
-Route::get('/payment', [BankController::class,'payment'])->name('payment');
+Route::get('/payment', [PaymentMethodController::class,'payment'])->name('payment');
 
 Route::get('/contact', function(){
     return view('front-end.contents.contactMap');
 })->name('contact');
-
-
-Route::get('/test', [BankController::class,'test']);
 
 
 //back-end

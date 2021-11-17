@@ -15,6 +15,12 @@
   z-index: 1;
   display: none;
 }
+.appear{
+  display: block !important;
+}
+.disappear-out{
+  display: hidden !important;
+}
 .myCate:hover .cateProduct{
   display: block !important;
   position: absolute;
