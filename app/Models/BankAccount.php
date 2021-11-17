@@ -14,5 +14,7 @@ class BankAccount extends Model
         'department',
         'bankNumber'
     ];
+    
     protected $table = 'bankaccount';
+    public $timestamps = false;
 }

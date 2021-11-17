@@ -11,3 +11,12 @@ function setVisibleCategory(){
         cate.hidden = true;
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    new Splide( '.splide', {
+        perPage    : 6,
+        type        : 'loop',
+        autoplay    : true,
+        pauseOnHover: false,
+    } ).mount();
+});
