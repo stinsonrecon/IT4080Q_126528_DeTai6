@@ -132,8 +132,8 @@
             </div>
         </div>
     </div>
-    <div class="border-t-2 py-10">
-        <div class="splide">
+    <div class="border-t-2 py-10 relative">
+        <div id="advertisement">
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
