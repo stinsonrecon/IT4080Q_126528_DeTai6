@@ -45,11 +45,11 @@
                         <thead>
                         
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                <th class="py-3 px-6 text-left">Tên ngân hàng</th>
-                                <th class="py-3 px-6 text-left">Tên chủ tài khoản</th>
-                                <th class="py-3 px-6 text-center">Số tài khoản</th>
-                                <th class="py-3 px-6 text-center">Vị trí</th>
-                                <th class="py-3 px-6 text-center">Hành động</th>
+                                <th class="py-3 px-6 text-left">Bank Name</th>
+                                <th class="py-3 px-6 text-left">Username</th>
+                                <th class="py-3 px-6 text-center">Bank Number</th>
+                                <th class="py-3 px-6 text-center">Department</th>
+                                <th class="py-3 px-6 text-center">Action</th>
                                 
                             </tr>
                         </thead>

@@ -21,12 +21,10 @@
                         <thead>
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                 <th class="py-3 px-6 text-left">Name</th>
-                                <th class="py-3 px-6 text-left">PriceRoot</th>
-                                <th class="py-3 px-6 text-center">PricePromo</th>
                                 <th class="py-3 px-6 text-center">Image</th>
-                                <th class="py-3 px-6 text-center">Description</th>
+                                <th class="py-3 px-6 text-left">PriceRoot</th>
+                                <th class="py-3 px-6 text-center">PricePromo</th>                               
                                 <th class="py-3 px-6 text-center">Quantity</th>
-                                <th class="py-3 px-6 text-center">Status</th>
                                 <th class="py-3 px-6 text-center">Action</th>
                             </tr>
                         </thead>
@@ -45,6 +43,13 @@
                                         <span class="font-medium">React Project</span>
                                     </div>
                                 </td>
+                                <td class="py-3 px-6 text-center">
+                                <div class="flex items-center">
+                                        <div class="bg-green-300 w-full h-full">
+                                            <img class="object-contain h-48 w-full" src="https://randomuser.me/api/portraits/men/1.jpg"/>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
                                         <span class="font-medium">100000VND</span>
@@ -54,20 +59,7 @@
                                     <span class="font-medium">75000VND</span>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                <div class="flex items-center">
-                                        <div class="bg-green-300 w-full h-full">
-                                            <img class="object-contain h-48 w-full" src="https://randomuser.me/api/portraits/men/1.jpg"/>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-6 text-center">
-                                <span>Eshal Rosas</span>
-                                </td>
-                                <td class="py-3 px-6 text-center">
                                     <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">100</span>
-                                </td>
-                                <td class="py-3 px-6 text-center">
-                                    <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">New</span>
                                 </td>
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">

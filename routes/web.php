@@ -105,9 +105,9 @@ Route::prefix('admin')->group(function(){
     });
 
     //new
-    Route::prefix('new')->group(function(){
+    Route::prefix('news')->group(function(){
         Route::get('/',function(){
-            return view('back-end.admin.new');
-        })->name('new');
+            return view('back-end.admin.news');
+        })->name('news');
     });
 });

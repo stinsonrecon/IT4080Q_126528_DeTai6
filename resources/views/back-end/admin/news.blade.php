@@ -1,13 +1,13 @@
 @extends('back-end.app')
 @section('title')
 <title>
-    Order
+    News
 </title>
 @endsection
 
 @section('back-end.contents')
 
-@include('back-end.components.content-header',['name'=>'new','key'=>''])
+@include('back-end.components.content-header',['name'=>'news','key'=>''])
 <!-- component -->
 <div class="overflow-x-auto flex flex-col">
     <div class="flex flex-row-reverse">
@@ -23,7 +23,6 @@
                                 <th class="py-3 px-6 text-left">Title</th>
                                 <th class="py-3 px-6 text-center">Image</th>
                                 <th class="py-3 px-6 text-center">Description</th>
-                                <th class="py-3 px-6 text-center">Content</th>
                                 <th class="py-3 px-6 text-center">Time</th>
                                 <th class="py-3 px-6 text-center">Action</th>
                             </tr>
@@ -53,10 +52,7 @@
                                 <td class="py-3 px-6 text-center">
                                         <span class="font-medium">abc</span>
                                    
-                                </td>                            
-                                <td class="py-3 px-6 text-center">
-                                    <span class="font-medium">abcd</span>
-                                </td>                               
+                                </td>                                                          
                                 <td class="py-3 px-6 text-center">                     
                                     <span class="font-medium">12:00 21/10/2021</span>
                                 </td>

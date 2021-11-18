@@ -21,14 +21,11 @@
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                     <th class="py-3 px-6 text-left">Product Name</th>
-                    <th class="py-3 px-6 text-left">Status Pay</th>
                     <th class="py-3 px-6 text-center">Type Pay</th>
                     <th class="py-3 px-6 text-center">Quantity</th>
                     <th class="py-3 px-6 text-center">Price</th>
                     <th class="py-3 px-6 text-center">Address</th>
                     <th class="py-3 px-6 text-center">Phone number</th>
-                    <th class="py-3 px-6 text-center">Email</th>
-
                 </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">
@@ -46,11 +43,6 @@
                             <span class="font-medium">React Project</span>
                         </div>
                     </td>
-                    <td class="py-3 px-6 text-left">
-                        <div class="flex items-center">
-                            <span class="font-medium">Chưa trả</span>
-                        </div>
-                    </td>
                     <td class="py-3 px-6 text-center">
                         <span class="font-medium">Tiền mặt</span>
                     </td>
@@ -65,10 +57,6 @@
                     </td>
                     <td class="py-3 px-6 text-center">
                         <span class="font-medium">0123456789</span>
-                    </td>
-                    
-                    <td class="py-3 px-6 text-center">
-                        <span class="font-medium">abc@gmail.com</span>
                     </td>
                     
                 </tr>
