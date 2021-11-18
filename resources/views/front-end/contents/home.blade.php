@@ -63,6 +63,18 @@
         </ul>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide( '#banner', {
+                perPage    : 1,
+                height     : '100vh',
+                type        : 'loop',
+                cover: true,
+                autoplay    : true,
+                pauseOnHover: false,
+            } ).mount();
+        });
+    </script>
     <div class="w-full px-6 pt-3" style="background-color: #fafafa;">
         {{-- advertisement --}}
         <div class="w-full bg-white h-32 flex justify-around items-center">

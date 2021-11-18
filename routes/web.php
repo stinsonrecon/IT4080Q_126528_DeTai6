@@ -50,9 +50,6 @@ Route::get('/contact', function(){
 })->name('contact');
 
 
-Route::get('/test', [BankController::class,'test']);
-
-
 //back-end
 Route::get('/admin',function(){
     return view('back-end.login');
