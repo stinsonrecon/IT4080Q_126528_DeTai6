@@ -12,4 +12,14 @@ class PaymentMethodController extends Controller
         $banks = BankAccount::limit(6)->get();
         return view('front-end.contents.paymentMethod',compact('banks'));
     }
+
+    public function paymentMethod(){
+        $banks = BankAccount::limit(6)->get();
+        return view('front-end.contents.paymentMethod', compact('banks'));
+    }
+
+    public function payment(){
+        $banks = BankAccount::limit(6)->get();
+        return view('front-end.contents.payForm', compact('banks'));
+    }
 }
