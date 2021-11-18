@@ -13,17 +13,18 @@
 // }
 
 document.addEventListener('DOMContentLoaded', function () {
-    if(document.getElementById('.splide'))
-        new Splide( '.splide', {
+    if(document.getElementById('advertisement')){
+        new Splide( '#advertisement', {
             perPage    : 6,
             type        : 'loop',
             autoplay    : true,
             pauseOnHover: false,
         } ).mount();
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    if(document.getElementById('banner'))
+    if(document.getElementById('banner')){
         new Splide( '#banner', {
             perPage    : 1,
             height     : '100vh',
@@ -32,4 +33,5 @@ document.addEventListener('DOMContentLoaded', function () {
             autoplay    : true,
             pauseOnHover: false,
         } ).mount();
+    }
 });
