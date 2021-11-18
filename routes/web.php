@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController\BankController;
 use App\Http\Controllers\UserController\HomeController;
+use App\Http\Controllers\UserController\PaymentMethodController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,31 +19,35 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front-end.contents.home');
 });
+
 Route::get('/home', [HomeController::class, 'index']);
+
 Route::get('/aboutus', function () {
     return view('front-end.contents.aboutus');
 })->name("aboutus");
-Route::get('/payment_method', function(){
-    return view('front-end.contents.paymentMethod');
-})->name("paymentMethod");
+Route::get('/payment_method', [PaymentMethodController::class,'paymentMethod'])->name("paymentMethod");
 Route::get('/warranty_policy', function(){
     return view('front-end.contents.warrantyPolicy');
 })->name("warrantyPolicy");
+
 Route::get('/shipping_policy', function(){
     return view('front-end.contents.shippingPolicy');
 })->name("shippingPolicy");
+
 Route::get('/shopping_guide', function(){
     return view('front-end.contents.shoppingGuide');
 })->name("shoppingGuide");
+
 Route::get('/refund_regulation', function () {
     return view('front-end.contents.refundRegulation');
 })->name('refundRegulation');
-Route::get('/payment', function(){
-    return view('front-end.contents.payForm');
-})->name('payment');
+
+Route::get('/payment', [PaymentMethodController::class,'payment'])->name('payment');
+
 Route::get('/contact', function(){
     return view('front-end.contents.contactMap');
 })->name('contact');
+
 
 //back-end
 Route::get('/admin',function(){
@@ -55,7 +60,7 @@ Route::prefix('admin')->group(function(){
         return view('back-end.contents.home');
     })->name('admin.home');
 
-    //slider
+    //bank
     Route::prefix('bank')->group(function(){
         Route::get('/',[
             BankController::class,'index']

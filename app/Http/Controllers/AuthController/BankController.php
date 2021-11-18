@@ -12,9 +12,6 @@ use PhpParser\Node\Expr\FuncCall;
 
 class BankController extends Controller
 {
-    
-
-    
     private $bank;
     public function __construct(BankAccount $bank)
     {
@@ -24,6 +21,7 @@ class BankController extends Controller
         $banks=$this->bank->paginate(5);
         return view('back-end.admin.bank.index',compact('banks'));
     }
+
     public function create(){
         return view('back-end.admin.bank.add');
     }

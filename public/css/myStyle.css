@@ -1,19 +1,28 @@
-.btn {
-  background-color: rgba(239, 68, 68, var(--tw-border-opacity));;
+/* .btn {
+  background-color: rgba(239, 68, 68, var(--tw-border-opacity));
   border: none;
   border-radius: 0.25rem;
   color: white;
   padding: 8px 12px;
   font-size: 16px;
   cursor: pointer;
-}
+} */
 .cateActive{
-  color: #75d69c;
+  color: #0c713d;
 }
 .cateProduct{
   top: 160px;
   z-index: 1;
   display: none;
+}
+.text {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s cubic-bezier(0, 1, 0, 1);
+}
+.text.full {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in-out;
 }
 .myCate:hover .cateProduct{
   display: block !important;

@@ -41,75 +41,21 @@
                 </div>
 
 
-                <div class=" font-bold text-lg pt-5 pb-3 text-gray-500">Thông tin chuyển khoản</div>
-                <table class="flex justify-around items-center w-full pb-10">
-                    <tr class="w-full">
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" >
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                        <td class="px-10 pb-10 pt-3 border border-gray-400">
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                    </tr>
-                    <tr class="w-full">
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" >
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" >
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                    </tr>
-                    <tr class="w-full">
-                        <td class="px-10 pb-10 pt-3 border border-gray-400">
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                        <td class="px-10 pb-10 pt-3 border border-gray-400" >
-                            <div class="pb-10 text-gray-500">1.    Ngân hàng Vietcombank</div>
-                            <div class="text-gray-500 pb-4">Tên chủ TK: Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh</div>
-                            <div class="text-gray-500 pb-4">Số TK: 
-                                <span class="text-red-500 font-semibold">
-                                    <i>0011004248403</i>
-                                </span>
-                            </div>
-                            <div class="text-gray-500">Tại sở giao dịch ngân hàng TMCP Ngoại Thương, TP. Hà Nội</div>
-                        </td>
-                    </tr>
-                </table>
+                <div class=" font-bold text-lg pt-5 pb-3">Thông tin chuyển khoản</div>
+                <div class="grid grid-cols-2 justify-around items-center w-full pb-10 px-10" >
+                    @foreach ($banks as $bank)
+                    <div class="px-10 pb-10 pt-3 border border-gray-400">
+                        <div class="pb-10 text-gray-500 font-semibold"><i>{{ ($loop->index) + 1 }}.    {{ $bank->bankName }}</i></div>
+                        <div class="text-gray-500 pb-4">Tên chủ TK: {{ $bank->userName }}</div>
+                        <div class="text-gray-500 pb-4">Số TK: 
+                            <span class="text-red-500 font-semibold">
+                                <i>{{ $bank->bankNumber }}</i>
+                            </span>
+                        </div>
+                        <div class="text-gray-500">{{ $bank->department }}</div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
         </div>
         <div class="w-1/3 bg-white px-10 h-1/2 mt-24 mx-10 shadow-2xl">
@@ -156,15 +102,21 @@
             <div class="pl-10 pt-5 flex-col pb-10">
                 <div class="flex w-full">
                     <div class="text-left pr-5">
-                        <input type="radio" name="check">
+                        <input id="typePay0" checked type="radio" name="typePay" onclick="displayDetailTypePay()">
                     </div>
                     <div class="">Chuyển khoản ngân hàng</div>
                 </div>
+                <div id="radioDetail0" class="text full">
+                    Thực hiện thanh toán vào một trong các tài khoản ngân hàng bên cạnh của chúng tôi. Vui lòng sử dụng mã đơn hàng để thanh toán (VD: thanh toan don hang so 1234)
+                </div>
                 <div class="flex w-full">
                     <div class="text-left pr-5">
-                        <input type="radio" name="check">
+                        <input id="typePay1" type="radio" name="typePay" onclick="displayDetailTypePay()">
                     </div>
                     <div class="">Trả tiền khi nhận mặt hàng</div>
+                </div>
+                <div id="radioDetail1" class="text">
+                    Trả tiền mặt khi giao hàng
                 </div>
             </div>
 
@@ -175,6 +127,20 @@
             <div class="text-red-500 pt-3 pb-20">(Tư vấn viên sẽ gọi điện xác nhận, không mua không sao)</div>
         </div>
         <script>
+            function displayDetailTypePay(){
+                var r0 = document.getElementById("typePay0");
+                var r1 = document.getElementById("typePay1");
+                var text0 = document.getElementById('radioDetail0');
+                var text1 = document.getElementById('radioDetail1');
+                if(r0.checked == true){
+                    text0.classList.add('full');
+                    text1.classList.remove('full');
+                }
+                if(r1.checked == true){
+                    text0.classList.remove('full');
+                    text1.classList.add('full');
+                }
+            }
             function decrement(e) {
                 const btn = e.target.parentNode.parentElement.querySelector(
                 'button[data-action="decrement"]'
@@ -212,8 +178,8 @@
             });
         </script>
     </div>
-    <div class="border-t-2 py-10">
-        <div class="splide">
+    <div class="border-t-2 py-10 relative">
+        <div id="advertisement">
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
