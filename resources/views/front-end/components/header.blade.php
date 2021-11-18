@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="h-1/3 text-gray-50 flex items-center justify-between" style="background-color: #aca38d;">
-        <div class="myCate ml-6 w-1/5 bg-green-primary h-full flex items-center justify-between font-lora">
+        <div class="myCate ml-6 w-1/5 bg-green-primary h-full flex items-center justify-between">
             <div class="ml-4"><i class="fas fa-bars"></i>   DANH MỤC SẢN PHẨM</div>
             <div id="cateProduct" class="cateProduct w-1/5 absolute">
                 <div class="bg-white flex-col">
