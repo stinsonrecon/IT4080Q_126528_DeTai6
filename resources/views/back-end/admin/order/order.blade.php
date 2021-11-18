@@ -22,7 +22,7 @@
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                     <th class="py-3 px-6 text-left">Tên khách hàng</th>
                     <th class="py-3 px-6 text-center">Địa chỉ</th>
-                    <th class="py-3 px-6 text-center">Số điện thoạir</th>
+                    <th class="py-3 px-6 text-center">Số điện thoại</th>
                     <th class="py-3 px-6 text-center">Tình trạng thanh toán</th>                   
                     <th class="py-3 px-6 text-center">Tình trạng vận chuyển</th>
                     <th class="py-3 px-6 text-center">Phương thức thanh toán</th>
