@@ -13,25 +13,25 @@
 // }
 
 document.addEventListener('DOMContentLoaded', function () {
-    if(document.getElementById('advertisement')){
-        new Splide( '#advertisement', {
-            perPage    : 6,
-            type        : 'loop',
-            autoplay    : true,
+    if (document.getElementById('advertisement')) {
+        new Splide('#advertisement', {
+            perPage: 6,
+            type: 'loop',
+            autoplay: true,
             pauseOnHover: false,
-        } ).mount();
+        }).mount();
     }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    if(document.getElementById('banner')){
-        new Splide( '#banner', {
-            perPage    : 1,
-            height     : '100vh',
-            type        : 'loop',
+    if (document.getElementById('banner')) {
+        new Splide('#banner', {
+            perPage: 1,
+            height: '100vh',
+            type: 'loop',
             cover: true,
-            autoplay    : true,
+            autoplay: true,
             pauseOnHover: false,
-        } ).mount();
+        }).mount();
     }
 });
