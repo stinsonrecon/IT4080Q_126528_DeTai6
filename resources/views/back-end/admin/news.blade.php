@@ -1,18 +1,18 @@
 @extends('back-end.app')
 @section('title')
 <title>
-    News
+    Tin tức
 </title>
 @endsection
 
 @section('back-end.contents')
 
-@include('back-end.components.content-header',['name'=>'news','key'=>''])
+@include('back-end.components.content-header',['name'=>'Tin tức','key'=>''])
 <!-- component -->
 <div class="overflow-x-auto flex flex-col">
     <div class="flex flex-row-reverse">
         <div class="m-6"><button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-        Add
+        Thêm
       </button></div>
     
     </div>
@@ -20,11 +20,11 @@
         <table class=" w-11/12  mx-auto mx-8  table-auto">
                         <thead>
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                <th class="py-3 px-6 text-left">Title</th>
-                                <th class="py-3 px-6 text-center">Image</th>
-                                <th class="py-3 px-6 text-center">Description</th>
-                                <th class="py-3 px-6 text-center">Time</th>
-                                <th class="py-3 px-6 text-center">Action</th>
+                                <th class="py-3 px-6 text-left">Tiêu đề</th>
+                                <th class="py-3 px-6 text-center">Hình ảnh</th>
+                                <th class="py-3 px-6 text-center">Mô tả</th>
+                                <th class="py-3 px-6 text-center">Thời gian</th>
+                                <th class="py-3 px-6 text-center">Hành động</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-600 text-sm font-light">

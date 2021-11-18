@@ -7,12 +7,12 @@
 
 @section('back-end.contents')
 
-@include('back-end.components.content-header',['name'=>'orderDetail','key'=>''])
+@include('back-end.components.content-header',['name'=>'Chi tiết đơn hàng','key'=>''])
 <!-- component -->
 <div class="overflow-x-auto flex flex-col">
     <div class="flex flex-row-reverse">
         <div class="m-6"><button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                Add
+                Thêm
             </button></div>
 
     </div>
@@ -20,12 +20,9 @@
         <table class=" w-11/12  mx-auto mx-8  table-auto">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 text-left">Product Name</th>
-                    <th class="py-3 px-6 text-center">Type Pay</th>
-                    <th class="py-3 px-6 text-center">Quantity</th>
-                    <th class="py-3 px-6 text-center">Price</th>
-                    <th class="py-3 px-6 text-center">Address</th>
-                    <th class="py-3 px-6 text-center">Phone number</th>
+                    <th class="py-3 px-6 text-left">Tên sản phẩm</th>
+                    <th class="py-3 px-6 text-center">Số lượng</th>
+                    <th class="py-3 px-6 text-center">Giá tiền</th>
                 </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">
@@ -44,21 +41,11 @@
                         </div>
                     </td>
                     <td class="py-3 px-6 text-center">
-                        <span class="font-medium">Tiền mặt</span>
-                    </td>
-                    <td class="py-3 px-6 text-center">
                         <span class="font-medium">6</span>
                     </td>
                     <td class="py-3 px-6 text-center">
                         <span class="font-medium">90000VND</span>
-                    </td>
-                    <td class="py-3 px-6 text-center">
-                        <span class="font-medium">Nghệ An</span>
-                    </td>
-                    <td class="py-3 px-6 text-center">
-                        <span class="font-medium">0123456789</span>
-                    </td>
-                    
+                    </td>                    
                 </tr>
 
             </tbody>

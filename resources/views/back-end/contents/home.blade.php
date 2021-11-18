@@ -1,12 +1,12 @@
 @extends('back-end.app')
 @section('title')
 <title>
-    Home
+    Trang chủ
 </title>
 @endsection
 @section('back-end.contents')
 
-@include('back-end.components.content-header',['name'=>'Home','key'=>''])
+@include('back-end.components.content-header',['name'=>'Trang chủ','key'=>''])
 <div class="flex flex-wrap">
 
                 <div class="w-full md:w-1/2 xl:w-1/3 p-6">

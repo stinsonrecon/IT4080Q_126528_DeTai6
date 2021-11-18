@@ -7,12 +7,12 @@
 
 @section('back-end.contents')
 
-@include('back-end.components.content-header',['name'=>'order','key'=>''])
+@include('back-end.components.content-header',['name'=>'Đơn hàng','key'=>''])
 <!-- component -->
 <div class="overflow-x-auto flex flex-col">
     <div class="flex flex-row-reverse">
         <div class="m-6"><button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                Add
+                Thêm
             </button></div>
 
     </div>
@@ -20,12 +20,13 @@
         <table class=" w-11/12  mx-auto mx-8  table-auto">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 text-left">Customer Name</th>
-                    <th class="py-3 px-6 text-center">Address</th>
-                    <th class="py-3 px-6 text-center">Phone number</th>
-                    <th class="py-3 px-6 text-center">StatusPay</th>
-                    <th class="py-3 px-6 text-center">StatusDeli</th>
-                    <th class="py-3 px-6 text-center">Note</th>
+                    <th class="py-3 px-6 text-left">Tên khách hàng</th>
+                    <th class="py-3 px-6 text-center">Địa chỉ</th>
+                    <th class="py-3 px-6 text-center">Số điện thoạir</th>
+                    <th class="py-3 px-6 text-center">Tình trạng thanh toán</th>                   
+                    <th class="py-3 px-6 text-center">Tình trạng vận chuyển</th>
+                    <th class="py-3 px-6 text-center">Phương thức thanh toán</th>
+                    <th class="py-3 px-6 text-center">Ghi chú</th>
                 </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">
@@ -60,6 +61,9 @@
                     </td>
                     <td class="py-3 px-6 text-center">
                         <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Đã giao</span>
+                    </td>
+                    <td class="py-3 px-6 text-center">
+                        <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Tien mat</span>
                     </td>
 
                     <td class="py-3 px-6 text-center">

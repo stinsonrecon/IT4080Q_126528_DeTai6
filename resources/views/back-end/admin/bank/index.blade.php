@@ -1,18 +1,18 @@
 @extends('back-end.app')
 @section('title')
 <title>
-    Bank
+    Ngân hàng
 </title>
 @endsection
 
 @section('back-end.contents')
 
-@include('back-end.components.content-header',['name'=>'Bank','key'=>''])
+@include('back-end.components.content-header',['name'=>'Ngân hàng','key'=>''])
 <!-- component -->
 <div class="overflow-x-auto flex flex-col">
     <div class="flex flex-row-reverse">
         <div class="m-6"><a href="{{route('bank.create')}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-        Add
+        Thêm
 </a></div>
     
     </div>
@@ -45,11 +45,11 @@
                         <thead>
                         
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                <th class="py-3 px-6 text-left">Bank Name</th>
-                                <th class="py-3 px-6 text-left">Username</th>
-                                <th class="py-3 px-6 text-center">Bank Number</th>
-                                <th class="py-3 px-6 text-center">Department</th>
-                                <th class="py-3 px-6 text-center">Action</th>
+                                <th class="py-3 px-6 text-left">Tên ngân hàng</th>
+                                <th class="py-3 px-6 text-left">Tên khách hàng</th>
+                                <th class="py-3 px-6 text-center">Số tài khoản</th>
+                                <th class="py-3 px-6 text-center">Chi nhánh</th>
+                                <th class="py-3 px-6 text-center">Hành động</th>
                                 
                             </tr>
                         </thead>

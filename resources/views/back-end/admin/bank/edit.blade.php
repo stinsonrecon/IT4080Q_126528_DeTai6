@@ -1,7 +1,7 @@
 @extends('back-end.app')
 @section('title')
 <title>
-    Bank Edit
+    Chỉnh sửa ngân hàng
 </title>
 @endsection
 
@@ -15,7 +15,7 @@
    @csrf
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
-        Bank Name
+        Tên ngân hàng
       </label>
       <input class="@error('bankName') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="bankName" name="bankName" type="text" placeholder="Nhập tên ngân hàng" value="{{$banks->bankName}}">
     </div>
@@ -34,7 +34,7 @@
 
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
-        Username
+        Chủ tài khoản
       </label>
       <input class="@error('userName') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="userName" name="userName" type="text" placeholder="Nhập tên chủ tài khoản" value="{{$banks->userName}}">
      
@@ -55,7 +55,7 @@
 
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
-        Bank number
+        Số tài khoản
       </label>
       <input class="@error('bankNumber') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="bankNumber" name="bankNumber" type="text" placeholder="Nhập số tài khoản" value="{{$banks->bankNumber}}">
      
@@ -75,7 +75,7 @@
 
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
-       Department
+       Chi nhánh
       </label>
       <input class="@error('department') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="department" name="department" type="text" placeholder="Nhập vị trí" value="{{ $banks->department }}">
      
@@ -96,7 +96,7 @@
 
     <div class="flex items-center justify-between">
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-        Add
+        Thêm
       </button>
       
     </div>

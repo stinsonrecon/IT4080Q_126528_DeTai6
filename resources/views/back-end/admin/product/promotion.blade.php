@@ -1,18 +1,18 @@
 @extends('back-end.app')
 @section('title')
 <title>
-    Promotion
+    Khuyến mãi
 </title>
 @endsection
 
 @section('back-end.contents')
 
-@include('back-end.components.content-header',['name'=>'promotion','key'=>''])
+@include('back-end.components.content-header',['name'=>'Khuyến mãi','key'=>''])
 <!-- component -->
 <div class="overflow-x-auto flex flex-col">
     <div class="flex flex-row-reverse">
         <div class="m-6"><button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                Add
+                Thêm
             </button></div>
 
     </div>
@@ -20,11 +20,11 @@
         <table class=" w-11/12  mx-auto mx-8  table-auto">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 text-left">Name</th>
-                    <th class="py-3 px-6 text-left">Start Time</th>
-                    <th class="py-3 px-6 text-center">End Time</th>
-                    <th class="py-3 px-6 text-center">Limit time</th>
-                    <th class="py-3 px-6 text-center">Action</th>
+                    <th class="py-3 px-6 text-left">Tên</th>
+                    <th class="py-3 px-6 text-left">Thời gian bắt đầu</th>
+                    <th class="py-3 px-6 text-center">Thời gian kết thúc</th>
+                    <th class="py-3 px-6 text-center">Giới hạn thời gian</th>
+                    <th class="py-3 px-6 text-center">Hành động</th>
                 </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">
