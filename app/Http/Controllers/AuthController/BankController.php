@@ -12,9 +12,6 @@ use PhpParser\Node\Expr\FuncCall;
 
 class BankController extends Controller
 {
-    
-
-    
     private $bank;
     public function __construct(BankAccount $bank)
     {

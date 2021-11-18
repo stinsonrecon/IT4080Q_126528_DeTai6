@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController\BankController;
 use App\Http\Controllers\UserController\HomeController;
+use App\Http\Controllers\UserController\PaymentMethodController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +25,7 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/aboutus', function () {
     return view('front-end.contents.aboutus');
 })->name("aboutus");
-
 Route::get('/payment_method', [BankController::class,'paymentMethod'])->name("paymentMethod");
-
 Route::get('/warranty_policy', function(){
     return view('front-end.contents.warrantyPolicy');
 })->name("warrantyPolicy");
@@ -61,7 +60,7 @@ Route::prefix('admin')->group(function(){
         return view('back-end.contents.home');
     })->name('admin.home');
 
-    //slider
+    //bank
     Route::prefix('bank')->group(function(){
         Route::get('/',[
             BankController::class,'index']
