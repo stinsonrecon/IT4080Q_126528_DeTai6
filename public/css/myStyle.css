@@ -15,10 +15,19 @@
   z-index: 1;
   display: none;
 }
+#radioDetail0, #radioDetail1{
+  transition: all 1s linear; 
+}
+.fadeout {
+  transform: scaleY(0);
+}
+.fadein {
+  transform: scaleY(1);
+}
 .appear{
   display: block !important;
 }
-.disappear-out{
+.disappear{
   display: hidden !important;
 }
 .myCate:hover .cateProduct{
