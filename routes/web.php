@@ -81,4 +81,38 @@ Route::prefix('admin')->group(function(){
             BankController::class, 'delete'
         ])->name('bank.delete');
     });
+    //product
+    Route::prefix('product')->group(function(){
+        Route::get('/',function(){
+            return view('back-end.admin.product.product');
+        })->name('product.product');
+    });
+
+    //promotion
+    Route::prefix('promotion')->group(function(){
+        Route::get('/',function(){
+            return view('back-end.admin.product.promotion');
+        })->name('product.promotion');
+    });
+
+    //order
+    Route::prefix('order')->group(function(){
+        Route::get('/',function(){
+            return view('back-end.admin.order.order');
+        })->name('order.order');
+    });
+
+    //orderDetail
+    Route::prefix('orderDetail')->group(function(){
+        Route::get('/',function(){
+            return view('back-end.admin.order.orderDetail');
+        })->name('order.orderDetail');
+    });
+
+    //new
+    Route::prefix('news')->group(function(){
+        Route::get('/',function(){
+            return view('back-end.admin.news');
+        })->name('news');
+    });
 });

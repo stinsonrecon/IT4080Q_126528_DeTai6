@@ -1,7 +1,7 @@
 @extends('back-end.app')
 @section('title')
 <title>
-    Bank Add
+    Thêm ngân hàng
 </title>
 @endsection
 
@@ -34,7 +34,7 @@
 
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
-        Tên chủ tài khoản
+        Chủ tài khoản
       </label>
       <input value="{{old('userName')}}" class="@error('userName') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="userName" name="userName" type="text" placeholder="Nhập tên chủ tài khoản">
      
@@ -75,7 +75,7 @@
 
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
-       Chi nhánh
+      Chi nhánh
       </label>
       <input value="{{old('department')}}" class="@error('department') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="department" name="department" type="text" placeholder="Nhập vị trí">
      
