@@ -3,26 +3,26 @@
     <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
         {{-- side menu & banner --}}
         <div class="w-1/6 pt-8">
-            <div><img src="{{ asset('images/chesen-ad.png') }}" alt=""></div>
+            <div><img src="{{ asset('images/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
             <div>
                 <div class=" font-bold text-lg py-5">Giới thiệu</div>
                 <ul>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5">
                         <a href="{{ route('aboutus') }}">Về chúng tôi</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5 text-red-500" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5 text-green-primary" style="border-top: none">
                         <a href="{{ route('shoppingGuide') }}">Hướng dẫn mua hàng</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('shippingPolicy') }}">Chính sách vận chuyển</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('paymentMethod') }}">Phương thức thanh toán</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('refundRegulation') }}">Quy định đổi trả hàng</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('warrantyPolicy') }}">Chính sách bảo hành</a>
                     </li>
                 </ul>
@@ -31,12 +31,12 @@
         {{-- content --}}
         <div class="w-full justify-around items-center pt-8 pl-7">
             <div class=" font-semibold text-xl pb-3">HƯỚNG DẪN MUA HÀNG</div>
-            <div class=" border-t-4 border border-gray-500 bg-white" style="border-top-color: red">
+            <div class=" border-t-4 border border-gray-500 bg-white" style="border-top-color: #0c713d">
                 <div class="pl-5 pt-5 text-2xl text-gray-500 font-bold">
                     Quý khách có thể lựa chọn một trong những cách mua hàng sau:
                 </div>
                 <p class="pl-5 pt-4 text-gray-500">1. Đến mua hàng trực tiếp tại showroom 
-                    <span class="text-red-500 font-semibold">
+                    <span class="text-green-primary font-semibold">
                         <i>Hoàng Minh Office</i>
                     </span>
                     .
@@ -44,13 +44,13 @@
                 <p class="pl-5 pt-5 text-gray-500">Địa chỉ: 121 Hàng Bạc, Quận Hoàn Kiếm, TP. Hà Nội</p>
                 <p class="pl-5 pt-4 text-gray-500">
                     2. Gọi mua hàng theo đường dây nóng; 
-                    <span class="text-red-500 font-semibold">
+                    <span class="text-green-primary font-semibold">
                         <i>090.328.2609</i>
                     </span>
                     (8h – 18h, từ thứ 2 đến thứ 7), nhân viên bán hàng của chúng tôi sẽ luôn sẵn sàng phục vụ bạn.
                 </p>
                 <p class="pl-5 pt-4 text-gray-500">3. Đặt mua hàng trên website 
-                    <span class=" text-red-500">
+                    <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
                             https://hoangminhoffice.com/
                         </a>
@@ -59,7 +59,7 @@
                 <div class="flex justify-around items-center pt-5"><img src="{{ asset('images/shoppingGuide.png') }}" alt=""></div>
                 <p class="pl-5 pt-5 text-gray-500">
                     &#8226  <u>Cách 1: Tìm kiếm sản phẩm theo danh mục hàng hoá.</u>
-                    <span class=" text-red-500">
+                    <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
                             https://hoangminhoffice.com/
                         </a>
@@ -92,7 +92,7 @@
                 </div>
                 <p class="pl-5 pt-5 text-gray-500">
                     Để giúp khách hàng có một sự lựa chọn hoàn hảo, 
-                    <span class="text-red-500 font-semibold">
+                    <span class="text-green-primary font-semibold">
                         <i>Hoàng Minh Office</i>
                     </span>
                     đem đến cho khách hàng rất nhiều quyền lợi như:
@@ -101,7 +101,7 @@
                 <p class="pl-5 pt-5 text-gray-500">
                     1. <u>Quyền được lựa chọn: </u>
                     Với hơn 2000 sản phẩm và nhiều dịch vụ đi kèm, khách hàng sẽ có rất nhiều lựa chọn về sản phẩm cũng như dịch vụ như ý tại 
-                    <span class=" text-blue-700">
+                    <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
                             https://hoangminhoffice.com/
                         </a>
@@ -110,7 +110,7 @@
                 <p class="pl-5 pt-5 text-gray-500">
                     2. <u>Quyền được mua đúng sản phẩm: </u>
                     Tất cả sản phẩm của 
-                    <span class=" text-blue-700">
+                    <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
                             https://hoangminhoffice.com/
                         </a>
@@ -123,7 +123,7 @@
                 <p class="pl-5 pt-5 text-gray-500">
                     3. <u>Quyền được đánh giá: </u>
                     Mọi khách hàng đều có quyền được đánh giá và đưa ý kiến về sản phẩm mình mua tại 
-                    <span class=" text-blue-700">
+                    <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
                             https://hoangminhoffice.com/
                         </a>
@@ -137,7 +137,7 @@
                     Những sản phẩm không đúng chủng loại, không mới 100%, có dấu hiệu lỗi hoặc trục trặc, khách hàng có quyền từ chối nhận hàng.
                     Mọi thắc mắc và phản hồi xin gửi đến email:
                      <span>
-                        <a href = "mailto: hoangminhoffice@gmail.com" class="text-blue-700">
+                        <a href = "mailto: hoangminhoffice@gmail.com" class="text-green-primary hover:text-green-primary_1">
                             hoangminhoffice@gmail.com
                         </a>
                     </span>

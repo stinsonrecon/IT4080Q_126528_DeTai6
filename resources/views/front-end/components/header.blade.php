@@ -17,7 +17,7 @@
             <a href="{{ route('contact') }}" class="hover:text-green-primary_1">Liên hệ</a>
         </div>
     </div>
-    <div class="h-1/3 text-gray-50 flex items-center justify-between" style="background-color: #aca38d;">
+    <div class="h-1/3 text-gray-50 flex items-center justify-between" style="background-color: #91cc00;">
         <div class="myCate ml-6 w-1/5 bg-green-primary h-full flex items-center justify-between">
             <div class="ml-4"><i class="fas fa-bars"></i>   DANH MỤC SẢN PHẨM</div>
             <div id="cateProduct" class="cateProduct w-1/5 absolute">
@@ -89,31 +89,31 @@
             </div>
             <div class="mr-4"><i class="fas fa-caret-down"></i></div>
         </div>
-        <div id="home" class="{{ (request()->is('home')) ? 'cateActive' : '' }} hover:text-green-primary font-medium">
+        <div id="home" class="{{ (request()->is('home')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="/home">
                 Trang chủ
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('aboutus')) ? 'cateActive' : '' }} hover:text-green-primary font-medium">
+        <div class="{{ (request()->is('aboutus')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('aboutus') }}">
                 Về chúng tôi
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('payment_method')) ? 'cateActive' : '' }} hover:text-green-primary font-medium">
+        <div class="{{ (request()->is('payment_method')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('paymentMethod') }}">
                 Phương thức thanh toán
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('warranty_policy')) ? 'cateActive' : '' }} hover:text-green-primary font-medium">
+        <div class="{{ (request()->is('warranty_policy')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('warrantyPolicy') }}">
                 Chính sách bảo hành
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('shipping_policy')) ? 'cateActive' : '' }} pr-10 hover:text-green-primary font-medium">
+        <div class="{{ (request()->is('shipping_policy')) ? 'cateActive' : '' }} pr-10 hover:text-green-primary_1 font-medium">
             <a href="{{ route('shippingPolicy') }}">
                 Chính sách vận chuyển
             </a>

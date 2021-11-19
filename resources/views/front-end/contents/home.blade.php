@@ -122,7 +122,7 @@
         <div class="flex flex-wrap justify-around bg-white mt-10 pt-5 pb-10 px-10">
             <div class="text-center w-1/4 px-10">
                 <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}"></div>
-                <div class="mt-2 font-bold text-xl text-green-primary_1 font-lora">Trà bách diệp</div>
+                <div class="mt-2 font-bold text-xl text-green-primary font-lora">Trà bách diệp</div>
                 <div class=" text-justify pt-3">
                     Gắn bó hơn 40 năm với cây chè. Giữ được hương vị chè truyền thống.
                     HTX Trà Sơn Dung mong muốn mang tới cho khách hàng những sản phẩm trà Tân Cương Thái Nguyên chính hiệu.
@@ -141,7 +141,7 @@
             </div>
             <div class="text-center w-1/4 px-10">
                 <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}"></div>
-                <div class="mt-2 font-bold text-xl text-green-primary_1 font-lora">Trà bách diệp</div>
+                <div class="mt-2 font-bold text-xl text-green-primary font-lora">Trà bách diệp</div>
                 <div class=" text-justify pt-3">
                     Gắn bó hơn 40 năm với cây chè. Giữ được hương vị chè truyền thống.
                     HTX Trà Sơn Dung mong muốn mang tới cho khách hàng những sản phẩm trà Tân Cương Thái Nguyên chính hiệu.
@@ -160,7 +160,7 @@
             </div>
             <div class="text-center w-1/4 px-10">
                 <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}"></div>
-                <div class="mt-2 font-bold text-xl text-green-primary_1 font-lora">Trà bách diệp</div>
+                <div class="mt-2 font-bold text-xl text-green-primary font-lora">Trà bách diệp</div>
                 <div class=" text-justify pt-3">
                     Gắn bó hơn 40 năm với cây chè. Giữ được hương vị chè truyền thống.
                     HTX Trà Sơn Dung mong muốn mang tới cho khách hàng những sản phẩm trà Tân Cương Thái Nguyên chính hiệu.
@@ -190,7 +190,7 @@
                         </div>
                         <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
                         </div>
-                        <div class="mt-2 font-bold text-xl text-green-primary_1 font-lora">Trà bách diệp</div>
+                        <div class="mt-2 font-bold text-xl text-green-primary font-lora">Trà bách diệp</div>
                         <div class=" text-justify pt-3">
                             Gắn bó hơn 40 năm với cây chè. Giữ được hương vị chè truyền thống.
                             HTX Trà Sơn Dung mong muốn mang tới cho khách hàng những sản phẩm trà Tân Cương Thái Nguyên
@@ -211,65 +211,66 @@
                 </div>
             </div>
         </div>
-        <script>
-            var m = 1000; //define your minute
-            var s = 0;
-            var h;
-            var xx = 0;
-            var width = 100 / (m * 60);
-            //var count=0;
-            var clearInter;
-            var tempW = 0;
-            minute = m % 60;
-            h = Math.floor(m / 60);
-            document.getElementById('hour').innerHTML = h;
-            document.getElementById('minute').innerHTML = minute;
-            clearInter = setInterval(function() {
-                timerCal();
-            }, 1000);
+    </div>
+    <script>
+        var m = 1000; //define your minute
+        var s = 0;
+        var h;
+        var xx = 0;
+        var width = 100 / (m * 60);
+        //var count=0;
+        var clearInter;
+        var tempW = 0;
+        minute = m % 60;
+        h = Math.floor(m / 60);
+        document.getElementById('hour').innerHTML = h;
+        document.getElementById('minute').innerHTML = minute;
+        clearInter = setInterval(function() {
+            timerCal();
+        }, 1000);
 
 
-            function timerCal() {
-                /*if((h==0)&&(m==0)&&(s==0)){
-                clearInterval(clearInter);
-                }*/
-                if (s > 0) {
-                    s = s - 1;
-                    //console.log(s);
-                    if (s < 10) {
-                        document.getElementById('second').innerHTML = "0" + s;
-                    } else {
-                        document.getElementById('second').innerHTML = s;
-                    }
-                }
-                if (s == 0) {
-                    s = 60;
-                    var ss = s;
-                    if (xx == 0) {
-                        s = 59;
-                        ss = s;
-                        xx = 1;
-                    }
+        function timerCal() {
+            /*if((h==0)&&(m==0)&&(s==0)){
+            clearInterval(clearInter);
+            }*/
+            if (s > 0) {
+                s = s - 1;
+                //console.log(s);
+                if (s < 10) {
+                    document.getElementById('second').innerHTML = "0" + s;
+                } else {
                     document.getElementById('second').innerHTML = s;
-                    if (minute != 0) {
-                        minute = minute - 1;
-                        if (minute < 10) {
-                            document.getElementById('minute').innerHTML = "0" + minute;
-                        } else {
-                            document.getElementById('minute').innerHTML = minute;
-                        }
+                }
+            }
+            if (s == 0) {
+                s = 60;
+                var ss = s;
+                if (xx == 0) {
+                    s = 59;
+                    ss = s;
+                    xx = 1;
+                }
+                document.getElementById('second').innerHTML = s;
+                if (minute != 0) {
+                    minute = minute - 1;
+                    if (minute < 10) {
+                        document.getElementById('minute').innerHTML = "0" + minute;
                     } else {
-                        if (h != 0) {
-                            h = h - 1;
-                            minute = 59;
-                            document.getElementById('minute').innerHTML = minute;
-                            document.getElementById('hour').innerHTML = h;
-                        } else {
-                            document.getElementById('second').innerHTML = '00';
-                            clearInterval(clearInter);
-                        }
+                        document.getElementById('minute').innerHTML = minute;
+                    }
+                } else {
+                    if (h != 0) {
+                        h = h - 1;
+                        minute = 59;
+                        document.getElementById('minute').innerHTML = minute;
+                        document.getElementById('hour').innerHTML = h;
+                    } else {
+                        document.getElementById('second').innerHTML = '00';
+                        clearInterval(clearInter);
                     }
                 }
             }
-        </script>
-    @endsection
+        }
+    </script>
+@endsection
