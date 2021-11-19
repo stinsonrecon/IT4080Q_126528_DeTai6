@@ -65,7 +65,7 @@
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex items-center">
                                         
-                                        <img class="img_index" src="{{$new->linkImg}}" alt="">
+                                        <img class="img_index" src="{{ asset('storage/new').'/'.$new->linkImg}}" alt="">
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">

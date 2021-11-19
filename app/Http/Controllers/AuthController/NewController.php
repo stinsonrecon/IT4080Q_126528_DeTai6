@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\NewRequest;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use App\Traits\StorageImageTrait;
 use App\Models\News;
 use Illuminate\Support\Facades\DB;
@@ -43,13 +44,11 @@ class NewController extends Controller
             $dataImgage =$this->storageTraitUploat($request,'linkImg','new');
                 if(!empty($dataImgage))
                     {
-              
-                        $data['linkImg']=$dataImgage['file_path'];
+                        $data['linkImg']=$dataImgage['file_name'];
                     }
                     else{
-                        $data['linkImg']='/images/back-end/new/chesen-banner-1.jpg';
+                        $data['linkImg']='chesen-banner-1.jpg';
                     }
-           
            $this->new->create($data);
            DB::commit();
             session()->flash('success', 'Bạn đã thêm thành công.');
@@ -75,15 +74,15 @@ class NewController extends Controller
                 'description' => $request->description,
                 'content'=>$request->content,
                 'statusTop'=>$request->statusTop,
-                'statusDisplay'=>$request->statusDisplay,
-                
-           
+                'statusDisplay'=>$request->statusDisplay
             ];
-            $dataImgage =$this->storageTraitUploat($request,'linkImg','new');
+            if($request->linkImg){
+                Storage::delete('public/new/'.$this->new->find($id)->linkImg);
+            }
+            $dataImgage =$this->storageTraitUploat($request,'linkImg','new');   
                 if(!empty($dataImgage))
                     {
-              
-                        $data['linkImg']=$dataImgage['file_path'];
+                        $data['linkImg']=$dataImgage['file_name'];
                     }
                     
            $this->new->find($id)->update($data);
@@ -97,7 +96,13 @@ class NewController extends Controller
     }
 
     public function delete($id){
-        $this->new->find($id)->delete();
+        $n = $this->new->find($id);
+        
+        if($n->linkImg && $n->linkImg != 'chesen-banner-1.jpg')
+        {
+            Storage::delete('public/new/'.$n->linkImg);
+        }
+        $n->delete();
         session()->flash('success', 'Bạn đã xóa thành công.');
         return redirect()->route('new.index');
     }

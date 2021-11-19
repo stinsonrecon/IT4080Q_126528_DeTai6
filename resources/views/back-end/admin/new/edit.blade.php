@@ -41,7 +41,7 @@
         Ảnh
         </label>
         <input type="file"    value="{{$news->linkImg}}" name="linkImg" class="@error('linkImg') is-invalid @enderror w-full text-gray-700 px-3 py-2 border rounded">
-        <img class="img_edit" src="{{$news->linkImg}}" alt="">
+        <img class="img_edit" src="{{ asset('storage/new').'/'.$news->linkImg}}" alt="">
     </div>
 
     
