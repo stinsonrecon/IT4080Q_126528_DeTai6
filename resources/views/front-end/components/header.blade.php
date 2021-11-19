@@ -17,87 +17,16 @@
             <a href="{{ route('contact') }}" class="hover:text-green-primary_1">Liên hệ</a>
         </div>
     </div>
-    <div class="h-1/3 text-gray-50 flex items-center justify-between" style="background-color: #91cc00;">
-        <div class="myCate ml-6 w-1/5 bg-green-primary h-full flex items-center justify-between">
-            <div class="ml-4"><i class="fas fa-bars"></i>   DANH MỤC SẢN PHẨM</div>
-            <div id="cateProduct" class="cateProduct w-1/5 absolute">
-                <div class="bg-white flex-col">
-                    <div class="h-12 flex justify-between items-center" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div class="flex justify-between w-full px-4">
-                            <div>
-                                <i class="fas fa-leaf" style="color: #B2B2B2"></i>
-                                <span class="ml-2 text-gray-700">Chè sen Thái Nguyên</span>
-                            </div>
-                            <div><i class="mr-2 fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                        </div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div class="flex justify-between w-full px-4">
-                            <div>
-                                <i class="fas fa-mug-hot" style="color: #B2B2B2"></i>
-                                <span class="ml-2 text-gray-700">Chè sen Cao Bằng</span>
-                            </div>
-                            <div><i class="mr-2 fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                        </div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div class="flex justify-between w-full px-4">
-                            <div>
-                                <i class="fas fa-spa" style="color: #B2B2B2"></i>
-                                <span class="ml-2 text-gray-700">Chè sen Hà Nội</span>
-                            </div>
-                            <div><i class="mr-2 fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                        </div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div class="flex justify-between w-full px-4">
-                            <div>
-                                <i class="fas fa-sun" style="color: #B2B2B2"></i>
-                                <span class="ml-2 text-gray-700">Chè sen cốm</span>
-                            </div>
-                            <div><i class="mr-2 fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                        </div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div class="flex justify-between w-full px-4">
-                            <div>
-                                <i class="fas fa-leaf" style="color: #B2B2B2"></i>
-                                <span class="ml-2 text-gray-700">Chè sen hoa nhài</span>
-                            </div>
-                            <div><i class="mr-2 fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                        </div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div class="flex justify-between w-full px-4">
-                            <div>
-                                <i class="fas fa-seedling" style="color: #B2B2B2"></i>
-                                <span class="ml-2 text-gray-700">Chè sen hoa súng</span>
-                            </div>
-                            <div><i class="mr-2 fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                        </div>
-                    </div>
-                    <div class="h-12 flex justify-between items-center" style="border: 1px solid #eaeaea; border-top: none;">
-                        <div class="flex justify-between w-full px-4">
-                            <div>
-                                <i class="fas fa-mug-hot" style="color: #B2B2B2"></i>
-                                <span class="ml-2 text-gray-700">Chè sen nóng</span>
-                            </div>
-                            <div><i class="mr-2 fas fa-caret-right" style="color: #B2B2B2"></i></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mr-4"><i class="fas fa-caret-down"></i></div>
-        </div>
-        <div id="home" class="{{ (request()->is('home')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+    <div class="px-10 h-1/3 text-gray-50 flex items-center justify-between" style="background-color: #91cc00;">
+        <div id="home" class="{{ (request()->is('/') || request()->is('home')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="/home">
                 Trang chủ
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('aboutus')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
-            <a href="{{ route('aboutus') }}">
-                Về chúng tôi
+        <div class="{{ (request()->is('warranty_policy')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="{{ route('warrantyPolicy') }}">
+                Tin tức khuyến mãi
             </a>
         </div>
         <div class=""> / </div>
@@ -107,15 +36,15 @@
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('warranty_policy')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
-            <a href="{{ route('warrantyPolicy') }}">
-                Chính sách bảo hành
+        <div class="{{ (request()->is('shipping_policy')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="{{ route('shippingPolicy') }}">
+                Chính sách vận chuyển
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('shipping_policy')) ? 'cateActive' : '' }} pr-10 hover:text-green-primary_1 font-medium">
-            <a href="{{ route('shippingPolicy') }}">
-                Chính sách vận chuyển
+        <div class="{{ (request()->is('aboutus')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="{{ route('aboutus') }}">
+                Về chúng tôi
             </a>
         </div>
     </div>
