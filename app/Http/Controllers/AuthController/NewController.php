@@ -46,6 +46,9 @@ class NewController extends Controller
               
                         $data['linkImg']=$dataImgage['file_path'];
                     }
+                    else{
+                        $data['linkImg']='/images/back-end/new/chesen-banner-1.jpg';
+                    }
            
            $this->new->create($data);
            DB::commit();
@@ -82,7 +85,7 @@ class NewController extends Controller
               
                         $data['linkImg']=$dataImgage['file_path'];
                     }
-           
+                    
            $this->new->find($id)->update($data);
            DB::commit();
             session()->flash('success', 'Bạn đã sửa thành công.');

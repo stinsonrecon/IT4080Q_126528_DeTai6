@@ -29,7 +29,7 @@ class NewRequest extends FormRequest
             'content'=>'required',
             'statusTop'=>'required',
             'statusDisplay'=>'required',
-            'linkImg'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'linkImg'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }
 }
