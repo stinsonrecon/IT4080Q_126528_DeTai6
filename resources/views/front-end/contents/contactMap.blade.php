@@ -3,26 +3,26 @@
 <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
     {{-- side menu & banner --}}
     <div class="w-1/6 pt-8">
-        <div><img src="{{ asset('images/chesen-ad.png') }}" alt=""></div>
+        <div><img src="{{ asset('images/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
         <div>
             <div class=" font-bold text-lg py-5">Giới thiệu</div>
             <ul>
-                <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5">
+                <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5">
                     <a href="{{ route('aboutus') }}">Về chúng tôi</a>
                 </li>
-                <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                     <a href="{{ route('shoppingGuide') }}">Hướng dẫn mua hàng</a>
                 </li>
-                <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                     <a href="{{ route('shippingPolicy') }}">Chính sách vận chuyển</a>
                 </li>
-                <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                     <a href="{{ route('paymentMethod') }}">Phương thức thanh toán</a>
                 </li>
-                <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                     <a href="{{ route('refundRegulation') }}">Quy định đổi trả hàng</a>
                 </li>
-                <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                     <a href="{{ route('warrantyPolicy') }}">Chính sách bảo hành</a>
                 </li>
             </ul>
@@ -40,18 +40,19 @@
             </div>
             <div class="text-center p-2">
                 Điện thoại:
-                <span  class="text-red-500 font-semibold">
+                <span  class="text-green-primary font-semibold">
                     024.382.38073
                 </span>
             </div>
             <div class="text-center p-2">
-                <span class="text-red-500 font-semibold">
-                    Fax: 043.9260566
+                Fax: 
+                <span class="text-green-primary font-semibold">
+                    043.9260566
                 </span>
             </div>
             <div class="text-center p-2 pb-5">
                 Email: 
-                <a href = "mailto: hoangminhoffice@gmail.com" class="text-red-500 font-semibold">
+                <a href = "mailto: hoangminhoffice@gmail.com" class="text-green-primary hover:text-green-primary_1 font-semibold">
                     hoangminhoffice@gmail.com
                 </a>
             </div>
@@ -74,11 +75,11 @@
             Công ty TNHH Máy Văn Phòng Hoàng Minh
         </div>
         <ul class="flex">
-            <li class="px-10 py-3 border-2 border-gray-50 hover:border-red-500"><a class="" href="{{ asset('images/company-img(1).jpg') }}"><img src="{{ asset('images/company-img(1).jpg') }}"></a></li>
-            <li class="px-10 py-3 border-2 border-gray-50 hover:border-red-500"><a class="" href="{{ asset('images/company-img(2).jpg') }}"><img src="{{ asset('images/company-img(2).jpg') }}"></a></li>
-            <li class="px-10 py-3 border-2 border-gray-50 hover:border-red-500"><a class="" href="{{ asset('images/company-img(3).jpg') }}"><img src="{{ asset('images/company-img(3).jpg') }}"></a></li>
-            <li class="px-10 py-3 border-2 border-gray-50 hover:border-red-500"><a class="" href="{{ asset('images/company-img(4).jpg') }}"><img src="{{ asset('images/company-img(4).jpg') }}"></a></li>
-            <li class="px-10 py-3 border-2 border-gray-50 hover:border-red-500"><a class="" href="{{ asset('images/company-img(5).jpg') }}"><img src="{{ asset('images/company-img(5).jpg') }}"></a></li>
+            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1"><a class="" href="{{ asset('images/company-img(1).jpg') }}"><img src="{{ asset('images/company-img(1).jpg') }}"></a></li>
+            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1"><a class="" href="{{ asset('images/company-img(2).jpg') }}"><img src="{{ asset('images/company-img(2).jpg') }}"></a></li>
+            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1"><a class="" href="{{ asset('images/company-img(3).jpg') }}"><img src="{{ asset('images/company-img(3).jpg') }}"></a></li>
+            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1"><a class="" href="{{ asset('images/company-img(4).jpg') }}"><img src="{{ asset('images/company-img(4).jpg') }}"></a></li>
+            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1"><a class="" href="{{ asset('images/company-img(5).jpg') }}"><img src="{{ asset('images/company-img(5).jpg') }}"></a></li>
         </ul>
     </div>
 </div>

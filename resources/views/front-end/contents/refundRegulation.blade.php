@@ -3,26 +3,26 @@
     <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
         {{-- side menu & banner --}}
         <div class="w-1/6 pt-8">
-            <div><img src="{{ asset('images/chesen-ad.png') }}" alt=""></div>
+            <div><img src="{{ asset('images/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
             <div>
                 <div class=" font-bold text-lg py-5">Giới thiệu</div>
                 <ul>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5">
                         <a href="{{ route('aboutus') }}">Về chúng tôi</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('shoppingGuide') }}">Hướng dẫn mua hàng</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('shippingPolicy') }}">Chính sách vận chuyển</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('paymentMethod') }}">Phương thức thanh toán</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5 text-red-500" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5 text-green-primary" style="border-top: none">
                         <a href="{{ route('refundRegulation') }}">Quy định đổi trả hàng</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('warrantyPolicy') }}">Chính sách bảo hành</a>
                     </li>
                 </ul>
@@ -31,10 +31,10 @@
         {{-- content --}}
         <div class="w-full  justify-around items-center pt-8 pl-7">
             <div class=" font-semibold text-xl pb-3">QUY ĐỊNH ĐỔI TRẢ HÀNG</div>
-            <div class=" border-t-4 border border-gray-500 bg-white" style="border-top-color: red">
+            <div class=" border-t-4 border border-gray-500 bg-white" style="border-top-color: #0c713d">
                 <div class="flex justify-around items-center pb-5"><img src="{{ asset('images/refundRegulation.jpg') }}" alt=""></div>
                 <p class="pl-5 text-gray-500">Với mục tiêu mang đến cho Quý khách hàng sự hài lòng, an tâm khi mua hàng và sử dụng dịch vụ tại 
-                    <span class="text-red-500 font-semibold">
+                    <span class="text-green-primary font-semibold">
                         <i>Hoàng Minh Office</i>
                     </span>
                     , chúng tôi có những chính sách đổi trả hàng lên tới 30 ngày nếu quý khách đáp ứng được những điều kiện sau đây:
@@ -85,7 +85,7 @@
                 <div class="pl-5 pt-3 font-bold">4) Phương thức hoàn tiền</div>
                 <p class="pl-5 pt-4 text-gray-500">
                     Nếu lỗi đó thuộc về chúng tôi, 
-                    <span class="text-red-500 font-semibold">
+                    <span class="text-green-primary font-semibold">
                         <i>Hoàng Minh Office</i>
                     </span> 
                     sẽ chịu hoàn toàn những chi phí phát sinh trong quá trình hoàn trả như là vận chuyển,
@@ -93,7 +93,7 @@
                 </p>
                 <p class="pl-5 text-gray-500">
                     <u>Phương thức hoàn tiền: </u>
-                    <span class="text-red-500 font-semibold">
+                    <span class="text-green-primary font-semibold">
                         <i>Hoàng Minh Office</i>
                     </span> 
                     có thể hoàn trả tiền mặt cho quý khách ngay tại công ty hoặc thực hiện uỷ nhiệm chi qua ngân hàng.
@@ -114,18 +114,19 @@
                 </div>
                 <div class="text-center p-2">
                     Điện thoại:
-                    <span  class="text-red-500 font-semibold">
+                    <span  class="text-green-primary font-semibold">
                         024.382.38073
                     </span>
                 </div>
                 <div class="text-center p-2">
-                    <span class="text-red-500 font-semibold">
-                        Fax: 043.9260566
+                    Fax: 
+                    <span class="text-green-primary font-semibold">
+                        043.9260566
                     </span>
                 </div>
                 <div class="text-center p-2 pb-5">
                     Email: 
-                    <a href = "mailto: hoangminhoffice@gmail.com" class="text-red-500 font-semibold">
+                    <a href = "mailto: hoangminhoffice@gmail.com" class="text-green-primary hover:text-green-primary_1 font-semibold">
                         hoangminhoffice@gmail.com
                     </a>
                 </div>
