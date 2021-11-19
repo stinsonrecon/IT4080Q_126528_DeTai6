@@ -97,18 +97,91 @@
                 <div>Hàng chính hãng<br>Cam kết chính hãng 100%</div>
             </div>
         </div>
-        <div class=" flex justify-around items-center mt-8 bg-white py-5 px-10">
+        <div class="flex flex-wrap justify-around bg-white mt-10 pt-5 pb-10 px-10">
+            <div class="text-center w-1/3 px-10" style="min-height: 350px;">
+                <div class="text-lg">&nbsp</div>
+                <div>
+                    <div>
+                        <img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
+                    </div>
+                    <div class="mt-2 font-bold text-xl text-green-primary font-lora">Hộp 100g - Trà bách diệp</div>
+                    <div class="font-semibold"><br>40,000 VND</div>
+                    <div class="mt-2">
+                        <button
+                            class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
+                            <a href="{{ route('aboutus') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem
+                                thêm</a>
+                        </button>
+                        <button
+                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
+                                class="fas fa-shopping-cart text-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center w-1/3 px-10" style="min-height: 350px;">
+                <div class="text-lg">&nbsp</div>
+                <div>
+                    <div>
+                        <img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
+                    </div>
+                    <div class="mt-2 font-bold text-xl text-green-primary font-lora">Hộp 500g - Trà bách diệp</div>
+                    <div class="font-semibold"><br>180,000 VND</div>
+                    <div class="mt-2">
+                        <button
+                            class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
+                            <a href="{{ route('aboutus') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem
+                                thêm</a>
+                        </button>
+                        <button
+                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
+                                class="fas fa-shopping-cart text-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center w-1/3 px-10" style="min-height: 350px;">
+                <div class="timer">
+                    <span class="text-red-500 text-lg">Chỉ còn: </span>
+                    <span id="hour" class="text-red-500 text-lg">00</span>
+                    <span class="text-red-500 text-lg">h</span>
+                    <span id="minute" class="text-red-500 text-lg">00</span>
+                    <span class="text-red-500 text-lg">p</span>
+                    <span id="second" class="text-red-500 text-lg">00</span>
+                </div>
+                <div>
+                    <div class="absolute float-left">
+                        <img class="w-20 h-20" src="{{ asset('images/sale.png') }}" alt="">
+                    </div>
+                    <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
+                    </div>
+                    <div class="mt-2 font-bold text-xl text-green-primary font-lora">1kg - Trà bách diệp</div>
+                    <div class="font-semibold"><del class="text-xs">350,000 VND</del><br>300,000 VND</div>
+                    <div class="mt-2">
+                        <button
+                            class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
+                            <a href="{{ route('aboutus') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem
+                                thêm</a>
+                        </button>
+                        <button
+                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
+                                class="fas fa-shopping-cart text-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" flex justify-around items-center mt-8 bg-white py-5 px-10 mb-10">
             <img src="{{ asset('images/aboutus-banner.jpg') }}" alt="" class="w-1/3 h-1/3 object-contain">
-            <div class="w-1/4">
+            <div class="w-2/5">
                 <div class="text-2xl font-semibold text-green-primary pb-12 font-lora">TỪ NHỮNG MẦM TRÀ, CHÚNG TÔI TẠO RA
                     NIỀM ĐAM MÊ</div>
-                <p>Trải qua hơn 50 năm chắt chiu tinh hoa từ những búp trà xanh và hạt cà phê thượng hạng cùng mong
+                <p class="text-justify">Trải qua hơn 50 năm chắt chiu tinh hoa từ những búp trà xanh và hạt cà phê
+                    thượng hạng cùng mong
                     muốn mang lại
                     cho khách hàng những trải nghiệm giá trị nhất khi thưởng thức, Bách Diệp Trà liên tục là
                     thương hiệu tiên phong
                     với nhiều ý tưởng sáng tạo đi đầu trong ngành trà và cà phê.
                 </p><br>
-                <p>Chúng tôi tin rằng từng sản phẩm trà và cà phê sẽ càng thêm hảo hạng khi được tạo ra từ sự
+                <p class="text-justify">Chúng tôi tin rằng từng sản phẩm trà và cà phê sẽ càng thêm hảo hạng khi
+                    được tạo ra từ sự
                     phấn đấu không ngừng cùng niềm đam mê.
                     Và chính kết nối dựa trên niềm tin, sự trung thực và tin yêu sẽ góp phần mang đến những nét đẹp trong
                     văn hóa thưởng trà và cà phê ngày càng bay cao, vươn xa.
@@ -119,98 +192,7 @@
                 </button>
             </div>
         </div>
-        <div class="flex flex-wrap justify-around bg-white mt-10 pt-5 pb-10 px-10">
-            <div class="text-center w-1/4 px-10">
-                <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}"></div>
-                <div class="mt-2 font-bold text-xl text-green-primary font-lora">Trà bách diệp</div>
-                <div class=" text-justify pt-3">
-                    Gắn bó hơn 40 năm với cây chè. Giữ được hương vị chè truyền thống.
-                    HTX Trà Sơn Dung mong muốn mang tới cho khách hàng những sản phẩm trà Tân Cương Thái Nguyên chính hiệu.
-                    Chúng tôi cam kết mang tới Quý khách hàng những sản phẩm trà tốt nhất, chất lượng nhất bằng […]
-                </div>
-                <div class="mt-2">
-                    <button
-                        class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-5">
-                        <a href="{{ route('aboutus') }}" class="font-bold text-xl"><i class="fas fa-eye"></i>Xem
-                            thêm</a>
-                    </button>
-                    <button
-                        class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-5"><i
-                            class="fas fa-shopping-cart"></i></button>
-                </div>
-            </div>
-            <div class="text-center w-1/4 px-10">
-                <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}"></div>
-                <div class="mt-2 font-bold text-xl text-green-primary font-lora">Trà bách diệp</div>
-                <div class=" text-justify pt-3">
-                    Gắn bó hơn 40 năm với cây chè. Giữ được hương vị chè truyền thống.
-                    HTX Trà Sơn Dung mong muốn mang tới cho khách hàng những sản phẩm trà Tân Cương Thái Nguyên chính hiệu.
-                    Chúng tôi cam kết mang tới Quý khách hàng những sản phẩm trà tốt nhất, chất lượng nhất bằng […]
-                </div>
-                <div class="mt-2">
-                    <button
-                        class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-5">
-                        <a href="{{ route('aboutus') }}" class="font-bold text-xl"><i class="fas fa-eye"></i>Xem
-                            thêm</a>
-                    </button>
-                    <button
-                        class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-5"><i
-                            class="fas fa-shopping-cart"></i></button>
-                </div>
-            </div>
-            <div class="text-center w-1/4 px-10">
-                <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}"></div>
-                <div class="mt-2 font-bold text-xl text-green-primary font-lora">Trà bách diệp</div>
-                <div class=" text-justify pt-3">
-                    Gắn bó hơn 40 năm với cây chè. Giữ được hương vị chè truyền thống.
-                    HTX Trà Sơn Dung mong muốn mang tới cho khách hàng những sản phẩm trà Tân Cương Thái Nguyên chính hiệu.
-                    Chúng tôi cam kết mang tới Quý khách hàng những sản phẩm trà tốt nhất, chất lượng nhất bằng […]
-                </div>
-                <div class="mt-2">
-                    <button
-                        class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-5">
-                        <a href="{{ route('aboutus') }}" class="font-bold text-xl"><i class="fas fa-eye"></i>Xem
-                            thêm</a>
-                    </button>
-                    <button
-                        class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-5"><i
-                            class="fas fa-shopping-cart"></i></button>
-                </div>
-            </div>
-            <div class="text-center w-1/4 px-10">
-                <div class="timer">
-                    <span id="hour" class="text-red-500 text-lg">00</span>
-                    <span class="text-red-500 text-lg">:</span>
-                    <span id="minute" class="text-red-500 text-lg">00</span>
-                    <span class="text-red-500 text-lg">:</span>
-                    <span id="second" class="text-red-500 text-lg">00</span>
-                    <div>
-                        <div class="absolute float-left">
-                            <img class="w-20 h-20" src="{{ asset('images/sale.png') }}" alt="">
-                        </div>
-                        <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
-                        </div>
-                        <div class="mt-2 font-bold text-xl text-green-primary font-lora">Trà bách diệp</div>
-                        <div class=" text-justify pt-3">
-                            Gắn bó hơn 40 năm với cây chè. Giữ được hương vị chè truyền thống.
-                            HTX Trà Sơn Dung mong muốn mang tới cho khách hàng những sản phẩm trà Tân Cương Thái Nguyên
-                            chính hiệu.
-                            Chúng tôi cam kết mang tới Quý khách hàng những sản phẩm trà tốt nhất, chất lượng nhất bằng […]
-                        </div>
-                        <div class="mt-2">
-                            <button
-                                class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-5">
-                                <a href="{{ route('aboutus') }}" class="font-bold text-xl"><i
-                                        class="fas fa-eye"></i>Xem thêm</a>
-                            </button>
-                            <button
-                                class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-5"><i
-                                    class="fas fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
     <script>
         var m = 1000; //define your minute
