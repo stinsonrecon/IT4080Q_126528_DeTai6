@@ -3,7 +3,7 @@
     <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
         {{-- side menu & banner --}}
         <div class="w-1/6 pt-8">
-            <div><img src="{{ asset('images/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
+            <div><img src="{{ asset('images/front-end/common/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
             <div>
                 <div class=" font-bold text-lg py-5">Giới thiệu</div>
                 <ul>
@@ -37,7 +37,7 @@
                 </div>
                 <p class="pl-5 pt-4 text-gray-500">1. Đến mua hàng trực tiếp tại showroom 
                     <span class="text-green-primary font-semibold">
-                        <i>Hoàng Minh Office</i>
+                        <i>Bách Diệp Trà</i>
                     </span>
                     .
                 </p>
@@ -52,7 +52,7 @@
                 <p class="pl-5 pt-4 text-gray-500">3. Đặt mua hàng trên website 
                     <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
-                            https://hoangminhoffice.com/
+                            https://bachdieptra.com/
                         </a>
                     </span>
                 </p>
@@ -61,7 +61,7 @@
                     &#8226  <u>Cách 1: Tìm kiếm sản phẩm theo danh mục hàng hoá.</u>
                     <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
-                            https://hoangminhoffice.com/
+                            https://bachdieptra.com/
                         </a>
                     </span>
                     có 1 số danh mục hàng cơ bản như:
@@ -88,12 +88,12 @@
                     Chúng tôi khuyến cáo các bạn nên điền đầy đủ các thông tin cá nhân để việc liên lạc được thực hiện một cách dễ dàng và nhanh chóng.
                 </p>
                 <div class="pl-5 pt-5 text-2xl text-gray-500 font-bold">
-                    Các quyền lợi của khách hàng khi mua hàng tại Công ty TNHH máy văn phòng Hoàng Minh
+                    Các quyền lợi của khách hàng khi mua hàng tại Bách Diệp Trà
                 </div>
                 <p class="pl-5 pt-5 text-gray-500">
                     Để giúp khách hàng có một sự lựa chọn hoàn hảo, 
                     <span class="text-green-primary font-semibold">
-                        <i>Hoàng Minh Office</i>
+                        <i>Bách Diệp Trà</i>
                     </span>
                     đem đến cho khách hàng rất nhiều quyền lợi như:
                     quyền được lựa chọn, quyền được mua đúng sản phẩm, quyền được đánh giá và quyền được từ chối.
@@ -103,7 +103,7 @@
                     Với hơn 2000 sản phẩm và nhiều dịch vụ đi kèm, khách hàng sẽ có rất nhiều lựa chọn về sản phẩm cũng như dịch vụ như ý tại 
                     <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
-                            https://hoangminhoffice.com/
+                            https://bachdieptra.com/
                         </a>
                     </span>
                 </p>
@@ -112,7 +112,7 @@
                     Tất cả sản phẩm của 
                     <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
-                            https://hoangminhoffice.com/
+                            https://bachdieptra.com/
                         </a>
                     </span>
                     là sản phẩm chất lượng cao, mẫu mã mới, tương thích tốt với nhu cầu sử dụng tại thị trường Việt Nam.
@@ -125,7 +125,7 @@
                     Mọi khách hàng đều có quyền được đánh giá và đưa ý kiến về sản phẩm mình mua tại 
                     <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
-                            https://hoangminhoffice.com/
+                            https://bachdieptra.com/
                         </a>
                     </span>
                     .Tất cả phản hồi, dù là tích cực hay trái chiều cũng sẽ được bộ phận chăm sóc khách hàng của chúng tôi ghi nhận và công khai để nâng cao chất lượng dịch vụ,
@@ -137,47 +137,12 @@
                     Những sản phẩm không đúng chủng loại, không mới 100%, có dấu hiệu lỗi hoặc trục trặc, khách hàng có quyền từ chối nhận hàng.
                     Mọi thắc mắc và phản hồi xin gửi đến email:
                      <span>
-                        <a href = "mailto: hoangminhoffice@gmail.com" class="text-green-primary hover:text-green-primary_1">
-                            hoangminhoffice@gmail.com
+                        <a href = "mailto: bachdieptra@gmail.com" class="text-green-primary hover:text-green-primary_1">
+                            bachdieptra@gmail.com
                         </a>
                     </span>
                     , chúng tôi sẽ tiến hành xem xét và giải quyết khúc mắc của quý khách một cách sớm nhất.
                 </p>
-            </div>
-        </div>
-    </div>
-    <div class="border-t-2 py-10 relative">
-        <div id="advertisement">
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-              </ul>
             </div>
         </div>
     </div>

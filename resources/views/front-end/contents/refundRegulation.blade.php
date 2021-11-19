@@ -3,7 +3,7 @@
     <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
         {{-- side menu & banner --}}
         <div class="w-1/6 pt-8">
-            <div><img src="{{ asset('images/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
+            <div><img src="{{ asset('images/front-end/common/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
             <div>
                 <div class=" font-bold text-lg py-5">Giới thiệu</div>
                 <ul>
@@ -35,7 +35,7 @@
                 <div class="flex justify-around items-center pb-5"><img src="{{ asset('images/refundRegulation.jpg') }}" alt=""></div>
                 <p class="pl-5 text-gray-500">Với mục tiêu mang đến cho Quý khách hàng sự hài lòng, an tâm khi mua hàng và sử dụng dịch vụ tại 
                     <span class="text-green-primary font-semibold">
-                        <i>Hoàng Minh Office</i>
+                        <i>Bách Diệp Trà</i>
                     </span>
                     , chúng tôi có những chính sách đổi trả hàng lên tới 30 ngày nếu quý khách đáp ứng được những điều kiện sau đây:
                 </p>
@@ -86,7 +86,7 @@
                 <p class="pl-5 pt-4 text-gray-500">
                     Nếu lỗi đó thuộc về chúng tôi, 
                     <span class="text-green-primary font-semibold">
-                        <i>Hoàng Minh Office</i>
+                        <i>Bách Diệp Trà</i>
                     </span> 
                     sẽ chịu hoàn toàn những chi phí phát sinh trong quá trình hoàn trả như là vận chuyển,
                     đóng gói, làm mới, v.v. Còn nếu quý khách đổi trả hàng vì bất kỳ lý do chủ quan nào, chúng tôi sẽ không chi trả cho những lệ phí đó.
@@ -94,14 +94,14 @@
                 <p class="pl-5 text-gray-500">
                     <u>Phương thức hoàn tiền: </u>
                     <span class="text-green-primary font-semibold">
-                        <i>Hoàng Minh Office</i>
+                        <i>Bách Diệp Trà</i>
                     </span> 
                     có thể hoàn trả tiền mặt cho quý khách ngay tại công ty hoặc thực hiện uỷ nhiệm chi qua ngân hàng.
                     Trong trường hợp chuyển khoản, lệnh chuyển tiền sẽ được thực hiện ngay sau khi chúng tôi hoàn tất việc kiểm tra và đánh giá tình trạng hàng hoá trả về; 
                     quý khách cũng sẽ được thông báo tiến độ hoàn trả cụ thể qua email.
                 </p>
                 <p class="pl-5 text-gray-500">
-                    &#8226 Thời gian quý khách nhận được chuyển khoản là từ 1 – 2 ngày sau khi có xác nhận hoàn tiền từ Hoàng Minh Office (có thể sớm hoặc trễ hơn tùy thuộc vào ngân hàng mà quý khách sử dụng)
+                    &#8226 Thời gian quý khách nhận được chuyển khoản là từ 1 – 2 ngày sau khi có xác nhận hoàn tiền từ Bách Diệp Trà (có thể sớm hoặc trễ hơn tùy thuộc vào ngân hàng mà quý khách sử dụng)
                 </p>
                 <p class="pl-5 text-gray-500">
                     Mọi chi tiết xin quý khách vui lòng liên hệ:
@@ -126,45 +126,10 @@
                 </div>
                 <div class="text-center p-2 pb-5">
                     Email: 
-                    <a href = "mailto: hoangminhoffice@gmail.com" class="text-green-primary hover:text-green-primary_1 font-semibold">
-                        hoangminhoffice@gmail.com
+                    <a href = "mailto: bachdieptra@gmail.com" class="text-green-primary hover:text-green-primary_1 font-semibold">
+                        bachdieptra@gmail.com
                     </a>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="border-t-2 py-10 relative">
-        <div id="advertisement">
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-              </ul>
             </div>
         </div>
     </div>

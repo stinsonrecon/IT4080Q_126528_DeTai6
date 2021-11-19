@@ -25,7 +25,7 @@
                             </button>
                         </div>
                     </div>
-                    <img src="{{ asset('images/chesen-banner-3.png') }}" alt="">
+                    <img src="{{ asset('images/front-end/home/slider/chesen-banner-3.png') }}" alt="">
                 </li>
                 <li class="splide__slide">
                     <div class="absolute left-0 right-0 my-0 top-1/3">
@@ -40,7 +40,7 @@
                             </button>
                         </div>
                     </div>
-                    <img src="{{ asset('images/chesen-banner-2.png') }}" alt="">
+                    <img src="{{ asset('images/front-end/home/slider/chesen-banner-2.png') }}" alt="">
                 </li>
                 <li class="splide__slide">
                     <div class="absolute left-0 right-0 my-0 top-1/3">
@@ -55,7 +55,7 @@
                             </button>
                         </div>
                     </div>
-                    <img src="{{ asset('images/chesen-banner-1.jpg') }}" alt="">
+                    <img src="{{ asset('images/front-end/home/slider/chesen-banner-1.jpg') }}" alt="">
                 </li>
                 <li class="splide__slide">
                     <div class="absolute left-0 right-0 my-0 top-1/3">
@@ -70,7 +70,7 @@
                             </button>
                         </div>
                     </div>
-                    <img src="{{ asset('images/chesen-banner-4.png') }}" alt="">
+                    <img src="{{ asset('images/front-end/home/slider/chesen-banner-4.png') }}" alt="">
                 </li>
             </ul>
         </div>
@@ -169,7 +169,7 @@
             </div>
         </div>
         <div class=" flex justify-around items-center mt-8 bg-white py-5 px-10 mb-10">
-            <img src="{{ asset('images/aboutus-banner.jpg') }}" alt="" class="w-1/3 h-1/3 object-contain">
+            <img src="{{ asset('images/front-end/home/aboutus-banner.jpg') }}" alt="" class="w-1/3 h-1/3 object-contain">
             <div class="w-2/5">
                 <div class="text-2xl font-semibold text-green-primary pb-12 font-lora">TỪ NHỮNG MẦM TRÀ, CHÚNG TÔI TẠO RA
                     NIỀM ĐAM MÊ</div>
