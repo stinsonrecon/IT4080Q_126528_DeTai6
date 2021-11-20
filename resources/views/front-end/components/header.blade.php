@@ -24,8 +24,8 @@
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('warranty_policy')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
-            <a href="{{ route('warrantyPolicy') }}">
+        <div class="{{ (request()->is('news')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="{{ route('news') }}">
                 Tin tức khuyến mãi
             </a>
         </div>

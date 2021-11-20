@@ -23,7 +23,7 @@
                     <a href="{{ route('refundRegulation') }}">Quy định đổi trả hàng</a>
                 </li>
                 <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
-                    <a href="{{ route('warrantyPolicy') }}">Chính sách bảo hành</a>
+                    <a href="{{ route('news') }}">Tin tức khuyến mãi</a>
                 </li>
             </ul>
         </div>
