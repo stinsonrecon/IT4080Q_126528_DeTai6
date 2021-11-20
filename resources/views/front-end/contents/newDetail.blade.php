@@ -29,8 +29,16 @@
         </div>
     </div>
     {{-- content --}}
-    <div class="w-5/6 p-10">
+    <div id="newsContent" class="w-5/6 p-10">
         {!! $new->content !!}
     </div>
 </div>
+<script>
+    loadNews();
+    function loadNews(){
+        var news = document.getElementById("newsContent");
+        var myimgs = news.getElementsByTagName('img')[0];
+        myimgs.style.margin = "auto";
+    }
+</script>
 @endsection
