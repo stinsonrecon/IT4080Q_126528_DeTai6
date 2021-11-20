@@ -3,7 +3,7 @@
     <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
         {{-- side menu & banner --}}
         <div class="w-1/6 pt-8">
-            <div><img src="{{ asset('images/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
+            <div><img src="{{ asset('images/front-end/common/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
             <div>
                 <div class=" font-bold text-lg py-5">Giới thiệu</div>
                 <ul>
@@ -35,7 +35,7 @@
                 <div class="text-center text-lg text-gray-500">
                     Nhằm mang đến cho quý khách hàng những trải nghiệm mua sắm trực tuyến tuyệt vời và yên tâm tại 
                     <span class="text-green-primary font-semibold">
-                        <i>Hoàng Minh Office</i>
+                        <i>Bách Diệp Trà</i>
                     </span>
                     , chúng tôi đưa ra nhiều phương thức thanh toán đa dạng để quý khách dễ dàng lựa chọn như sau:
                 </div>
@@ -43,7 +43,7 @@
                 <div class=" font-bold text-lg pt-5 pb-3 pl-5 text-gray-500">1) Thanh toán bằng tiền mặt</div>
                 <p class="pl-5 text-gray-500">
                     &#8226 <u>Thanh toán ngay tại cửa hàng:</u>
-                    Quý khách đến mua hàng và thanh toán tiền mặt trực tiếp tại Công ty TNHH máy văn phòng Hoàng Minh.
+                    Quý khách đến mua hàng và thanh toán tiền mặt trực tiếp tại Bách Diệp Trà.
                 </p>
                 <p class="pl-5 py-3 text-gray-500">
                     <i>
@@ -72,8 +72,8 @@
                     Sau khi chuyển khoản thành công,
                     quý khách có thể email (
                         <span>
-                            <a href = "mailto: hoangminhoffice@gmail.com" class="text-green-primary hover:text-green-primary_1 font-semibold">
-                                hoangminhoffice@gmail.com
+                            <a href = "mailto: bachdieptra@gmail.com " class="text-green-primary hover:text-green-primary_1 font-semibold">
+                                bachdieptra@gmail.com 
                             </a>
                         </span>
                     ) hoặc fax (
@@ -84,7 +84,7 @@
                 </p>
                 <p class="pl-5 pt-3 text-gray-500">
                     <span class="text-green-primary font-semibold">
-                        <i>Hoàng Minh Office</i>
+                        <i>Bách Diệp Trà</i>
                     </span> 
                     sẽ chỉ ủy quyền cho các đơn vị uy tín như DHL, EMS, Viettel, Giao Hàng Tiết Kiệm, Grab, v.v. để vận chuyển hàng tới tay quý khách.
                 </p>
@@ -103,7 +103,7 @@
                     <b><i>Lưu ý:</i></b> Các đơn hàng có địa chỉ giao nhận tại thành phố Hà Nội cũng có thể áp dụng hình thức chuyển khoản hoặc thanh toán trực tuyến như đã nêu ở mục 2.
                     Tuy nhiên,
                     <span class="text-green-primary font-semibold">
-                        <i>Hoàng Minh Office</i>
+                        <i>Bách Diệp Trà</i>
                     </span>
                     khuyến khích khách hàng sử dụng hình thức “thanh toán tại điểm giao hàng” để tiến trình xử lý đơn hàng có thể diễn ra 1 cách nhanh nhất.
                 </p>
@@ -125,41 +125,6 @@
                     </div>
                     @endforeach
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="border-t-2 py-10 relative">
-        <div id="advertisement">
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-              </ul>
             </div>
         </div>
     </div>

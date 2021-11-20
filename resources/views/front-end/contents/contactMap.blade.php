@@ -3,7 +3,7 @@
 <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
     {{-- side menu & banner --}}
     <div class="w-1/6 pt-8">
-        <div><img src="{{ asset('images/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
+        <div><img src="{{ asset('images/front-end/common/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
         <div>
             <div class=" font-bold text-lg py-5">Giới thiệu</div>
             <ul>
@@ -75,47 +75,32 @@
             Công ty TNHH Máy Văn Phòng Hoàng Minh
         </div>
         <ul class="flex">
-            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1"><a class="" href="{{ asset('images/company-img(1).jpg') }}"><img src="{{ asset('images/company-img(1).jpg') }}"></a></li>
-            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1"><a class="" href="{{ asset('images/company-img(2).jpg') }}"><img src="{{ asset('images/company-img(2).jpg') }}"></a></li>
-            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1"><a class="" href="{{ asset('images/company-img(3).jpg') }}"><img src="{{ asset('images/company-img(3).jpg') }}"></a></li>
-            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1"><a class="" href="{{ asset('images/company-img(4).jpg') }}"><img src="{{ asset('images/company-img(4).jpg') }}"></a></li>
-            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1"><a class="" href="{{ asset('images/company-img(5).jpg') }}"><img src="{{ asset('images/company-img(5).jpg') }}"></a></li>
+            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1">
+                <a class="" href="{{ asset('images/front-end/aboutus/company-img(1).jpg') }}">
+                    <img src="{{ asset('images/front-end/aboutus/company-img(1).jpg') }}">
+                </a>
+            </li>
+            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1">
+                <a class="" href="{{ asset('images/front-end/aboutus/company-img(2).jpg') }}">
+                    <img src="{{ asset('images/front-end/aboutus/company-img(2).jpg') }}">
+                </a>
+            </li>
+            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1">
+                <a class="" href="{{ asset('images/front-end/aboutus/company-img(3).jpg') }}">
+                    <img src="{{ asset('images/front-end/aboutus/company-img(3).jpg') }}">
+                </a>
+            </li>
+            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1">
+                <a class="" href="{{ asset('images/front-end/aboutus/company-img(4).jpg') }}">
+                    <img src="{{ asset('images/front-end/aboutus/company-img(4).jpg') }}">
+                </a>
+            </li>
+            <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1">
+                <a class="" href="{{ asset('images/front-end/aboutus/company-img(5).jpg') }}">
+                    <img src="{{ asset('images/front-end/aboutus/company-img(5).jpg') }}">
+                </a>
+            </li>
         </ul>
-    </div>
-</div>
-<div class="border-t-2 py-10 relative">
-    <div id="advertisement">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
-                <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-            </li>
-            <li class="splide__slide">
-                <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-            </li>
-            <li class="splide__slide">
-                <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-            </li>
-            <li class="splide__slide">
-                <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-            </li>
-            <li class="splide__slide">
-                <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-            </li>
-            <li class="splide__slide">
-                <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-            </li>
-            <li class="splide__slide">
-                <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-            </li>
-            <li class="splide__slide">
-                <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-            </li>
-            <li class="splide__slide">
-                <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-            </li>
-          </ul>
-        </div>
     </div>
 </div>
 @endsection
