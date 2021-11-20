@@ -29,7 +29,8 @@
         </div>
     </div>
     {{-- content --}}
-    {!! $new->content !!}
-    
+    <div class="w-5/6 p-10">
+        {!! $new->content !!}
+    </div>
 </div>
 @endsection
