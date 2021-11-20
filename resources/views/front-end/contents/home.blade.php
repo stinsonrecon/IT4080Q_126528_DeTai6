@@ -200,13 +200,15 @@
         var h;
         var xx = 0;
         var width = 100 / (m * 60);
-        //var count=0;
+        var gio = document.getElementById('hour');
+        var phut = document.getElementById('minute');
+        var giay = document.getElementById('second');
         var clearInter;
         var tempW = 0;
         minute = m % 60;
         h = Math.floor(m / 60);
-        document.getElementById('hour').innerHTML = h;
-        document.getElementById('minute').innerHTML = minute;
+        gio.innerHTML = h;
+        phut.innerHTML = minute;
         clearInter = setInterval(function() {
             timerCal();
         }, 1000);
@@ -220,9 +222,9 @@
                 s = s - 1;
                 //console.log(s);
                 if (s < 10) {
-                    document.getElementById('second').innerHTML = "0" + s;
+                    giay.innerHTML = "0" + s;
                 } else {
-                    document.getElementById('second').innerHTML = s;
+                    giay.innerHTML = s;
                 }
             }
             if (s == 0) {
@@ -233,22 +235,22 @@
                     ss = s;
                     xx = 1;
                 }
-                document.getElementById('second').innerHTML = s;
+                giay.innerHTML = s;
                 if (minute != 0) {
                     minute = minute - 1;
                     if (minute < 10) {
-                        document.getElementById('minute').innerHTML = "0" + minute;
+                        phut.innerHTML = "0" + minute;
                     } else {
-                        document.getElementById('minute').innerHTML = minute;
+                        phut.innerHTML = minute;
                     }
                 } else {
                     if (h != 0) {
                         h = h - 1;
                         minute = 59;
-                        document.getElementById('minute').innerHTML = minute;
-                        document.getElementById('hour').innerHTML = h;
+                        phut.innerHTML = minute;
+                        gio.innerHTML = h;
                     } else {
-                        document.getElementById('second').innerHTML = '00';
+                        giay.innerHTML = '00';
                         clearInterval(clearInter);
                     }
                 }
