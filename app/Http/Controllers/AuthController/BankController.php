@@ -17,6 +17,7 @@ class BankController extends Controller
     public function __construct(BankAccount $bank)
     {
         $this->bank=$bank;
+        $this->middleware(['auth']);
     }
     public function index(){
         $banks=$this->bank->paginate(5);

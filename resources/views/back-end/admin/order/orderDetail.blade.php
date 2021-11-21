@@ -24,7 +24,7 @@
                     <th class="py-3 px-6 text-center">Số lượng</th>
                     <th class="py-3 px-6 text-center">Đơn giá</th>
                     <th class="py-3 px-6 text-center">Thành tiền</th>
-                </tr>               
+                </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">
                 <tr class="border-b border-gray-200 hover:bg-gray-100">
@@ -46,18 +46,20 @@
                     </td>
                     <td class="py-3 px-6 text-center">
                         <span class="font-medium">90000VND</span>
-                    </td> 
+                    </td>
                     <td class="py-3 px-6 text-center">
                         <span class="font-medium">90000VND</span>
-                    </td>                     
+                    </td>
                 </tr>
             </tbody>
-            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 text-center">Tổng tiền</th>
-                    <td class="py-3 px-6 text-center">
-                        <span class="font-medium">90000VND</span>
-                    </td>  
+
+            <tr class=" bg-gray-200 text-gray-600 leading-normal ">
+                <th class="py-3 px-6 text-center">Tổng tiền:</th>
+                <td class="py-3 px-6 text-center text-red-500">
+                    <span class="font-medium ">90000VND</span>
+                </td>
             </tr>
+            </div>
         </table>
     </div>
 

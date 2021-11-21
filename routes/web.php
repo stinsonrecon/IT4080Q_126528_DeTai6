@@ -76,22 +76,22 @@ Route::prefix('admin')->group(function(){
     Route::prefix('bank')->group(function(){
         Route::get('/',[
             BankController::class,'index']
-        )->name('bank.index')->middleware('auth');
+        )->name('bank.index');
         Route::get('/create', [
             BankController::class, 'create'
-        ])->name('bank.create')->middleware('auth');
+        ])->name('bank.create');
         Route::post('/store', [
             BankController::class, 'store'
-        ])->name('bank.store')->middleware('auth');
+        ])->name('bank.store');
         Route::get('/edit/{id}', [
             BankController::class, 'edit'
-        ])->name('bank.edit')->middleware('auth');
+        ])->name('bank.edit');
         Route::post('/update/{id}', [
             BankController::class, 'update'
-        ])->name('bank.update')->middleware('auth');
+        ])->name('bank.update');
         Route::get('/delete/{id}', [
             BankController::class, 'delete'
-        ])->name('bank.delete')->middleware('auth');
+        ])->name('bank.delete');
     });
     //product
     Route::prefix('product')->group(function(){
