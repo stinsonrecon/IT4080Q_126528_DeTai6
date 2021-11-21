@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController\BankController;
+use App\Http\Controllers\AuthController\RegisterController;
 use App\Http\Controllers\UserController\HomeController;
 use App\Http\Controllers\UserController\PaymentMethodController;
 use Illuminate\Support\Facades\Route;
@@ -54,17 +55,29 @@ Route::get('/admin',function(){
     return view('back-end.login');
 });
 
+//register
+Route::get('/register',[RegisterController::class, 'index'])->name('register');
+Route::post('/register',[RegisterController::class, 'store']);
+
+//login
+Route::get('/login',[RegisterController::class, 'login'])->name('login');
+Route::post('/login',[RegisterController::class, 'customerLogin']);
+
+//logout
+Route::get('/logout',[RegisterController::class, 'logout'])->name('logout');
+
 Route::prefix('admin')->group(function(){
     //home
     Route::get('/home',function(){
         return view('back-end.contents.home');
-    })->name('admin.home');
+    })->name('admin.home')
+    ;
 
     //bank
     Route::prefix('bank')->group(function(){
         Route::get('/',[
             BankController::class,'index']
-        )->name('bank.index');
+        )->name('bank.index')->middleware('auth');
         Route::get('/create', [
             BankController::class, 'create'
         ])->name('bank.create');

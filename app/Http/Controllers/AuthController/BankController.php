@@ -13,6 +13,7 @@ use PhpParser\Node\Expr\FuncCall;
 class BankController extends Controller
 {
     private $bank;
+
     public function __construct(BankAccount $bank)
     {
         $this->bank=$bank;
@@ -25,6 +26,7 @@ class BankController extends Controller
     public function create(){
         return view('back-end.admin.bank.add');
     }
+
     public function store(BankRequest $request){
         try{
             DB::beginTransaction();
