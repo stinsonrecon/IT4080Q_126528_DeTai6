@@ -70,8 +70,7 @@ Route::prefix('admin')->group(function(){
     //home
     Route::get('/home',function(){
         return view('back-end.contents.home');
-    })->name('admin.home')
-    ;
+    })->name('admin.home')->middleware('auth');
 
     //bank
     Route::prefix('bank')->group(function(){
@@ -80,52 +79,52 @@ Route::prefix('admin')->group(function(){
         )->name('bank.index')->middleware('auth');
         Route::get('/create', [
             BankController::class, 'create'
-        ])->name('bank.create');
+        ])->name('bank.create')->middleware('auth');
         Route::post('/store', [
             BankController::class, 'store'
-        ])->name('bank.store');
+        ])->name('bank.store')->middleware('auth');
         Route::get('/edit/{id}', [
             BankController::class, 'edit'
-        ])->name('bank.edit');
+        ])->name('bank.edit')->middleware('auth');
         Route::post('/update/{id}', [
             BankController::class, 'update'
-        ])->name('bank.update');
+        ])->name('bank.update')->middleware('auth');
         Route::get('/delete/{id}', [
             BankController::class, 'delete'
-        ])->name('bank.delete');
+        ])->name('bank.delete')->middleware('auth');
     });
     //product
     Route::prefix('product')->group(function(){
         Route::get('/',function(){
             return view('back-end.admin.product.product');
-        })->name('product.product');
+        })->name('product.product')->middleware('auth');
     });
 
     //promotion
     Route::prefix('promotion')->group(function(){
         Route::get('/',function(){
             return view('back-end.admin.product.promotion');
-        })->name('product.promotion');
+        })->name('product.promotion')->middleware('auth');
     });
 
     //order
     Route::prefix('order')->group(function(){
         Route::get('/',function(){
             return view('back-end.admin.order.order');
-        })->name('order.order');
+        })->name('order.order')->middleware('auth');
     });
 
     //orderDetail
     Route::prefix('orderDetail')->group(function(){
         Route::get('/',function(){
             return view('back-end.admin.order.orderDetail');
-        })->name('order.orderDetail');
+        })->name('order.orderDetail')->middleware('auth');
     });
 
     //new
     Route::prefix('news')->group(function(){
         Route::get('/',function(){
             return view('back-end.admin.news');
-        })->name('news');
+        })->name('news')->middleware('auth');
     });
 });
