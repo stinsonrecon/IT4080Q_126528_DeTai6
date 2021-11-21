@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController\BankController;
+use App\Http\Controllers\AuthController\Csvc_Pttt_Controller;
 use App\Http\Controllers\AuthController\NewController;
 use App\Http\Controllers\UserController\HomeController;
 use App\Http\Controllers\UserController\NewsController;
@@ -132,5 +133,22 @@ Route::prefix('admin')->group(function(){
         Route::get('/delete/{id}', [
             NewController::class, 'delete'
         ])->name('new.delete');
+    });
+
+    //chinh sach van chuyen va phuong thuc thanh toan
+    Route::prefix('csvcandpttt')->group(function(){
+        Route::get('/csvc',[
+            Csvc_Pttt_Controller::class,'indexa'
+        ])->name('a.index');
+        Route::post('/csvc/store',[
+            Csvc_Pttt_Controller::class,'storea'
+        ])->name('a.store');
+        Route::get('/pttt',[
+            Csvc_Pttt_Controller::class,'indexb'
+        ])->name('b.index');
+        Route::post('/pttt/store',[
+            Csvc_Pttt_Controller::class,'storeb'
+        ])->name('b.store');
+        
     });
 });
