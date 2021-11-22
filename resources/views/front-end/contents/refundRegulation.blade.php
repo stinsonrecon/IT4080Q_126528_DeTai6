@@ -3,27 +3,27 @@
     <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
         {{-- side menu & banner --}}
         <div class="w-1/6 pt-8">
-            <div><img src="{{ asset('images/chesen-ad.png') }}" alt=""></div>
+            <div><img src="{{ asset('images/front-end/common/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
             <div>
                 <div class=" font-bold text-lg py-5">Giới thiệu</div>
                 <ul>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5">
                         <a href="{{ route('aboutus') }}">Về chúng tôi</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('shoppingGuide') }}">Hướng dẫn mua hàng</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('shippingPolicy') }}">Chính sách vận chuyển</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('paymentMethod') }}">Phương thức thanh toán</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5 text-red-500" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5 text-green-primary" style="border-top: none">
                         <a href="{{ route('refundRegulation') }}">Quy định đổi trả hàng</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
-                        <a href="{{ route('warrantyPolicy') }}">Chính sách bảo hành</a>
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
+                        <a href="{{ route('news') }}">Tin tức khuyến mãi</a>
                     </li>
                 </ul>
             </div>
@@ -31,11 +31,11 @@
         {{-- content --}}
         <div class="w-full  justify-around items-center pt-8 pl-7">
             <div class=" font-semibold text-xl pb-3">QUY ĐỊNH ĐỔI TRẢ HÀNG</div>
-            <div class=" border-t-4 border border-gray-500 bg-white" style="border-top-color: red">
+            <div class=" border-t-4 border border-gray-500 bg-white" style="border-top-color: #0c713d">
                 <div class="flex justify-around items-center pb-5"><img src="{{ asset('images/refundRegulation.jpg') }}" alt=""></div>
                 <p class="pl-5 text-gray-500">Với mục tiêu mang đến cho Quý khách hàng sự hài lòng, an tâm khi mua hàng và sử dụng dịch vụ tại 
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
                     </span>
                     , chúng tôi có những chính sách đổi trả hàng lên tới 30 ngày nếu quý khách đáp ứng được những điều kiện sau đây:
                 </p>
@@ -85,23 +85,23 @@
                 <div class="pl-5 pt-3 font-bold">4) Phương thức hoàn tiền</div>
                 <p class="pl-5 pt-4 text-gray-500">
                     Nếu lỗi đó thuộc về chúng tôi, 
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
                     </span> 
                     sẽ chịu hoàn toàn những chi phí phát sinh trong quá trình hoàn trả như là vận chuyển,
                     đóng gói, làm mới, v.v. Còn nếu quý khách đổi trả hàng vì bất kỳ lý do chủ quan nào, chúng tôi sẽ không chi trả cho những lệ phí đó.
                 </p>
                 <p class="pl-5 text-gray-500">
                     <u>Phương thức hoàn tiền: </u>
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
                     </span> 
                     có thể hoàn trả tiền mặt cho quý khách ngay tại công ty hoặc thực hiện uỷ nhiệm chi qua ngân hàng.
                     Trong trường hợp chuyển khoản, lệnh chuyển tiền sẽ được thực hiện ngay sau khi chúng tôi hoàn tất việc kiểm tra và đánh giá tình trạng hàng hoá trả về; 
                     quý khách cũng sẽ được thông báo tiến độ hoàn trả cụ thể qua email.
                 </p>
                 <p class="pl-5 text-gray-500">
-                    &#8226 Thời gian quý khách nhận được chuyển khoản là từ 1 – 2 ngày sau khi có xác nhận hoàn tiền từ Hoàng Minh Office (có thể sớm hoặc trễ hơn tùy thuộc vào ngân hàng mà quý khách sử dụng)
+                    &#8226 Thời gian quý khách nhận được chuyển khoản là từ 1 – 2 ngày sau khi có xác nhận hoàn tiền từ Bách Diệp Trà (có thể sớm hoặc trễ hơn tùy thuộc vào ngân hàng mà quý khách sử dụng)
                 </p>
                 <p class="pl-5 text-gray-500">
                     Mọi chi tiết xin quý khách vui lòng liên hệ:
@@ -114,56 +114,22 @@
                 </div>
                 <div class="text-center p-2">
                     Điện thoại:
-                    <span  class="text-red-500 font-semibold">
+                    <span  class="text-green-primary font-semibold">
                         024.382.38073
                     </span>
                 </div>
                 <div class="text-center p-2">
-                    <span class="text-red-500 font-semibold">
-                        Fax: 043.9260566
+                    Fax: 
+                    <span class="text-green-primary font-semibold">
+                        043.9260566
                     </span>
                 </div>
                 <div class="text-center p-2 pb-5">
                     Email: 
-                    <a href = "mailto: hoangminhoffice@gmail.com" class="text-red-500 font-semibold">
-                        hoangminhoffice@gmail.com
+                    <a href = "mailto: bachdieptra@gmail.com" class="text-green-primary hover:text-green-primary_1 font-semibold">
+                        bachdieptra@gmail.com
                     </a>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="border-t-2 py-10 relative">
-        <div id="advertisement">
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-              </ul>
             </div>
         </div>
     </div>

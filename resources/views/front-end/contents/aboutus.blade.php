@@ -3,27 +3,27 @@
     <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
         {{-- side menu & banner --}}
         <div class="w-1/6 pt-8">
-            <div><img src="{{ asset('images/chesen-ad.png') }}" alt=""></div>
+            <div><img src="{{ asset('images/front-end/common/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
             <div>
                 <div class=" font-bold text-lg py-5">Giới thiệu</div>
                 <ul>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('aboutus') }}">Về chúng tôi</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('shoppingGuide') }}">Hướng dẫn mua hàng</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('shippingPolicy') }}">Chính sách vận chuyển</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('paymentMethod') }}">Phương thức thanh toán</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
                         <a href="{{ route('refundRegulation') }}">Quy định đổi trả hàng</a>
                     </li>
-                    <li class=" border border-gray-500 w-full p-3 hover:text-red-500 pl-5" style="border-top: none">
-                        <a href="{{ route('warrantyPolicy') }}">Chính sách bảo hành</a>
+                    <li class=" border border-gray-500 w-full p-3 hover:text-green-primary pl-5" style="border-top: none">
+                        <a href="{{ route('news') }}">Tin tức khuyến mãi</a>
                     </li>
                 </ul>
             </div>
@@ -31,154 +31,159 @@
         {{-- content --}}
         <div class="w-full  justify-around items-center pt-8 pl-7">
             <div class=" font-semibold text-xl pb-3">VỀ CHÚNG TÔI</div>
-            <div class=" border-t-4 border border-gray-500 bg-white" style="border-top-color: red">
+            <div class=" border-t-4 border border-gray-500 bg-white" style="border-top-color: #0c713d">
                 <div class="text-center font-semibold text-lg">
                     Xin kính chào và cảm ơn quý khách hành đã quan tâm và truy cập vào website:
-                    <span class=" text-red-500">
+                    <span class=" text-green-primary hover:text-green-primary_1">
                         <a href="/home">
-                            https://hoangminhoffice.com/
+                            https://bachdieptra.com/
                         </a>
                     </span>
                 </div>
-                <a class="flex justify-around items-center" href="/home"><img src="{{ asset('images/logo.png') }}" alt=""></a>
-                <div class=" font-bold text-lg pt-5 pb-3 pl-5">Giới thiệu</div>
-                <p class="pl-5 text-black">Do nắm bắt được thị trường tiềm năng về in ấn và sao chụp của Việt Nam thời mở cửa những năm 1990s,
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
+                <a class="flex justify-around items-center" href="/home"><img src="{{ asset('images/logo.jpg') }}" alt=""></a>
+                <div class=" font-bold text-lg pt-5 pb-3 pl-5 text-green-primary_1">ABOUT US</div>
+                <p class="pl-5 text-black">Founded in 1968 on the famous tea highland in Bao Loc (Lam Dong),
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
                     </span>
-                    đã ra đời với định hướng kinh doanh đầu tiên là phân phối máy photocopy
-                    đã qua sử dụng cho toàn miền bắc. Và từ đó, công ty chúng tôi đã dần dần phát triền,
-                    mở rộng quy mô và bắt đầu kinh doanh thêm các loại linh kiện vật tư của rất nhiều dòng máy photocopy thời bấy giờ.
-                    Cho đến những năm 2000s, khi nhu cầu khách hàng dần chuyển qua những dòng máy in văn phòng có kích thước nhỏ gọn hơn,
-                    những chủng loại máy in đầu tiên, công nghệ hiện đại đã được
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
-                    </span>
-                    nhập khẩu về và cung cấp tới tay người
-                    tiêu dùng cùng với các đại lý lớn nhỏ trên toàn quốc.
+                    began supplying high quality coffee and tea products, in which the traditional Vietnamese taste was preserved in combination with a modern appealing style.
                 </p>
-                <p class="pl-5 pt-3 text-black">Với bề dày kinh nghiệm hơn 20 năm hoạt động trong lĩnh vực thiết bị máy văn phòng,
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
+                <p class="pl-5 pt-3 text-black">During the 1980s,
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
                     </span>
-                    tự hào có một chỗ đứng vững chắc trên thị trường cũng như là sự tín nhiệm của khách hàng trên toàn quốc.
-                    Khi đến với chúng tôi, các bạn sẽ được trải nhiệm những dịch vụ mua sắm và chăm sóc khách hàng đắc lực nhất.
-                </p>
-                <p class="pl-5 pt-3 text-black">Bên cạnh đó,
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
+                    opened three coffee shops on Le Van Sy, Tran Hung Dao and Mac Thi Buoi streets.
+                    These coffee shops were very successful and company became a limited company in 2000.
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
                     </span>
-                    cũng muốn gửi lời cảm ơn trân trọng đến những khách hàng đã hỗ trợ và hợp tác cùng công ty chúng tôi từ những ngày đầu thành lập.
-                    Nếu không có sự hỗ trợ và tin tưởng ấy, có thể chúng tôi đã không có được sự thành công rực rỡ như ngày hôm nay.
-                    Và 
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
-                    </span> 
-                    cũng hy vọng sẽ được tiếp tục đồng hành và hợp tác cùng quý khách hàng trong những năm tháng tiếp theo.
+                    was successful in part due to the effort made to continuously improve the quality of our products and the quality of the service we provide to our respected customers.
                 </p>
-                <div class=" font-bold text-lg pt-5 pb-3 pl-5">Những mặt hàng và dịch vụ tiêu biểu</div>
+                <p class="pl-5 pt-3 text-black"> In 2007,
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
+                    </span>
+                    took possession of a tea hill in Thai Nguyen and at the same time invested in building a coffee and tea factory in Binh Duong
+                     with the purpose of making our own quality products and meeting the increasing export demand.
+                </p>
+                <p class="pl-5 pt-3 text-black"> The first 
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
+                    </span>
+                    was opened at Crescent Mall shopping center in District 7.
+                    The purpose of this café was to create a comfortable, welcoming modern environment where customers received the highest quality freshly brewed and ready-to-serve drinks.
+                    The success of this café marked a significant change in Phuc Long’s development, step by step to become one of very few Vietnamese brands to take part in the Food & Beverage
+                    industry with the operating model of modern and outstanding self-service. 
+                </p>
+                <p class="pl-5 pt-3 text-black">After 50 years of experience growing and developing the highest quality of tea leaves and coffee beans coupled with our devotion to
+                    providing memorable customer experience,
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
+                    </span>
+                    has earned the reputation as a pioneer brand having many creative ideas for the coffee and tea industry.
+                </p>
+                <p class="pl-5 pt-3 text-black">We constantly strive to create the highest quality of tea and coffee products through ceaseless effort and passion.
+                     We are truly connected to and contribute deeply to the Vietnam's longstanding culture of drinking coffee and tea.
+                      The success of the first
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
+                    </span>
+                    shop has led to the opening of more than 60 additional shops selling our fresh and delicious drinks in Ho Chi Minh City, Binh Duong, Da Nang, Nha Trang, Ha Noi.
+                    Furthermore, we continue to develop and expand the chain stores from the South to the North.
+                    Increase the coverage of products to all distribution channels: supermarkets, convenience stores...
+                </p>
                 <p class="pl-5 pt-3 text-black">
-                    <span class="text-red-500 font-semibold">
-                        <u>
-                            <a href="/home"><i>Công ty TNHH máy văn phòng Hoàng Minh</i></a>
-                        </u>
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
                     </span>
-                    được phép của sở kế hoạch và đầu tư thành phố Hà Nội,
-                    chuyên nhập khẩu và phân phối nguyên vật tư linh kiện máy in, máy photo, máy fax, các loại mực in,
-                    mực photo và là một trong số những doanh nghiệp uy tín hàng đầu trong lĩnh vực máy văn phòng tại thị trường Việt Nam.
-                    Những thương hiệu tiêu biểu của
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
-                    </span> 
-                    gồm có: Ricoh, Toshiba, Canon, Sharp, Fuji-Xerox, HP, Epson, v.v.
-                    Các loại máy photocopy, máy in hoặc linh kiện vật tư đến từ những thương hiệu kể trên đều có nhiều tính năng ưu việt và được khách hàng trên toàn quốc tín nhiệm
-                    cũng như sử dụng rộng rãi. Ngoài ra, 
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
-                    </span> 
-                    còn cung cấp các loại hình dịch vụ đổ mực, bảo trì, bảo dưỡng và sửa chữa máy in,
-                    máy photocopy chất lượng cao, giá cả cạnh trạnh nhất trong khu vực Hà Nội.
+                    operates based on the slogan “A Passion for Quality”.
+                    Because of this, our brand is building a reputation for a Vietnamese brand rich in tradition that connects our many years of experience;
+                    our continuous learning and adaptation to the changing times to many generations.
                 </p>
-                <div class=" font-bold text-lg pt-5 pb-3 pl-5">Định hướng kinh doanh</div>
+
+                <div class=" font-bold text-lg pt-5 pb-3 pl-5 text-green-primary_1">OUR VISION</div>
                 <p class="pl-5 pt-3 text-black">
-                    Với phương châm luôn đặt lợi ích của khách hàng lên hàng đầu,
-                    <span class="text-red-500 font-semibold">
-                        <i>Hoàng Minh Office</i>
-                    </span> 
-                    luôn luôn đổi mới để có thể nắm bắt tốt hơn thị trường cũng như thị hiếu của người tiêu dùng qua từng ngày.
-                    Sứ mệnh của chúng tôi là trở thành một doanh nghiệp kinh doanh thiết bị máy văn phòng chuyên nghiệp nhất và tầm cỡ nhất tại Việt Nam,
-                    mang lại nhiều lợi ích quý giá mà khách hàng mong muốn.
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
+                    </span>
+                    hopes to create a Vietnamese brand in which the outstanding quality is easily recognized globally.
                 </p>
-                <div class=" font-bold text-lg pt-5 pb-3 pl-5">Thông tin liên hệ</div>
+                <p class="pl-5 pt-3 text-black">
+                    With the ceaseless passion for expanding our market through sustainable development, 
+                    <span class="text-green-primary font-semibold">
+                        <i>Bách Diệp Trà</i>
+                    </span>
+                    is striving to become a company specialized in manufacturing and exporting high-quality coffee and tea in Vietnam.
+                </p>
+                <div class=" font-bold text-lg pt-5 pb-3 pl-5 text-green-primary_1">OUR MISSION</div>
+                <p class="pl-5 pt-3 text-black">
+                    <span class="font-bold">1. To become a pioneer</span> by creating new ideas for the coffee and tea industry.
+                </p>
+                <p class="pl-5 pt-3 text-black">
+                    <span class="font-bold">2. To develop an outstanding brand,</span> motivate one another, as well as turn the ideas into reality over unity, interaction, listening and respect.
+                </p>
+                <p class="pl-5 pt-3 text-black">
+                    <span class="font-bold">3. To give happiness and treat our customers with respect and courtesy,</span>  each of us must always be bright, never be inactive, or avoid challenges, not stop continuously improving ourselves.
+                </p>
+                <p class="pl-5 pt-3 text-black">
+                    <span class="font-bold">4. Maintain our high quality</span> that satisfies our customers by having a deep understanding of their needs and values.
+                </p>
+                <div class=" font-bold text-lg pt-5 pb-3 pl-5 text-green-primary_1">CONTACT INFORMATION</div>
                 <div class="font-bold text-lg text-center">
-                    Công ty TNHH kinh doanh thiết bị máy văn phòng Hoàng Minh.
+                    Bách Diệp Trà - chuyên bán và phân phối trà sen.
                 </div>
                 <div class="text-center p-2">
                     Địa chỉ: 121 Hàng Bạc, Hoàn Kiếm, Hà Nội
                 </div>
                 <div class="text-center p-2">
                     Điện thoại:
-                    <span  class="text-red-500 font-semibold">
+                    <span  class="text-green-primary font-semibold">
                         024.382.38073
                     </span>
                 </div>
                 <div class="text-center p-2">
-                    <span class="text-red-500 font-semibold">
-                        Fax: 043.9260566
+                    Fax: 
+                    <span class="text-green-primary font-semibold">
+                        043.9260566
                     </span>
                 </div>
                 <div class="text-center p-2 pb-5">
                     Email: 
-                    <a href = "mailto: hoangminhoffice@gmail.com" class="text-red-500 font-semibold">
-                        hoangminhoffice@gmail.com
+                    <a href = "mailto: hoangminhoffice@gmail.com" class="text-green-primary hover:text-green-primary_1 font-semibold">
+                        bachdieptra@gmail.com
                     </a>
                 </div>
             </div>
             <div class="py-5 text-3xl">
-                Công ty TNHH Máy Văn Phòng Hoàng Minh
+                Bách Diệp Trà
             </div>
             <ul class="flex">
-                <li class="px-10 py-3 border-2 border-gray-50 hover:border-red-500"><a class="" href="{{ asset('images/company-img(1).jpg') }}"><img src="{{ asset('images/company-img(1).jpg') }}"></a></li>
-                <li class="px-10 py-3 border-2 border-gray-50 hover:border-red-500"><a class="" href="{{ asset('images/company-img(2).jpg') }}"><img src="{{ asset('images/company-img(2).jpg') }}"></a></li>
-                <li class="px-10 py-3 border-2 border-gray-50 hover:border-red-500"><a class="" href="{{ asset('images/company-img(3).jpg') }}"><img src="{{ asset('images/company-img(3).jpg') }}"></a></li>
-                <li class="px-10 py-3 border-2 border-gray-50 hover:border-red-500"><a class="" href="{{ asset('images/company-img(4).jpg') }}"><img src="{{ asset('images/company-img(4).jpg') }}"></a></li>
-                <li class="px-10 py-3 border-2 border-gray-50 hover:border-red-500"><a class="" href="{{ asset('images/company-img(5).jpg') }}"><img src="{{ asset('images/company-img(5).jpg') }}"></a></li>
+                <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1">
+                    <a class="" href="{{ asset('images/front-end/aboutus/company-img(1).jpg') }}">
+                        <img src="{{ asset('images/front-end/aboutus/company-img(1).jpg') }}">
+                    </a>
+                </li>
+                <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1">
+                    <a class="" href="{{ asset('images/front-end/aboutus/company-img(2).jpg') }}">
+                        <img src="{{ asset('images/front-end/aboutus/company-img(2).jpg') }}">
+                    </a>
+                </li>
+                <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1">
+                    <a class="" href="{{ asset('images/front-end/aboutus/company-img(3).jpg') }}">
+                        <img src="{{ asset('images/front-end/aboutus/company-img(3).jpg') }}">
+                    </a>
+                </li>
+                <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1">
+                    <a class="" href="{{ asset('images/front-end/aboutus/company-img(4).jpg') }}">
+                        <img src="{{ asset('images/front-end/aboutus/company-img(4).jpg') }}">
+                    </a>
+                </li>
+                <li class="px-10 py-3 border-2 border-gray-50 hover:border-green-primary_1">
+                    <a class="" href="{{ asset('images/front-end/aboutus/company-img(5).jpg') }}">
+                        <img src="{{ asset('images/front-end/aboutus/company-img(5).jpg') }}">
+                    </a>
+                </li>
             </ul>
-        </div>
-    </div>
-    <div class="border-t-2 py-10 relative">
-        <div id="advertisement">
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/xerox-logo-2-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/toshiba-logo-3-250x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-                <li class="splide__slide">
-                    <img src="{{ asset('images/panasonic-logo-3-280x100.jpg') }}" alt="aheloo" class="mb-2 h-full w-full object-contain">
-                </li>
-              </ul>
-            </div>
         </div>
     </div>
 @endsection
