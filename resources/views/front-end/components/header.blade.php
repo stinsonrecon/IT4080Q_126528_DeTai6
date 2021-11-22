@@ -1,20 +1,52 @@
-<div class="w-full flex-col justify-between h-40 min-h-full">
-    <div class="h-4/6 flex items-center justify-between px-4">
-        <div><img class="h-20" src="{{ asset('images/logo.jpg') }}"/></div>
+<div class="w-full flex-col justify-between h-24 lg:h-40 min-h-full">
+    <div class="h-full lg:h-4/6 flex items-center justify-between px-4">
+        <div class="lg:hidden">
+            <span id="mobile-menu-button" class="p-3 px-4 rounded border-2 text-white border-green-primary bg-green-primary w-10 h-10 hover:bg-white hover:text-green-primary">
+                <i class="fas fa-list"></i>
+            </span>
+        </div>
+        <div class="hidden lg:flex"><img class="h-20" src="{{ asset('images/logo.jpg') }}"/></div>
         <div>
-            <input class="h-12 outline-none w-60 lg:w-80 px-2 border-2 border-green-primary rounded-l" type="text" placeholder="Tìm kiếm theo sản phẩm hoặc nhãn hàng..."/>
+            <input class="search-mobile h-12 outline-none w-40 lg:w-80 px-2 border-2 border-green-primary rounded-l" type="text" placeholder="Tìm kiếm theo sản phẩm hoặc nhãn hàng..."/>
             <span class="-ml-1.5 p-3 px-4 rounded-r border-2 text-white border-green-primary bg-green-primary w-10 h-10 hover:bg-white hover:text-green-primary">
                 <i class="fas fa-search"></i>
             </span>
         </div>
-        <div><img class="h-12" src="{{ asset('images/hotline.png') }}"/></div>
-        <div class="text-black">
+        <div class="hidden lg:flex"><img class="h-12" src="{{ asset('images/hotline.png') }}"/></div>
+        <div class="hidden lg:block text-black">
             <i class="text-3xl fas fa-shopping-cart text-green-primary"></i> 
-            <a href="{{ route('payment') }}" class="hover:text-green-primary_1">Giỏ hàng<span>(0)</span></a>
+            <a href="{{ route('payment') }}" class="hover:text-green-primary_1">&nbsp;Giỏ hàng<span>(0)</span></a>
         </div>
-        <div class="text-black {{ (request()->is('contact')) ? 'cateActive' : '' }}">
+        <div class="hidden lg:block text-black {{ (request()->is('contact')) ? 'cateActive' : '' }}">
             <i class="text-3xl fas fa-map-marked-alt text-green-primary"></i> 
             <a href="{{ route('contact') }}" class="hover:text-green-primary_1">Liên hệ</a>
+        </div>
+    </div>
+    <div id="menu" class="flex-col z-10 absolute bg-white w-full px-4 text-xl">
+        <div id="home" class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('/') || request()->is('home')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="/home">
+                Trang chủ
+            </a>
+        </div>
+        <div class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('news')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="{{ route('news') }}">
+                Tin tức khuyến mãi
+            </a>
+        </div>
+        <div class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('payment_method')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="{{ route('paymentMethod') }}">
+                Phương thức thanh toán
+            </a>
+        </div>
+        <div class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('shipping_policy')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="{{ route('shippingPolicy') }}">
+                Chính sách vận chuyển
+            </a>
+        </div>
+        <div class="p-3 mb-2 border-b-2 border-green-secondary_1 {{ (request()->is('aboutus')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="{{ route('aboutus') }}">
+                Về chúng tôi
+            </a>
         </div>
     </div>
     <div class="hidden px-20 h-1/3 text-gray-50 lg:flex items-center justify-between" style="background-color: #91cc00;">
@@ -49,3 +81,10 @@
         </div>
     </div>
 </div>
+<script>
+    var btn = document.getElementById("mobile-menu-button");
+    var menu = document.getElementById("menu");
+    btn.onclick = function(){
+        menu.classList.toggle("hidden");
+    };
+</script>

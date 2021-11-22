@@ -1,7 +1,7 @@
 @extends('front-end.app')
 @section('content')
-    <div id="banner" class=" relative w-full border-t-2 border-green-primary">
-        <div class="splide__arrows">
+    <div id="banner" class="relative w-full border-t-2 border-green-primary">
+        <div class="splide__arrows hidden lg:block">
             <button class="splide__arrow splide__arrow--prev text-2xl hover:bg-green-primary text-black hover:text-white">
                 <i class="fas fa-caret-left"></i>
             </button>
@@ -9,11 +9,10 @@
                 <i class="fas fa-caret-right"></i>
             </button>
         </div>
-
         <div class="splide__track">
             <ul class="splide__list">
                 <li class="splide__slide">
-                    <div class="absolute left-0 right-0 my-0 top-1/3">
+                    <div class="absolute left-0 right-0 my-0 top-1/4 lg:top-1/3">
                         <div class="text-center text-white drop-shadow-2xl text-8xl font-petemoss"><i>Năng lượng từ thiên
                                 nhiên</i></div>
                         <div class="text-center text-white text-2xl font-bold drop-shadow-2xl pt-5">Trà xanh đặc sản Hồ Tây
@@ -28,7 +27,7 @@
                     <img src="{{ asset('images/front-end/home/slider/chesen-banner-3.png') }}" alt="">
                 </li>
                 <li class="splide__slide">
-                    <div class="absolute left-0 right-0 my-0 top-1/3">
+                    <div class="absolute left-0 right-0 my-0 top-1/4 lg:top-1/3">
                         <div class="text-center text-white drop-shadow-2xl text-8xl font-petemoss"><i>Năng lượng từ thiên
                                 nhiên</i></div>
                         <div class="text-center text-white text-2xl font-bold drop-shadow-2xl pt-5">Trà xanh đặc sản Hồ Tây
@@ -43,7 +42,7 @@
                     <img src="{{ asset('images/front-end/home/slider/chesen-banner-2.png') }}" alt="">
                 </li>
                 <li class="splide__slide">
-                    <div class="absolute left-0 right-0 my-0 top-1/3">
+                    <div class="absolute left-0 right-0 my-0 top-1/4 lg:top-1/3">
                         <div class="text-center text-black drop-shadow-2xl text-8xl font-petemoss"><i>Năng lượng từ thiên
                                 nhiên</i></div>
                         <div class="text-center text-black text-2xl font-bold drop-shadow-2xl pt-5">Trà xanh đặc sản Hồ Tây
@@ -58,7 +57,7 @@
                     <img src="{{ asset('images/front-end/home/slider/chesen-banner-1.jpg') }}" alt="">
                 </li>
                 <li class="splide__slide">
-                    <div class="absolute left-0 right-0 my-0 top-1/3">
+                    <div class="absolute left-0 right-0 my-0 top-1/4 lg:top-1/3">
                         <div class="text-center text-white drop-shadow-2xl text-8xl font-petemoss"><i>Năng lượng từ thiên
                                 nhiên</i></div>
                         <div class="text-center text-white text-2xl font-bold drop-shadow-2xl pt-5">Trà xanh đặc sản Hồ Tây
@@ -77,7 +76,7 @@
     </div>
     <div class="w-full px-6 pt-3" style="background-color: #fafafa;">
         {{-- advertisement --}}
-        <div class="w-full bg-white h-32 flex justify-around items-center">
+        <div class="hidden lg:flex w-full bg-white h-32 flex justify-around items-center">
             <div class="flex justify-between items-center">
                 <div class="mr-4">
                     <i class="text-3xl fas fa-truck-moving text-red-500"></i>
@@ -97,16 +96,16 @@
                 <div>Hàng chính hãng<br>Cam kết chính hãng 100%</div>
             </div>
         </div>
-        <div class="flex flex-wrap justify-around bg-white mt-10 pt-5 pb-10 px-10">
-            <div class="text-center w-1/3 px-10" style="min-height: 350px;">
+        <div class="flex flex-wrap justify-around bg-white mt-4 lg:mt-10 pt-5 pb-10 px-2 lg:px-10">
+            <div class="text-center w-full lg:w-1/3 lg:px-10" style="min-height: 350px;">
                 <div class="text-lg">&nbsp</div>
                 <div>
                     <div>
                         <img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
                     </div>
-                    <div class="mt-2 font-bold text-xl text-green-primary font-lora">Hộp 100g - Trà bách diệp</div>
+                    <div class="mt-1 lg:mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">Hộp 100g - Trà bách diệp</div>
                     <div class="font-semibold"><br>40,000 VND</div>
-                    <div class="mt-2">
+                    <div class="mt-1 lg:mt-2">
                         <button
                             class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
                             <a href="{{ route('aboutus') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem
@@ -118,13 +117,13 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center w-1/3 px-10" style="min-height: 350px;">
+            <div class="text-center w-full lg:w-1/3 lg:px-10" style="min-height: 350px;">
                 <div class="text-lg">&nbsp</div>
                 <div>
                     <div>
                         <img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
                     </div>
-                    <div class="mt-2 font-bold text-xl text-green-primary font-lora">Hộp 500g - Trà bách diệp</div>
+                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">Hộp 500g - Trà bách diệp</div>
                     <div class="font-semibold"><br>180,000 VND</div>
                     <div class="mt-2">
                         <button
@@ -138,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center w-1/3 px-10" style="min-height: 350px;">
+            <div class="text-center w-full lg:w-1/3 lg:px-10" style="min-height: 350px;">
                 <div class="timer">
                     <span class="text-red-500 text-lg">Chỉ còn: </span>
                     <span id="hour" class="text-red-500 text-lg">00</span>
@@ -153,7 +152,7 @@
                     </div>
                     <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
                     </div>
-                    <div class="mt-2 font-bold text-xl text-green-primary font-lora">1kg - Trà bách diệp</div>
+                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">1kg - Trà bách diệp</div>
                     <div class="font-semibold"><del class="text-xs">350,000 VND</del><br>300,000 VND</div>
                     <div class="mt-2">
                         <button
@@ -168,7 +167,7 @@
                 </div>
             </div>
         </div>
-        <div class=" flex justify-around items-center mt-8 bg-white py-5 px-10 mb-10">
+        <div class="hidden lg:flex justify-around items-center mt-8 bg-white py-5 px-10 mb-10">
             <img src="{{ asset('images/front-end/home/aboutus-banner.jpg') }}" alt="" class="w-1/3 h-1/3 object-contain">
             <div class="w-2/5">
                 <div class="text-2xl font-semibold text-green-primary pb-12 font-lora">TỪ NHỮNG MẦM TRÀ, CHÚNG TÔI TẠO RA

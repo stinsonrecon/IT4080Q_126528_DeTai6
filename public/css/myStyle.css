@@ -42,3 +42,15 @@ input[type='number']::-webkit-outer-spin-button {
 .custom-number-input button:focus {
   outline: none !important;
 }
+
+@media (min-width: 370px) {
+  .search-mobile{
+    width: 13rem;
+  }
+}
+@media (min-width: 1024px){
+  .search-mobile{
+    width: 20rem;
+  }
+}
+
