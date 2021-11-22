@@ -13,9 +13,11 @@ use PhpParser\Node\Expr\FuncCall;
 class BankController extends Controller
 {
     private $bank;
+
     public function __construct(BankAccount $bank)
     {
         $this->bank=$bank;
+        $this->middleware(['auth']);
     }
     public function index(){
         $banks=$this->bank->paginate(5);
@@ -25,6 +27,7 @@ class BankController extends Controller
     public function create(){
         return view('back-end.admin.bank.add');
     }
+
     public function store(BankRequest $request){
         try{
             DB::beginTransaction();

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController\BankController;
+use App\Http\Controllers\AuthController\RegisterController;
 use App\Http\Controllers\AuthController\NewController;
 use App\Http\Controllers\UserController\HomeController;
 use App\Http\Controllers\UserController\NewsController;
@@ -57,11 +58,22 @@ Route::get('/admin',function(){
     return view('back-end.login');
 });
 
+//register
+Route::get('/register',[RegisterController::class, 'index'])->name('register');
+Route::post('/register',[RegisterController::class, 'store']);
+
+//login
+Route::get('/login',[RegisterController::class, 'login'])->name('login');
+Route::post('/login',[RegisterController::class, 'customerLogin']);
+
+//logout
+Route::get('/logout',[RegisterController::class, 'logout'])->name('logout');
+
 Route::prefix('admin')->group(function(){
     //home
     Route::get('/home',function(){
         return view('back-end.contents.home');
-    })->name('admin.home');
+    })->name('admin.home')->middleware('auth');
 
     //bank
     Route::prefix('bank')->group(function(){
@@ -88,28 +100,28 @@ Route::prefix('admin')->group(function(){
     Route::prefix('product')->group(function(){
         Route::get('/',function(){
             return view('back-end.admin.product.product');
-        })->name('product.product');
+        })->name('product.product')->middleware('auth');
     });
 
     //promotion
     Route::prefix('promotion')->group(function(){
         Route::get('/',function(){
             return view('back-end.admin.product.promotion');
-        })->name('product.promotion');
+        })->name('product.promotion')->middleware('auth');
     });
 
     //order
     Route::prefix('order')->group(function(){
         Route::get('/',function(){
             return view('back-end.admin.order.order');
-        })->name('order.order');
+        })->name('order.order')->middleware('auth');
     });
 
     //orderDetail
     Route::prefix('orderDetail')->group(function(){
         Route::get('/',function(){
             return view('back-end.admin.order.orderDetail');
-        })->name('order.orderDetail');
+        })->name('order.orderDetail')->middleware('auth');
     });
 
     //new
