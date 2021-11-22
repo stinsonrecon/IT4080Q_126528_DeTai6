@@ -1,5 +1,6 @@
 @extends('front-end.app')
 @section('content')
+<div class="w-full p-4 h-10 flex items-center justify-start hover:text-green-primary hover:font-bold"><a href="{{ route('news') }}">Tin tức khuyến mãi >></a> <span class="text-green-primary">{{$new->title}}</span></div>
 <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
     {{-- side menu & banner --}}
     <div class="w-1/6 pt-8">
