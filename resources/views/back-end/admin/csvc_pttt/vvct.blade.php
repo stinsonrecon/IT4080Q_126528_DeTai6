@@ -1,17 +1,17 @@
 @extends('back-end.app')
 @section('title')
 <title>
-    Sửa phương thức thanh toán
+    Về với chúng tôi
 </title>
 @endsection
 
 @section('back-end.contents')
 
-@include('back-end.components.content-header',['name'=>'Phương thức thanh toán','key'=>' | Sửa'])
+@include('back-end.components.content-header',['name'=>'Về với chúng tôi','key'=>' | Sửa'])
 <!-- component -->
 <div class="overflow-x-auto flex flex-col">
     
-   <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" action="{{route('b.store')}}" enctype="multipart/form-data" >
+   <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" action="{{route('c.store')}}" enctype="multipart/form-data" >
    @csrf
    <div class=" mb-6  bg-green-700  ">
             @if(session()->has('success'))

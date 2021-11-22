@@ -161,6 +161,12 @@ Route::prefix('admin')->group(function(){
         Route::post('/pttt/store',[
             Csvc_Pttt_Controller::class,'storeb'
         ])->name('b.store');
+        Route::get('/vvct',[
+            Csvc_Pttt_Controller::class,'indexc'
+        ])->name('c.index');
+        Route::post('/vvct/store',[
+            Csvc_Pttt_Controller::class,'storec'
+        ])->name('c.store');
         
     });
 });

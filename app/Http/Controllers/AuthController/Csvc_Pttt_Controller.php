@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class Csvc_Pttt_Controller extends Controller
 {
     public function indexa(){
-        $file=fopen(storage_path("app/public/chinhsachvanchuyen.txt"), "r");
+       
+        $file=fopen(storage_path("app/public/chinhsachvanchuyen.txt"), "a+");
        
         return view('back-end.admin.csvc_pttt.csvc',compact('file'));
     }
@@ -23,7 +24,7 @@ class Csvc_Pttt_Controller extends Controller
     }
 
     public function indexb(){
-        $file=fopen(storage_path("app/public/phuongthucthanhtoan.txt"), "r");
+        $file=fopen(storage_path("app/public/phuongthucthanhtoan.txt"), "a+");
        
         return view('back-end.admin.csvc_pttt.pttt',compact('file'));
     }
@@ -34,6 +35,21 @@ class Csvc_Pttt_Controller extends Controller
         $file=fopen(storage_path("app/public/phuongthucthanhtoan.txt"), "r");
         session()->flash('success', 'Bạn đã sửa thành công.');
         return view('back-end.admin.csvc_pttt.pttt',compact('file'));
+        
+    }
+
+    public function indexc(){
+        $file=fopen(storage_path("app/public/vevoichungtoi.txt"), "a+");
+       
+        return view('back-end.admin.csvc_pttt.vvct',compact('file'));
+    }
+    public function storec(Request $request){
+        $file1=fopen(storage_path("app/public/vevoichungtoi.txt"), "w+");
+        fwrite($file1, $request->content);
+        fclose($file1);
+        $file=fopen(storage_path("app/public/vevoichungtoi.txt"), "r");
+        session()->flash('success', 'Bạn đã sửa thành công.');
+        return view('back-end.admin.csvc_pttt.vvct',compact('file'));
         
     }
 }
