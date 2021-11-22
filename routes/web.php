@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController\HomeController;
 use App\Http\Controllers\UserController\NewsController;
 use App\Http\Controllers\UserController\PaymentMethodController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController\PromotionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,12 +105,27 @@ Route::prefix('admin')->group(function(){
         })->name('product.product')->middleware('auth');
     });
 
-    //promotion
-    Route::prefix('promotion')->group(function(){
-        Route::get('/',function(){
-            return view('back-end.admin.product.promotion');
-        })->name('product.promotion')->middleware('auth');
-    });
+   //promotion
+   Route::prefix('promotion')->group(function(){
+    Route::get('/',[
+        PromotionController::class,'index'
+    ])->name('promotion.index');
+    Route::get('/create',[
+        PromotionController::class,'create'
+    ])->name('promotion.create');
+    Route::post('/store',[
+        PromotionController::class,'store'
+    ])->name('promotion.store');
+    Route::get('/delete/{id}',[
+        PromotionController::class,'delete'
+    ])->name('promotion.delete');
+    Route::post('/update/{id}',[
+        PromotionController::class,'update'
+    ])->name('promotion.update');
+    Route::get('/edit/{id}',[
+        PromotionController::class,'edit'
+    ])->name('promotion.edit');
+});
 
     //order
     Route::prefix('order')->group(function(){
