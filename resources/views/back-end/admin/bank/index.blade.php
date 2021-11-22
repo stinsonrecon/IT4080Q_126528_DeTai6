@@ -47,8 +47,8 @@
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                 <th class="py-3 px-6 text-left">Tên ngân hàng</th>
                                 <th class="py-3 px-6 text-left">Tên khách hàng</th>
-                                <th class="py-3 px-6 text-center">Số tài khoản</th>
-                                <th class="py-3 px-6 text-center">Chi nhánh</th>
+                                <th class="py-3 px-6 text-left">Số tài khoản</th>
+                                <th class="py-3 px-6 text-left">Chi nhánh</th>
                                 <th class="py-3 px-6 text-center">Hành động</th>
                                 
                             </tr>
@@ -68,7 +68,7 @@
                                         <span class="font-medium">{{$bank->userName}}</span>
                                     </div>
                                 </td>
-                                <td class="py-3 px-6 text-center">
+                                <td class="py-3 px-6 text-left">
                                 <div class="flex items-center">
                                         <div class="mr-2">
                                             
@@ -76,7 +76,7 @@
                                         <span class="font-medium">{{$bank->bankNumber}}</span>
                                     </div>
                                 </td>
-                                <td class="py-3 px-6 text-center">
+                                <td class="py-3 px-6 text-left">
                                 <div class="flex items-center">
                                         <div class="mr-2">
                                             
@@ -84,7 +84,7 @@
                                         <span class="font-medium">{{$bank->department}}</span>
                                     </div>
                                 </td>
-                                <td class="py-3 px-6 text-center">
+                                <td class="py-3 px-6 text-left">
                                     <div class="flex item-center justify-center">
                                        
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
