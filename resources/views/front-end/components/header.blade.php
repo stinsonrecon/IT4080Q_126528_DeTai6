@@ -22,7 +22,7 @@
             <a href="{{ route('contact') }}" class="hover:text-green-primary_1">Liên hệ</a>
         </div>
     </div>
-    <div id="menu" class="flex-col z-10 absolute bg-white w-full px-4 text-xl">
+    <div id="menu" class="sm:hidden hidden flex-col z-10 absolute bg-white w-full px-4 text-xl">
         <div id="home" class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('/') || request()->is('home')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="/home">
                 Trang chủ

@@ -1,8 +1,8 @@
 @extends('front-end.app')
 @section('content')
-<div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
+<div class="w-full px-6 pb-10 flex flex-col lg:flex-row" style="background-color: #fafafa;">
     {{-- side menu & banner --}}
-    <div class="w-1/6 pt-8">
+    <div class="hidden lg:block w-1/6 pt-8">
         <div><img src="{{ asset('images/front-end/common/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
         <div>
             <div class=" font-bold text-lg py-5">Giới thiệu</div>
@@ -29,15 +29,15 @@
         </div>
     </div>
     {{-- content --}}
-    <div class="flex-col w-4/6  justify-around items-center pt-8 pl-7">
+    <div class="flex-col w-full lg:w-4/6  justify-left items-center pt-8 lg:pl-7">
         @foreach ($news as $new)
-            <div class="flex px-10 pb-10">
-                <div class="w-1/3 pr-10">
-                    <img src="{{ asset('storage/new').'/'.$new->linkImg}}" alt="" class="h-full w-full object-contain">
+            <div class="flex w-full lg:px-10 pb-10">
+                <div class="w-1/3 mr-4 lg:pr-10">
+                    <img src="{{ asset('storage/new').'/'.$new->linkImg}}" alt="" class="w-20 h-20 lg:h-48 lg:w-48 lg:object-contain">
                 </div>
-                <div class="pr-20">
-                    <div class="text-justify text-xl font-bold font-lora">
-                        <a href="/new/{{ $new->id }}">
+                <div class="w-2/3 lg:pr-20">
+                    <div class="text-left lg:text-justify text-lg lg:text-xl font-bold font-lora">
+                        <a href="/news/{{ $new->id }}">
                             {{ $new->title }}
                         </a>
                     </div>
@@ -59,19 +59,19 @@
         </div>
     </div>
     {{-- side menu --}}
-    <div class="w-1/6 flex-col justify-around items-center pt-8">
+    <div class="w-full lg:w-1/6 flex-col justify-around items-center pt-8">
         <div class="border border-gray-300 py-3 px-3">
-            <div class="font-semibold mb-5 pb-2 border-b border-gray-300">
+            <div class="font-semibold mb-4 pb-2 border-b border-gray-300">
                 TIN MỚI
             </div>
             <ul>
                 @foreach ($latest_news as $latest_new)
-                <li class="flex pb-10">
+                <li class="flex items-center pb-3">
                     <div class="w-1/3">
-                        <img src="{{ asset('storage/new').'/'.$latest_new->linkImg}}" alt="" class="h-full w-full object-contain">
+                        <img src="{{ asset('storage/new').'/'.$latest_new->linkImg}}" alt="" class="w-20 h-20 lg:h-24 lg:w-24 object-contain">
                     </div>
-                    <div class="pl-5">
-                        <div class="text-justify text-sm font-bold font-lora">
+                    <div class="w-2/3 pl-5">
+                        <div class="text-left text-sm font-bold font-lora">
                             <a href="/new/{{ $latest_new->id }}">
                                 {{ $latest_new->title }}
                             </a>

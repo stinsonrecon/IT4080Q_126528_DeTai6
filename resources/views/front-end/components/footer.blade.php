@@ -1,4 +1,4 @@
-<footer class="footer-1 py-8 sm:py-12 text-white" style="background-image: url('images/front-end/footer/footer-bg.jpg'); background-repeat: no-repeat; background-size: cover;">
+<footer id="footer" class="footer-1 py-8 sm:py-12 text-white" style="background-image: url('{{asset('images/front-end/footer/footer-bg.jpg')}}'); background-repeat: no-repeat; background-size: cover;">
     <div class="container mx-auto px-4">
       <div class="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
         <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">

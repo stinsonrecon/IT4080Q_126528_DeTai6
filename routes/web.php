@@ -52,7 +52,7 @@ Route::get('/contact', function(){
     return view('front-end.contents.contactMap');
 })->name('contact');
 
-Route::get('/new/{id}',[NewsController::class,'show']);
+Route::get('/news/{id}',[NewsController::class,'show']);
 
 //back-end
 Route::get('/admin',function(){
