@@ -41,7 +41,7 @@ class Csvc_Pttt_Controller extends Controller
     public function indexc(){
         $file=fopen(storage_path("app/public/vevoichungtoi.txt"), "a+");
        
-        return view('back-end.admin.csvc_pttt.pttt',compact('file'));
+        return view('back-end.admin.csvc_pttt.vvct',compact('file'));
     }
     public function storec(Request $request){
         $file1=fopen(storage_path("app/public/vevoichungtoi.txt"), "w+");
