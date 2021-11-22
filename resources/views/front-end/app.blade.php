@@ -24,7 +24,7 @@
     @include('front-end.components.header')
     @yield('content')
     @include('front-end.components.footer')
-    <div class="zalo-chat-widget" data-oaid="579745863508352884" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="300" data-height="300"> </div> 
+    <div class="hidden lg:block zalo-chat-widget" data-oaid="579745863508352884" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="300" data-height="300"> </div> 
     <div id="overlay" class="hidden"></div>
 </body>
 </html>

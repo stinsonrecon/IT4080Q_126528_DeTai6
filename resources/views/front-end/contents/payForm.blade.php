@@ -1,10 +1,10 @@
 @extends('front-end.app')
 @section('content')
-    <div class="w-full px-6 pb-10 flex justify-around" style="background-color: white;">
-        <div class="w-2/3 flex pt-10 mx-10">
-            <div class="w-full">
-                <div class=" font-semibold text-xl pb-10">THANH TOÁN</div>
-                <div class="py-3 pl-10 bg-gray-100 text-2xl text-black border-l-4 border-red-600">
+    <div class="w-full lg:px-6 pb-10 flex flex-col lg:flex-row lg:justify-around" style="background-color: white;">
+        <div class="w-full lg:w-2/3 flex pt-4 lg:pt-10 lg:mx-10">
+            <div class="w-full px-4">
+                <div class="font-semibold text-xl pb-10">THANH TOÁN</div>
+                <div class="py-3 pl-2 lg:pl-10 bg-gray-100 text-2xl text-black border-l-4 border-green-primary">
                     THÔNG TIN THANH TOÁN
                 </div>
                 <div class="flex-col  pt-5">
@@ -19,18 +19,12 @@
                     <label class=" text-black" for="city">Tỉnh / Thành phố <span class="text-red-500">*</span></label>
                     <input type="text" id="city" class="w-full border border-gray-300 rounded outline-none">
                 </div>
-                <div class="flex pb-10 pt-5">
-                    <div class="w-1/2 pr-6">
-                        <label class=" text-black" for="phoneNum">Số điện thoại <span class="text-red-500">*</span></label>
-                        <input type="text" id="phoneNum" class="w-full border border-gray-300 rounded outline-none">
-                    </div>
-                    <div class="w-1/2 pl-6">
-                        <label class=" text-black" for="email">Địa chỉ email <span class="text-red-500">*</span></label>
-                        <input type="text" id="email" class="w-full border border-gray-300 rounded outline-none">
-                    </div>
+                <div class="flex-col pb-10 pt-5">
+                    <label class=" text-black" for="phoneNum">Số điện thoại <span class="text-red-500">*</span></label>
+                    <input type="text" id="phoneNum" class="w-full border border-gray-300 rounded outline-none">
                 </div>
 
-                <div class="py-3 pl-10 bg-gray-100 text-2xl text-black border-l-4 border-red-600">
+                <div class="py-3 pl-2 lg:pl-10 bg-gray-100 text-2xl text-black border-l-4 border-green-primary">
                     THÔNG TIN BỔ SUNG
                 </div>
                 <div class="border-b-2 border-green-primary pt-5 text-2xl pb-2 text-green-primary">
@@ -41,11 +35,11 @@
                 </div>
 
 
-                <div class=" font-bold text-lg pt-5 pb-3">Thông tin chuyển khoản</div>
-                <div class="grid grid-cols-2 justify-around items-center w-full pb-10 px-10" >
+                <div class="font-bold text-lg pt-5 pb-3">Thông tin chuyển khoản</div>
+                <div class="grid grid-cols-2 lg:justify-around items-center w-full pb-10 lg:px-10" >
                     @foreach ($banks as $bank)
-                    <div class="flex-col justify-center h-64 px-10 pb-10 pt-3 border border-gray-100">
-                        <div class="pb-10 text-gray-500 font-semibold"><i>{{ ($loop->index) + 1 }}.    {{ $bank->bankName }}</i></div>
+                    <div class="flex-col justify-center h-64 px-2 lg:px-10 pb-10 pt-3 border border-gray-100">
+                        <div class="pb-4 lg:pb-10 text-gray-500 font-semibold"><i>{{ ($loop->index) + 1 }}.    {{ $bank->bankName }}</i></div>
                         <div class="text-gray-500 pb-4">Tên chủ TK: {{ $bank->userName }}</div>
                         <div class="text-gray-500 pb-4">Số TK: 
                             <span class="text-red-500 font-semibold">
@@ -58,11 +52,11 @@
                 </div>
             </div>
         </div>
-        <div class="w-1/3 bg-white px-10 h-1/2 mt-24 mx-10 shadow-2xl">
-            <div class="py-3 pl-10 mt-2 bg-gray-100 text-2xl text-black border-l-4 border-red-600">
+        <div class="w-full lg:w-1/3 bg-white px-4 lg:px-10 h-1/2 lg:mt-24 lg:mx-10 shadow-2xl">
+            <div class="py-3 pl-2 lg:pl-10 mt-2 bg-gray-100 text-2xl text-black border-l-4 border-green-primary">
                 THÔNG TIN THANH TOÁN
             </div>
-            <table class="mt-10 mb-5">
+            <table class="mt-3 lg:mt-10 mb-5">
                 <tr class="border-b border-gray-400">
                     <td class="w-1/4 px-1 text-center">Sản phẩm</td>
                     <td class="w-1/4 px-1 text-center">Số lượng</td>
@@ -70,7 +64,7 @@
                     <td class="w-1/4 px-1 text-center">Gỡ bỏ</td>
                 </tr>
                 <tr>
-                    <td class="w-1/4 px-1 text-center"><img src="{{ asset('images/product.jpg') }}" alt="" class="w-2/3 h-auto"></td>
+                    <td class="w-1/4 px-1 text-center"><img src="{{ asset('images/product.jpg') }}" alt="" class="w-10 h-10 lg:w-2/3 lg:h-auto"></td>
                     <td class="w-1/4 px-1 text-center">
                         <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1 ">
                             <button data-action="decrement" type="button" class=" bg-green-primary text-white hover:bg-green-primary_1 h-full w-20 rounded-l cursor-pointer outline-none">
@@ -83,23 +77,23 @@
                       </div>
                     </td>
                     <td class="w-1/4 px-1 text-center">
-                        3000000<u class="text-red-500 text-center">đ</u>
+                        3000000<u class="text-green-primary text-center">đ</u>
                     </td>
                     <td class="w-1/4 px-1 text-center">
-                        <a onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này?')" href="" class="active text-green-primary" ui-toggle-class=""><i class="fa fa-times text-danger text"></i></a> 
+                        <a onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này?')" href="" class="active text-green-primary" ui-toggle-class=""><i class="fa fa-times text-danger text-green-primary"></i></a> 
                     </td>
                 </tr>
             </table>
             <div class="text-xl text-gray-500 border-b border-gray-400 mb-10">Máy photocopy Canon iR2004 </div>
             <div class="flex border-b border-gray-400 mb-5">
                 <div class="w-1/2 text-2xl text-gray-500">Tổng tiền</div>
-                <div class="w-1/2 text-right">3000000<u class="text-red-500">đ</u></div>
+                <div class="w-1/2 text-right">3000000<u class="text-green-primary">đ</u></div>
             </div>
 
-            <div class="py-3 pl-10 mt-2 bg-gray-100 text-2xl text-black border-l-4 border-red-600">
+            <div class="py-3 pl-4 lg:pl-10 mt-2 bg-gray-100 text-2xl text-black border-l-4 border-green-primary">
                 THÔNG TIN ĐẶT HÀNG
             </div>
-            <div class="pl-10 pt-5 flex-col pb-10">
+            <div class="pl-6 lg:pl-10 pt-5 flex-col pb-4 lg:pb-10">
                 <div class="flex w-full">
                     <div class="text-left pr-5">
                         <input id="typePay0" checked type="radio" name="typePay" onclick="displayDetailTypePay()">
