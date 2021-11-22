@@ -40,76 +40,9 @@
                     , chúng tôi đưa ra nhiều phương thức thanh toán đa dạng để quý khách dễ dàng lựa chọn như sau:
                 </div>
                 <div class="flex justify-around items-center"><img src="{{ asset('images/Payments.png') }}" alt=""></div>
-                <div class=" font-bold text-lg pt-5 pb-3 pl-5 text-gray-500">1) Thanh toán bằng tiền mặt</div>
-                <p class="pl-5 text-gray-500">
-                    &#8226 <u>Thanh toán ngay tại cửa hàng:</u>
-                    Quý khách đến mua hàng và thanh toán tiền mặt trực tiếp tại Bách Diệp Trà.
-                </p>
-                <p class="pl-5 py-3 text-gray-500">
-                    <i>
-                        Địa chỉ: <span class="font-semibold">121 Hàng Bạc, Quận Hoàn Kiếm, TP. Hà Nội.<span>
-                    </i>
-                </p>
-                <p class="pl-5 pt-3 text-gray-500">&#8226 <u>Thanh toán tại điểm giao hàng:</u>
-                    áp dụng với các đơn hàng có địa chỉ giao nhận <b>tại</b> thành phố Hà Nội hoặc những đơn hàng được chúng tôi tiếp nhận hình thức ship C.O.D 
-                    (liên hệ: 
-                    <span class="text-green-primary font-semibold">
-                        <i>024.382.38073</i>
-                    </span>
-                     để biết thêm chi tiết những nơi áp dụng hình thức ship C.O.D)
-                </p>
-                <p class="pl-5 pt-5 text-gray-500">
-                    Quý khách vui lòng thanh toán cho nhân viên giao vận toàn bộ hoặc một phần (nếu đã đặt cọc) giá trị hàng hóa đã mua.
-                </p>
-                <p class="pl-5 pt-5 text-gray-500">
-                    Xem thêm “Chính sách vận chuyển” cho những đơn hàng có địa chỉ giao nhận <b>tại</b> thành phố Hà Nội (<i><a href="" class="text-green-primary">Xem chi tiết</a></i>)
-                </p>
-
-                <div class="font-bold text-lg pt-5 pb-3 pl-5 text-gray-500">2) Thanh toán bằng hình thức chuyển khoản hoặc trực tuyến</div>
-                <p class="pl-5 pt-3 text-gray-500">
-                    Đây là hình thức thanh toán được khuyến khích cho những đơn hàng có địa chỉ giao nhận <b><i>không phải</i></b> thành phố Hà Nội.
-                    Quý khách vui lòng chuyển khoản trước cho chúng tôi 1 phần tiền cọc hoặc 100% giá trị đơn hàng.
-                    Sau khi chuyển khoản thành công,
-                    quý khách có thể email (
-                        <span>
-                            <a href = "mailto: bachdieptra@gmail.com " class="text-green-primary hover:text-green-primary_1 font-semibold">
-                                bachdieptra@gmail.com 
-                            </a>
-                        </span>
-                    ) hoặc fax (
-                        <span class="text-green-primary font-semibold">
-                            <i>043.926.0566</i>
-                        </span>
-                    ) ủy nhiệm chi cho chúng tôi để nhân viên kinh doanh có thể tiến hành lên đơn và xuất hàng cho quý khách.
-                </p>
-                <p class="pl-5 pt-3 text-gray-500">
-                    <span class="text-green-primary font-semibold">
-                        <i>Bách Diệp Trà</i>
-                    </span> 
-                    sẽ chỉ ủy quyền cho các đơn vị uy tín như DHL, EMS, Viettel, Giao Hàng Tiết Kiệm, Grab, v.v. để vận chuyển hàng tới tay quý khách.
-                </p>
-                <p class="pl-5 py-3 text-gray-500">
-                    Bên cạnh đó, quý khách hàng có thể sử dụng hình thức thanh toán trực tuyến thông qua 2 cách sau:
-                </p>
-                <p class="pl-5 text-gray-500">
-                    &#8226 <u>Thanh toán bằng thẻ nội địa:</u>
-                    áp dụng trong trường hợp khách hàng muốn thanh toán thông qua Internet banking hoăc dịch vụ thanh trực tuyến tại các ngân hàng.
-                </p>
-                <p class="pl-5 text-gray-500">
-                    &#8226 <u>Ví điện tử Ngân Lượng, Bảo Kim:</u>
-                    áp dụng trong trường hợp khách hàng muốn thanh toán qua ví điện tử hoặc cổng thanh toán trực tuyến trên Internet.
-                </p>
-                <p class="pl-5 pt-5 pb-3 pr-4 text-gray-500 text-justify">
-                    <b><i>Lưu ý:</i></b> Các đơn hàng có địa chỉ giao nhận tại thành phố Hà Nội cũng có thể áp dụng hình thức chuyển khoản hoặc thanh toán trực tuyến như đã nêu ở mục 2.
-                    Tuy nhiên,
-                    <span class="text-green-primary font-semibold">
-                        <i>Bách Diệp Trà</i>
-                    </span>
-                    khuyến khích khách hàng sử dụng hình thức “thanh toán tại điểm giao hàng” để tiến trình xử lý đơn hàng có thể diễn ra 1 cách nhanh nhất.
-                </p>
-                <p class="pl-5 py-3 text-gray-500">
-                    Xem thêm “Chính sách vận chuyển” cho những đơn hàng có địa chỉ giao nhận <b>không phải</b> thành phố Hà Nội (<i><a href="" class="text-green-primary">Xem chi tiết</a></i>)
-                </p>
+                <div>
+                    <?php while(!feof($file)) {  echo fgets($file) ;  }  fclose($file); ?>
+                </div>
                 <div class=" font-bold text-lg pt-5 pb-3 pl-5 text-gray-500">3) Thông tin chuyển khoản</div>
                 <div class="grid grid-cols-2 justify-around items-center w-full pb-10 px-10" >
                     @foreach ($banks as $bank)

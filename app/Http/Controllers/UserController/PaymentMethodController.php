@@ -15,11 +15,22 @@ class PaymentMethodController extends Controller
 
     public function paymentMethod(){
         $banks = BankAccount::limit(6)->get();
-        return view('front-end.contents.paymentMethod', compact('banks'));
+        $file=fopen(storage_path("app/public/phuongthucthanhtoan.txt"), "r");
+        return view('front-end.contents.paymentMethod', compact('banks','file'));
     }
 
     public function payment(){
         $banks = BankAccount::limit(6)->get();
         return view('front-end.contents.payForm', compact('banks'));
+    }
+
+    public function shippingPolicy(){
+        $file=fopen(storage_path("app/public/chinhsachvanchuyen.txt"), "r");
+        return view('front-end.contents.shippingPolicy', compact('file'));
+    }
+
+    public function aboutUs(){
+        $file=fopen(storage_path("app/public/vevoichungtoi.txt"), "r");
+        return view('front-end.contents.aboutus', compact('file'));
     }
 }

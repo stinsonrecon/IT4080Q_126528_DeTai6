@@ -26,17 +26,13 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'index']);
 
-Route::get('/aboutus', function () {
-    return view('front-end.contents.aboutus');
-})->name("aboutus");
+Route::get('/aboutus', [PaymentMethodController::class,'aboutUs'])->name("aboutus");
 
 Route::get('/payment_method', [PaymentMethodController::class,'paymentMethod'])->name("paymentMethod");
 
 Route::get('/news', [NewsController::class, 'index'])->name("news");
 
-Route::get('/shipping_policy', function(){
-    return view('front-end.contents.shippingPolicy');
-})->name("shippingPolicy");
+Route::get('/shipping_policy', [PaymentMethodController::class,'shippingPolicy'])->name("shippingPolicy");
 
 Route::get('/shopping_guide', function(){
     return view('front-end.contents.shoppingGuide');
