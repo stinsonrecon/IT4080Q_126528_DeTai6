@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class Csvc_Pttt_Controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth']);     
+    }
     public function indexa(){
        
         $file=fopen(storage_path("app/public/chinhsachvanchuyen.txt"), "a+");

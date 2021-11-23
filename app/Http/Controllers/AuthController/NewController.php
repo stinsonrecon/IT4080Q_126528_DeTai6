@@ -17,7 +17,8 @@ class NewController extends Controller
     private $new;
     public function __construct(News $new)
     {
-        $this->new=$new;      
+        $this->new=$new; 
+        $this->middleware(['auth']);     
     }
     public function index(){
         $news=$this->new->paginate('5');
