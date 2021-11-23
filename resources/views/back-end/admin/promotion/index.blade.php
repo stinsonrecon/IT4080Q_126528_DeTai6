@@ -100,7 +100,7 @@
                     </td>
                     @endif
 
-                    @if($timeNow>$a->endTime)
+                    @if($timeNow>$a->endTime && $a->endTime!=NULL)
                     <td class="py-3 px-6 text-center">
                         <span class="bg-red-300  py-1 px-3 rounded-full text-xs">Hết hạn</span>
                     </td>
