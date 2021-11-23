@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController\BankController;
 use App\Http\Controllers\AuthController\Csvc_Pttt_Controller;
 use App\Http\Controllers\AuthController\RegisterController;
 use App\Http\Controllers\AuthController\NewController;
+use App\Http\Controllers\AuthController\ProductController;
 use App\Http\Controllers\UserController\HomeController;
 use App\Http\Controllers\UserController\NewsController;
 use App\Http\Controllers\UserController\PaymentMethodController;
@@ -96,9 +97,24 @@ Route::prefix('admin')->group(function(){
     });
     //product
     Route::prefix('product')->group(function(){
-        Route::get('/',function(){
-            return view('back-end.admin.product.product');
-        })->name('product.product')->middleware('auth');
+        Route::get('/',[
+            ProductController::class,'index']
+        )->name('product.index');
+        Route::get('/create', [
+            ProductController::class, 'create'
+        ])->name('product.create');
+        Route::post('/store', [
+            ProductController::class, 'store'
+        ])->name('product.store');
+        Route::get('/edit/{id}', [
+            ProductController::class, 'edit'
+        ])->name('product.edit');
+        Route::post('/update/{id}', [
+            ProductController::class, 'update'
+        ])->name('product.update');
+        Route::get('/delete/{id}', [
+            ProductController::class, 'delete'
+        ])->name('product.delete');
     });
 
    //promotion

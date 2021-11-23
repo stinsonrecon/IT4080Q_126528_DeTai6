@@ -85,7 +85,7 @@
                         <label for="appt-time" class="block text-gray-700 text-sm font-bold mb-2">Nhập thời gian bắt đầu
                         </label>
                         <input value="{{ substr($promotions->startTime, -8) }}" id="appt-time" type="time" name="time_start"
-                            step="2">
+                            step="1">
                     </div>
                     <div>
                         <label for="start">:</label>
@@ -99,7 +99,7 @@
                         <label for="appt-time" class="block text-gray-700 text-sm font-bold mb-2">Nhập thời gian kết thúc
                         </label>
                         <input value="{{ substr($promotions->endTime, -8) }}" id="appt-time" type="time" name="time_end"
-                            step="2">
+                            step="1">
                     </div>
                     <div>
                         <label for="start">:</label>
