@@ -47,31 +47,21 @@
                             Trà sen
                         </div>
                     </div>
-                    <div class="flex">
+                    <div class="flex text-green-primary text-xl">
                         <div>
-                            <svg onclick="color1()" id="sao1" width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                            </svg>
+                            <i class="fas fa-star"></i>
                         </div>
                         <div>
-                            <svg onclick="color2()" id="sao2" width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                            </svg>
+                            <i class="fas fa-star"></i>
                         </div>
                         <div>
-                            <svg onclick="color3()" id="sao3" width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                            </svg>
+                            <i class="fas fa-star"></i>
                         </div>
                         <div>
-                            <svg onclick="color4()" id="sao4" width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                            </svg>
+                            <i class="fas fa-star"></i>
                         </div>
                         <div>
-                            <svg onclick="color5()" id="sao5" width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                            </svg>
+                            <i class="fas fa-star-half-alt"></i>
                         </div>
                     </div>
                     <div class="text-justify pt-2 pb-3 text-green-primary_1"> <!-- Mô tả ngắn -->
@@ -191,52 +181,6 @@
     </div>
 </div>
 <script>
-    sao1 = document.getElementById("sao1");
-    sao2 = document.getElementById("sao2");
-    sao3 = document.getElementById("sao3");
-    sao4 = document.getElementById("sao4");
-    sao5 = document.getElementById("sao5");
-    function color1()
-    {
-        sao1.style.fill = "#46b200";
-        sao2.style.fill = "white";
-        sao3.style.fill = "white"; 
-        sao4.style.fill = "white"; 
-        sao5.style.fill = "white"; 
-    }
-    function color2()
-    {
-        sao1.style.fill = "#46b200";
-        sao2.style.fill = "#46b200";
-        sao3.style.fill = "white"; 
-        sao4.style.fill = "white"; 
-        sao5.style.fill = "white"; 
-    }
-    function color3()
-    {
-        sao1.style.fill = "#46b200";
-        sao2.style.fill = "#46b200";
-        sao3.style.fill = "#46b200"; 
-        sao4.style.fill = "white"; 
-        sao5.style.fill = "white"; 
-    }
-    function color4()
-    {
-        sao1.style.fill = "#46b200";
-        sao2.style.fill = "#46b200";
-        sao3.style.fill = "#46b200"; 
-        sao4.style.fill = "#46b200"; 
-        sao5.style.fill = "white"; 
-    }
-    function color5()
-    {
-        sao1.style.fill = "#46b200";
-        sao2.style.fill = "#46b200";
-        sao3.style.fill = "#46b200"; 
-        sao4.style.fill = "#46b200"; 
-        sao5.style.fill = "#46b200"; 
-    }
-
     function displayDetailTypePay(){
         var r0 = document.getElementById("typePay0");
         var r1 = document.getElementById("typePay1");
