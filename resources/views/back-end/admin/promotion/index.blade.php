@@ -49,6 +49,7 @@
                     <th class="py-3 px-6 text-left">Thời gian bắt đầu</th>
                     <th class="py-3 px-6 text-center">Thời gian kết thúc</th>
                     <th class="py-3 px-6 text-center">Giới hạn thời gian</th>
+                    <th class="py-3 px-6 text-center">Tình trạng</th>
                     <th class="py-3 px-6 text-center">Hành động</th>
                 </tr>
             </thead>
@@ -96,6 +97,16 @@
                     </td>
                     <td class="py-3 px-6 text-center">
                         <span>Quanh năm</span>
+                    </td>
+                    @endif
+
+                    @if($timeNow>$a->endTime)
+                    <td class="py-3 px-6 text-center">
+                        <span class="bg-red-300  py-1 px-3 rounded-full text-xs">Hết hạn</span>
+                    </td>
+                    @else
+                    <td class="py-3 px-6 text-center">
+                        <span class="bg-green-200  py-1 px-3 rounded-full text-xs">Còn hạn</span>
                     </td>
                     @endif
                     

@@ -17,8 +17,10 @@ class PromotionController extends Controller
         $this->promotion=$promotion;
     }
     public function index(){
+       
+        $timeNow= Carbon::now();
         $p=$this->promotion->paginate('5');
-        return view('back-end.admin.promotion.index',compact('p'));
+        return view('back-end.admin.promotion.index',compact('p','timeNow'));
     }
     public function create(){
         return view('back-end.admin.promotion.add');
