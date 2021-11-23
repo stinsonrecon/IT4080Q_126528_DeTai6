@@ -71,7 +71,7 @@ class ProductController extends Controller
         
         if($n->linkImg && $n->linkImg != 'chesen-banner-1.jpg')
         {
-            Storage::delete('public/new/'.$n->linkImg);
+            Storage::delete('public/product/'.$n->linkImg);
         }
         $n->delete();
         session()->flash('success', 'Bạn đã xóa thành công.');
