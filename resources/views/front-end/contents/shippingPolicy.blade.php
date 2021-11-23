@@ -2,7 +2,7 @@
 @section('content')
 <div class="w-full px-6 pb-10 flex" style="background-color: #fafafa;">
     {{-- side menu & banner --}}
-    <div class="w-1/6 pt-8">
+    <div class="hidden lg:block w-1/6 pt-8">
         <div><img src="{{ asset('images/front-end/common/chesen-ad.png') }}" alt="" class="h-full w-full object-contain"></div>
         <div>
             <div class=" font-bold text-lg py-5">Giới thiệu</div>
@@ -29,7 +29,7 @@
         </div>
     </div>
     {{-- content --}}
-    <div class="w-full  justify-around items-center pt-8 pl-7">
+    <div class="w-full justify-around items-center pt-8 lg:pl-7">
         <div class=" font-semibold text-xl pb-3">CHÍNH SÁCH VẬN CHUYỂN</div>
         <div class=" border-t-4 border border-gray-500 bg-white" style="border-top-color: #0c713d">
             <div class="flex justify-around items-center py-5"><img src="{{ asset('images/shippingPolicy.png') }}" alt=""></div>
