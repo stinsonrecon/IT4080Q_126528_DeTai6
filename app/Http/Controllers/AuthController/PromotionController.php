@@ -15,6 +15,7 @@ class PromotionController extends Controller
     public function __construct(Promotion $promotion)
     {
         $this->promotion=$promotion;
+        $this->middleware(['auth']);
     }
     public function index(){
         $p=$this->promotion->paginate('5');
