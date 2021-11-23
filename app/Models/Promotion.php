@@ -15,6 +15,7 @@ class Promotion extends Model
         'limitTime'
     ];
     protected $table = 'promotion';
+    public $timestamps = false;
     public function products() {
         return $this->hasMany(Product::class, 'promoID', 'id');
     }
