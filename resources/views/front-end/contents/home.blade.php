@@ -101,15 +101,14 @@
                 <div class="text-lg">&nbsp</div>
                 <div>
                     <div>
-                        <img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
+                        <img class="h-full w-full object-contain" src="{{ asset('images/front-end/product-img/chesen-thumbnail.jpg') }}">
                     </div>
                     <div class="mt-1 lg:mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">Hộp 100g - Trà bách diệp</div>
                     <div class="font-semibold"><br>40,000 VND</div>
                     <div class="mt-1 lg:mt-2">
                         <button
                             class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                            <a href="{{ route('aboutus') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem
-                                thêm</a>
+                            <a href="{{ route('productDetail') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
                         </button>
                         <button
                             class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
@@ -121,15 +120,14 @@
                 <div class="text-lg">&nbsp</div>
                 <div>
                     <div>
-                        <img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
+                        <img class="h-full w-full object-contain" src="{{ asset('images/front-end/product-img/chesen-thumbnail.jpg') }}">
                     </div>
                     <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">Hộp 500g - Trà bách diệp</div>
                     <div class="font-semibold"><br>180,000 VND</div>
                     <div class="mt-2">
                         <button
                             class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                            <a href="{{ route('aboutus') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem
-                                thêm</a>
+                            <a href="{{ route('productDetail') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
                         </button>
                         <button
                             class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
@@ -150,15 +148,14 @@
                     <div class="absolute float-left">
                         <img class="w-20 h-20" src="{{ asset('images/sale.png') }}" alt="">
                     </div>
-                    <div><img class="h-full w-full object-contain" src="{{ asset('images/chesen-product.jpg') }}">
+                    <div><img class="h-full w-full object-contain" src="{{ asset('images/front-end/product-img/chesen-thumbnail.jpg') }}">
                     </div>
                     <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">1kg - Trà bách diệp</div>
                     <div class="font-semibold"><del class="text-xs">350,000 VND</del><br>300,000 VND</div>
                     <div class="mt-2">
                         <button
                             class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                            <a href="{{ route('aboutus') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem
-                                thêm</a>
+                            <a href="{{ route('productDetail') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
                         </button>
                         <button
                             class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i

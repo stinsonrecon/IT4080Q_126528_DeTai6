@@ -51,6 +51,10 @@ Route::get('/contact', function(){
 
 Route::get('/news/{id}',[NewsController::class,'show']);
 
+Route::get('/product_detail', function(){
+    return view('front-end.contents.productDetail');
+})->name('productDetail');
+
 //back-end
 Route::get('/admin',function(){
     return view('back-end.login');
