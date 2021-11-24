@@ -16,6 +16,7 @@
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Tên sản phẩm
+        <span class="text-red-500 text-base">*</span>
       </label>
       <input name="name" value="{{old('name')}}"  class="@error('name') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="bankName" name="bankName" type="text" placeholder="Nhập tên sản phẩm">
     </div>
@@ -35,6 +36,7 @@
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Gía ban đầu
+        <span class="text-red-500 text-base">*</span>
       </label>
       <input value="{{old('priceRoot')}}" name="priceRoot" class="@error('priceRoot') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Nhập giá ban đầu">
      
@@ -75,6 +77,7 @@
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Số lượng
+        <span class="text-red-500 text-base">*</span>
       </label>
       <input value="{{old('quantity')}}" name="quantity" class="@error('quantity') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Nhập số lượng">
      
@@ -162,7 +165,7 @@
 
     
     <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2">Hiển thị sản phẩm </label>
+        <label class="block text-gray-700 text-sm font-bold mb-2">Hiển thị sản phẩm <span class="text-red-500 text-base">*</span></label>
         <div class="flex @error('status') is-invalid @enderror">
             <div class="flex items-center mb-2 mr-4">
                 <input  @if(old('status')) checked @endif type="radio" value="1" id="radio-example-1" name="status" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
