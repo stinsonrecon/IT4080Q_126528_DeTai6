@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthController\ProductController;
 use App\Http\Controllers\UserController\HomeController;
 use App\Http\Controllers\UserController\NewsController;
 use App\Http\Controllers\UserController\PaymentMethodController;
+use App\Http\Controllers\UserController\ProductClientController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController\PromotionController;
 
@@ -51,6 +52,8 @@ Route::get('/contact', function(){
 Route::get('/news/{id}',[NewsController::class,'show']);
 
 Route::get('/product_detail/{id}', [HomeController::class,'show']);
+
+Route::get('/product_list', [ProductClientController::class, 'index'])->name('productList');
 
 //back-end
 Route::get('/admin',function(){
