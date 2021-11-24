@@ -28,6 +28,11 @@
                 Trang chủ
             </a>
         </div>
+        <div class="p-3 mb-2 border-b-2 border-green-secondary_1 {{ (request()->is('product_list')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="{{ route('productList') }}">
+                Sản phẩm
+            </a>
+        </div>
         <div class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('news')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('news') }}">
                 Tin tức khuyến mãi
@@ -53,6 +58,12 @@
         <div id="home" class="{{ (request()->is('/') || request()->is('home')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="/home">
                 Trang chủ
+            </a>
+        </div>
+        <div class=""> / </div>
+        <div class="{{ (request()->is('product_list')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="{{ route('productList') }}">
+                Sản phẩm
             </a>
         </div>
         <div class=""> / </div>
