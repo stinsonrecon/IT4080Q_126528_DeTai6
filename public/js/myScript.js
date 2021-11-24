@@ -21,3 +21,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }).mount();
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.getElementById('product-slider')) {
+        new Splide('#product-slider', {
+            perPage: 3,
+            type: 'loop',
+            autoplay: true,
+            pauseOnHover: false,
+        }).mount();
+    }
+});
