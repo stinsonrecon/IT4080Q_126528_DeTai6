@@ -18,8 +18,10 @@ class PromotionController extends Controller
         $this->middleware(['auth']);
     }
     public function index(){
+       
+        $timeNow= Carbon::now();
         $p=$this->promotion->paginate('5');
-        return view('back-end.admin.promotion.index',compact('p'));
+        return view('back-end.admin.promotion.index',compact('p','timeNow'));
     }
     public function create(){
         return view('back-end.admin.promotion.add');
@@ -28,8 +30,11 @@ class PromotionController extends Controller
         
        
             DB::beginTransaction();
+            $timeNow= Carbon::now();
+            $endTime=$dt = Carbon::create($request->date_end.' '.$request->time_end);
+          
             
-            if( $request->limitTime==1 &&
+            if( $request->limitTime==1 && ($timeNow<$endTime) &&
                 ($request->date_start< $request->date_end ||(($request->date_start== $request->date_end)&&$request->time_start< $request->time_end))){
                     $data=[
                             'name'=>$request->name,
@@ -63,7 +68,7 @@ class PromotionController extends Controller
             else{
                 session()->flash('name', $request->name);
                 
-                session()->flash('fail', ' Vui lòng nhập lại thời gian (Thời gian kết thúc phải lớn hơn thời gian bắt đầu)');
+                session()->flash('fail', ' Vui lòng nhập lại thời gian (Thời gian kết thúc phải lớn hơn thời gian bắt đầu và thời gian hiện tại)');
                 DB::rollBack();
                 return redirect()->route('promotion.create');
             }
@@ -88,8 +93,10 @@ class PromotionController extends Controller
         
        
         DB::beginTransaction();
-        
-        if( $request->limitTime==1 &&
+        $timeNow= Carbon::now();
+        $endTime=$dt = Carbon::create($request->date_end.' '.$request->time_end);
+      
+        if( $request->limitTime==1 && ($timeNow<$endTime) &&
             ($request->date_start< $request->date_end ||(($request->date_start== $request->date_end)&&$request->time_start< $request->time_end))){
                 $data=[
                         'name'=>$request->name,
@@ -123,7 +130,7 @@ class PromotionController extends Controller
         else{
             session()->flash('name', $request->name);
             
-            session()->flash('fail', ' Vui lòng nhập lại thời gian (Thời gian kết thúc phải lớn hơn thời gian bắt đầu)');
+            session()->flash('fail', '  Vui lòng nhập lại thời gian (Thời gian kết thúc phải lớn hơn thời gian bắt đầu và thời gian hiện tại)');
             DB::rollBack();
             return redirect()->route('promotion.edit',['id'=>$id]);
         }
