@@ -163,6 +163,7 @@
                     success: function(data){
                         if(data.code === 200) {
                             $('.cart_wrapper').html(data.cart_component);
+                            alert("Cập nhật thành công");
                         }
                     },
                     error: function(){
@@ -171,8 +172,32 @@
                 });
             };
 
+            function cartDelete(event){
+                event.preventDefault();
+                let urlDelete = $('.cart').data('url');
+                let id = $(this).data('id');
+                
+                $.ajax({
+                    type: "GET",
+                    url: urlDelete,
+                    data: {
+                        id: id,
+                    },
+                    success: function(data){
+                        if(data.code === 200) {
+                            $('.cart_wrapper').html(data.cart_component);
+                            alert("Cập nhật thành công");
+                        }
+                    },
+                    error: function(){
+
+                    }
+                });
+            }
+
             $(function(){
                 $(document).on('click','.cart_update', cartUpdate);
+                $(document).on('click','.cart_delete', cartDelete);
             });
         </script>
     </div>

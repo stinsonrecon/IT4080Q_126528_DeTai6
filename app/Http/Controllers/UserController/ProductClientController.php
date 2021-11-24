@@ -52,4 +52,18 @@ class ProductClientController extends Controller
             return response()->json(['cart_component' => $cart_component, 'code' => 200], 200);
         }
     }
+
+    function deleteCart(Request $request){
+        if($request->id){
+            $carts = session()->get('cart');
+            unset($carts[$request->id]);
+            
+            session()->put('cart', $carts);
+
+            $carts = session()->get('cart');
+
+            $cart_component = view('front-end.components.cart_component', compact('carts'))->render();
+            return response()->json(['cart_component' => $cart_component, 'code' => 200], 200);
+        }
+    }
 }
