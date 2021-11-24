@@ -21,7 +21,8 @@ class PaymentMethodController extends Controller
 
     public function payment(){
         $banks = BankAccount::limit(6)->get();
-        return view('front-end.contents.payForm', compact('banks'));
+        $carts = session()->get('cart');
+        return view('front-end.contents.payForm', ['banks' => $banks, 'carts' => $carts]);
     }
 
     public function shippingPolicy(){
