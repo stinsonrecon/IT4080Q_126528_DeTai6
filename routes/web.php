@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController\NewsController;
 use App\Http\Controllers\UserController\PaymentMethodController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController\PromotionController;
+use App\Http\Controllers\AuthController\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -125,9 +126,15 @@ Route::prefix('admin')->group(function(){
 
     //order
     Route::prefix('order')->group(function(){
-        Route::get('/',function(){
-            return view('back-end.admin.order.order');
-        })->name('order.order')->middleware('auth');
+        Route::get('/',[
+            OrderController::class,'index'
+        ])->name('order.index');
+        Route::get('/create',[
+            OrderController::class,'create'
+        ])->name('order.create');
+        Route::post('/create',[
+            OrderController::class,'store'
+        ]);
     });
 
     //orderDetail
