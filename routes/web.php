@@ -22,9 +22,7 @@ use App\Http\Controllers\AuthController\PromotionController;
 |
 */
 
-Route::get('/', function () {
-    return view('front-end.contents.home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'index']);
 
@@ -52,9 +50,7 @@ Route::get('/contact', function(){
 
 Route::get('/news/{id}',[NewsController::class,'show']);
 
-Route::get('/product_detail', function(){
-    return view('front-end.contents.productDetail');
-})->name('productDetail');
+Route::get('/product_detail/{id}', [HomeController::class,'show']);
 
 //back-end
 Route::get('/admin',function(){

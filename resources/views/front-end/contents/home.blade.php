@@ -96,72 +96,72 @@
                 <div>Hàng chính hãng<br>Cam kết chính hãng 100%</div>
             </div>
         </div>
-        <div class="flex flex-wrap justify-around bg-white mt-4 lg:mt-10 pt-5 pb-10 px-2 lg:px-10">
-            <div class="text-center w-full lg:w-1/3 lg:px-10" style="min-height: 350px;">
-                <div class="text-lg">&nbsp</div>
-                <div>
-                    <div>
-                        <img class="h-full w-full object-contain" src="{{ asset('images/front-end/product-img/chesen-thumbnail.jpg') }}">
-                    </div>
-                    <div class="mt-1 lg:mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">Hộp 100g - Trà bách diệp</div>
-                    <div class="font-semibold"><br>40,000 VND</div>
-                    <div class="mt-1 lg:mt-2">
-                        <button
-                            class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                            <a href="{{ route('productDetail') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
-                        </button>
-                        <button
-                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
-                                class="fas fa-shopping-cart text-lg"></i></button>
-                    </div>
-                </div>
+        <div class="relative flex flex-wrap justify-around bg-white mt-4 lg:mt-10 pt-5 pb-10 px-2 lg:px-10" id="product-slider">
+            <div class="splide__arrows hidden lg:block">
+                <button class="splide__arrow splide__arrow--prev text-2xl hover:bg-green-primary text-black hover:text-white">
+                    <i class="fas fa-caret-left"></i>
+                </button>
+                <button class="splide__arrow splide__arrow--next text-2xl hover:bg-green-primary text-black hover:text-white">
+                    <i class="fas fa-caret-right"></i>
+                </button>
             </div>
-            <div class="text-center w-full lg:w-1/3 lg:px-10" style="min-height: 350px;">
-                <div class="text-lg">&nbsp</div>
-                <div>
-                    <div>
-                        <img class="h-full w-full object-contain" src="{{ asset('images/front-end/product-img/chesen-thumbnail.jpg') }}">
-                    </div>
-                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">Hộp 500g - Trà bách diệp</div>
-                    <div class="font-semibold"><br>180,000 VND</div>
-                    <div class="mt-2">
-                        <button
-                            class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                            <a href="{{ route('productDetail') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
-                        </button>
-                        <button
-                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
-                                class="fas fa-shopping-cart text-lg"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center w-full lg:w-1/3 lg:px-10" style="min-height: 350px;">
-                <div class="timer">
-                    <span class="text-red-500 text-lg">Chỉ còn: </span>
-                    <span id="hour" class="text-red-500 text-lg">00</span>
-                    <span class="text-red-500 text-lg">h</span>
-                    <span id="minute" class="text-red-500 text-lg">00</span>
-                    <span class="text-red-500 text-lg">p</span>
-                    <span id="second" class="text-red-500 text-lg">00</span>
-                </div>
-                <div>
-                    <div class="absolute float-left">
-                        <img class="w-20 h-20" src="{{ asset('images/sale.png') }}" alt="">
-                    </div>
-                    <div><img class="h-full w-full object-contain" src="{{ asset('images/front-end/product-img/chesen-thumbnail.jpg') }}">
-                    </div>
-                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">1kg - Trà bách diệp</div>
-                    <div class="font-semibold"><del class="text-xs">350,000 VND</del><br>300,000 VND</div>
-                    <div class="mt-2">
-                        <button
-                            class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                            <a href="{{ route('productDetail') }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
-                        </button>
-                        <button
-                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
-                                class="fas fa-shopping-cart text-lg"></i></button>
-                    </div>
-                </div>
+            <div class="splide__track">
+                <ul class="splide__list">
+                    @foreach ($products as $product)
+                        <li class="text-center w-full lg:w-1/3 lg:px-10 splide__slide" style="min-height: 350px;">
+                            @if( $product->promotion != NULL)
+                                <div class="timer">
+                                    <span class="text-red-500 text-lg">Chỉ còn: </span>
+                                    <span id="hour" class="text-red-500 text-lg">00</span>
+                                    <span class="text-red-500 text-lg">h</span>
+                                    <span id="minute" class="text-red-500 text-lg">00</span>
+                                    <span class="text-red-500 text-lg">p</span>
+                                    <span id="second" class="text-red-500 text-lg">00</span>
+                                </div>
+                                <div>
+                                    <div class="absolute float-left">
+                                        <img class="w-20 h-20" src="{{ asset('images/sale.png') }}" alt="">
+                                    </div>
+                                    <div><img class="h-full w-full object-contain" src="{{ asset('storage/product').'/'.$product->linkImg}}">
+                                    </div>
+                                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">{{ $product->name }}</div>
+                                    <div class="font-semibold">
+                                        <del class="text-xs">
+                                            {{ number_format($product->priceRoot) }} VND
+                                        </del>
+                                        <br>{{ number_format($product->pricePromo) }} VND
+                                    </div>
+                                    <div class="mt-2">
+                                        <button
+                                            class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
+                                            <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
+                                        </button>
+                                        <button
+                                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
+                                                class="fas fa-shopping-cart text-lg"></i></button>
+                                    </div>
+                                </div>
+                            @else
+                                <div class="mt-7">
+                                    <div>
+                                        <img class="h-full w-full object-contain" src="{{ asset('storage/product').'/'.$product->linkImg}}">
+                                    </div>
+                                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">{{ $product->name }}</div>
+                                    <div class="font-semibold"><br>{{ number_format($product->priceRoot) }} VND</div>
+                                    <div class="mt-2">
+                                        <button
+                                            class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
+                                            <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
+                                        </button>
+                                        <button
+                                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
+                                                class="fas fa-shopping-cart text-lg"></i></button>
+                                    </div>
+                                </div>
+                            @endif
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
         <div class="hidden lg:flex justify-around items-center mt-8 bg-white py-5 px-10 mb-10">
