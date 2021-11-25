@@ -16,6 +16,7 @@
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Tên ngân hàng
+        <span class="text-red-500 text-base">*</span>
       </label>
       <input value="{{old('bankName')}}" class="@error('bankName') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="bankName" name="bankName" type="text" placeholder="Nhập tên ngân hàng">
     </div>
@@ -35,6 +36,7 @@
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Chủ tài khoản
+        <span class="text-red-500 text-base">*</span>
       </label>
       <input value="{{old('userName')}}" class="@error('userName') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="userName" name="userName" type="text" placeholder="Nhập tên chủ tài khoản">
      
@@ -55,6 +57,7 @@
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Số tài khoản
+        <span class="text-red-500 text-base">*</span>
       </label>
       <input value="{{old('bankNumber')}}" class="@error('bankNumber') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="bankNumber" name="bankNumber" type="text" placeholder="Nhập số tài khoản">
      
@@ -76,6 +79,7 @@
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
       Chi nhánh
+      <span class="text-red-500 text-base">*</span>
       </label>
       <input value="{{old('department')}}" class="@error('department') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="department" name="department" type="text" placeholder="Nhập vị trí">
      

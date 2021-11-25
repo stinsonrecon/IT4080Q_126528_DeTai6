@@ -16,6 +16,7 @@
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Tiêu đề
+        <span class="text-red-500 text-base">*</span>
       </label>
       <input name="title" value="{{old('title')}}"  class="@error('title') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="bankName" name="bankName" type="text" placeholder="Nhập tiêu đề">
     </div>
@@ -57,6 +58,7 @@
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Mô tả
+        <span class="text-red-500 text-base">*</span>
       </label>
       <input value="{{old('description')}}" name="description" class="@error('description') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="bankNumber" name="bankNumber" type="text" placeholder="Nhập mô tả">
      
@@ -77,6 +79,7 @@
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
        Nội dung
+       <span class="text-red-500 text-base">*</span>
       </label>
      
       <textarea  id="editor1" class="@error('content') is-invalid @enderror w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" rows="6" name="content">{{ old('content') }}</textarea>
@@ -98,6 +101,7 @@
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Ghim tin tức
+        <span class="text-red-500 text-base">*</span>
       </label>
       <div class="flex @error('statusTop') is-invalid @enderror">
             <div class="flex items-center mb-2 mr-4">
@@ -127,7 +131,7 @@
 
     
     <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2">Hiển thị tin tức </label>
+        <label class="block text-gray-700 text-sm font-bold mb-2">Hiển thị tin tức<span class="text-red-500 text-base">*</span> </label>
         <div class="flex @error('statusDisplay') is-invalid @enderror">
             <div class="flex items-center mb-2 mr-4">
                 <input  @if(old('statusDisplay')) checked @endif type="radio" value="1" id="radio-example-1" name="statusDisplay" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
