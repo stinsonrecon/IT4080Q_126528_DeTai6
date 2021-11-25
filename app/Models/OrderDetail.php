@@ -14,6 +14,7 @@ class OrderDetail extends Model
         'quantity',
         'price'
     ];
+    public $timestamps = false;
     protected $table = 'orderdetail';
     public function product()
     {

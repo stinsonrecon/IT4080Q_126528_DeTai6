@@ -63,6 +63,8 @@ Route::post('/product/update_cart', [ProductClientController::class, 'updateCart
 
 Route::get('/product/delete_cart', [ProductClientController::class, 'deleteCart'])->name('deleteCart');
 
+Route::post('/payCart', [ProductClientController::class, 'payCart'])->name('payCart');
+
 
 //back-end
 Route::get('/admin',function(){

@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\BankAccount;
 use App\Models\Promotion;
+use App\Models\Customer;
+use App\Models\OrderDetail;
+use App\Models\Orders;
 use Illuminate\Http\Request;
-
 class ProductClientController extends Controller
 {
     function index(){
@@ -24,6 +26,7 @@ class ProductClientController extends Controller
             $cart[$id]['quantity'] +=  $request->amount;
         } else{
             $cart[$id] = [
+                'id' => $id,
                 'name' => $product->name,
                 'priceRoot' => $product->priceRoot,
                 'pricePromo' => $product->pricePromo,
@@ -47,6 +50,7 @@ class ProductClientController extends Controller
             $cart[$id]['quantity'] +=  1;
         } else{
             $cart[$id] = [
+                'id' => $id,
                 'name' => $product->name,
                 'priceRoot' => $product->priceRoot,
                 'pricePromo' => $product->pricePromo,
@@ -132,5 +136,59 @@ class ProductClientController extends Controller
                 'code' => 200
             ], 200);
         }
+    }
+
+    function payCart(Request $request){
+        $request->validate([
+            'customerName' => 'required|max:255',
+            'address' => 'required|max:255',
+            'city' => 'required|max:255',
+            'phoneNum' => 'required|max:20',
+            'note' => 'max:255'
+        ]);
+        $c = new Customer([
+            'name' => $request->customerName,
+            'address' => $request->address,
+            'city' => $request->city,
+            'phoneNumber' => $request->phoneNum
+        ]);
+        $c->save();
+        $dh = new Orders([
+            'statusPay' => 0,
+            'statusDeli' => 0,
+            'typePay' => $request->typePay,
+            'note' => $request->note,
+            'customerID' => $c->id
+        ]);
+        if($request->typePay == 0){
+            $digits = 5;
+            $number = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
+            $idBanking = 'DH'.$number;
+            $check = Orders::select('idBanking')->get();
+            for ($i=0; $i < $check->count(); $i++) { 
+                if ($idBanking == $check[$i]) {
+                    $number = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
+                    $idBanking = 'DH'.$number;
+                    $i=-1;
+                }
+            }
+            $dh->idBanking = $idBanking;
+        }
+        $dh->save();
+        $cart = session()->get('cart');
+        foreach ($cart as $c) {
+            $detail = new OrderDetail([
+                'productID' => $c['id'],
+                'orderID' => $dh->id,
+                'quantity' => $c['quantity']
+            ]);
+            if ($c['promoID'] != NULL){
+                $detail->price = $c['pricePromo'];
+            } else {
+                $detail->price = $c['priceRoot'];
+            }
+            $detail->save();
+        }
+        return redirect()->back()->with('message', $dh->idBanking);
     }
 }
