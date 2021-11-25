@@ -10,6 +10,8 @@ use App\Models\Customer;
 use App\Models\OrderDetail;
 use App\Models\Orders;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
 class ProductClientController extends Controller
 {
     function index(){
@@ -31,9 +33,19 @@ class ProductClientController extends Controller
                 'priceRoot' => $product->priceRoot,
                 'pricePromo' => $product->pricePromo,
                 'linkImg' => $product->linkImg,
-                'quantity' => $request->amount,
-                'promoID' => $product->promoID
+                'quantity' => $request->amount
             ];
+            
+            if($product->promoID != NULL){
+                $endTime = Carbon::create($product->promotion->endTime);
+                $now = Carbon::now();
+                if ($now > $endTime){
+                    $cart[$id]['promoID'] = NULL;
+                }
+            }
+            else{
+                $cart[$id]['promoID'] = $product->promoID;
+            }
         }
         session()->put('cart', $cart);
         $banks = BankAccount::limit(6)->get();
@@ -55,9 +67,19 @@ class ProductClientController extends Controller
                 'priceRoot' => $product->priceRoot,
                 'pricePromo' => $product->pricePromo,
                 'linkImg' => $product->linkImg,
-                'quantity' => 1,
-                'promoID' => $product->promoID
+                'quantity' => 1
             ];
+            
+            if($product->promoID != NULL){
+                $endTime = Carbon::create($product->promotion->endTime);
+                $now = Carbon::now();
+                if($now > $endTime){
+                    $cart[$id]['promoID'] = NULL;
+                }
+            }
+            else{
+                $cart[$id]['promoID'] = $product->promoID;
+            }
         }
         $count = 0;
         foreach ($cart as $c) {

@@ -146,7 +146,7 @@
                     }
                 },
                 error: function() {
-
+                    alert("Cập nhật giỏ hàng thất bại");
                 }
             });
         };
@@ -170,7 +170,7 @@
                     }
                 },
                 error: function() {
-
+                    alert("Cập nhật giỏ hàng thất bại");
                 }
             });
         }
