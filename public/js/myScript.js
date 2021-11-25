@@ -1,15 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    if (document.getElementById('advertisement')) {
-        new Splide('#advertisement', {
-            perPage: 6,
-            type: 'loop',
-            autoplay: true,
-            pauseOnHover: false,
-        }).mount();
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
     if (document.getElementById('banner')) {
         new Splide('#banner', {
             perPage: 1,
@@ -23,9 +12,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    if (document.getElementById('product-slider')) {
-        new Splide('#product-slider', {
+    if (document.getElementsByClassName('product-slider')[0]) {
+        new Splide('.product-slider', {
             perPage: 3,
+            type: 'loop',
+            autoplay: true,
+            pauseOnHover: false,
+        }).mount();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.getElementsByClassName('product-slider-mobile')[0]) {
+        new Splide('.product-slider-mobile', {
+            perPage: 1,
             type: 'loop',
             autoplay: true,
             pauseOnHover: false,

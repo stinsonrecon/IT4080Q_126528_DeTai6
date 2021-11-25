@@ -30,9 +30,9 @@
     </div>
     {{-- content --}}
     <div class="w-full justify-around items-center pt-8 lg:pl-7">
-        <ul class="flex flex-wrap w-full">
+        <div class="flex-col lg:flex-row flex flex-wrap w-full">
             @foreach ($products as $product)
-                <li class="text-center w-1/2 px-20 pb-10">
+                <div class="text-center w-full lg:w-1/2 lg:px-20 pb-10">
                     @if( $product->promotion != NULL)
                         <div class="timer">
                             <span class="text-red-500 text-lg">Chỉ còn: </span>
@@ -85,9 +85,9 @@
                             </div>
                         </div>
                     @endif
-                </li>
-            @endforeach
-        </ul>
+                    </div>
+                @endforeach
+            </div>
         <div class="pt-20">
             {{ $products->links() }}
         </div>

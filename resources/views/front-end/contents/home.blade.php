@@ -96,12 +96,15 @@
                 <div>Hàng chính hãng<br>Cam kết chính hãng 100%</div>
             </div>
         </div>
-        <div class="relative flex flex-wrap justify-around bg-white mt-4 lg:mt-10 pt-5 pb-10 px-2 lg:px-10" id="product-slider">
+        <div class="product-slider relative flex flex-wrap justify-around bg-white mt-4 lg:mt-10 pt-5 pb-10 px-2 lg:px-10"
+            id="productList">
             <div class="splide__arrows hidden lg:block">
-                <button class="splide__arrow splide__arrow--prev text-2xl hover:bg-green-primary text-black hover:text-white">
+                <button
+                    class="splide__arrow splide__arrow--prev text-2xl hover:bg-green-primary text-black hover:text-white">
                     <i class="fas fa-caret-left"></i>
                 </button>
-                <button class="splide__arrow splide__arrow--next text-2xl hover:bg-green-primary text-black hover:text-white">
+                <button
+                    class="splide__arrow splide__arrow--next text-2xl hover:bg-green-primary text-black hover:text-white">
                     <i class="fas fa-caret-right"></i>
                 </button>
             </div>
@@ -109,7 +112,7 @@
                 <ul class="splide__list">
                     @foreach ($products as $product)
                         <li class="text-center w-full lg:w-1/3 lg:px-10 splide__slide" style="min-height: 350px;">
-                            @if( $product->promotion != NULL)
+                            @if ($product->promotion != null)
                                 <div class="timer">
                                     <span class="text-red-500 text-lg">Chỉ còn: </span>
                                     <span id="hour" class="text-red-500 text-lg">00</span>
@@ -122,9 +125,11 @@
                                     <div class="absolute float-left">
                                         <img class="w-20 h-20" src="{{ asset('images/sale.png') }}" alt="">
                                     </div>
-                                    <div><img class="h-full w-full object-contain" src="{{ asset('storage/product').'/'.$product->linkImg}}">
+                                    <div><img class="h-full w-full object-contain"
+                                            src="{{ asset('storage/product') . '/' . $product->linkImg }}">
                                     </div>
-                                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">{{ $product->name }}</div>
+                                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">
+                                        {{ $product->name }}</div>
                                     <div class="font-semibold">
                                         <del class="text-xs">
                                             {{ number_format($product->priceRoot) }} VND
@@ -134,29 +139,35 @@
                                     <div class="mt-2">
                                         <button
                                             class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                                            <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
+                                            <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i
+                                                    class="fas fa-eye"></i> Xem thêm</a>
                                         </button>
                                         <button
                                             class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
-                                            <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}" class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
+                                            <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}"
+                                                class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
                                         </button>
                                     </div>
                                 </div>
                             @else
                                 <div class="mt-7">
                                     <div>
-                                        <img class="h-full w-full object-contain" src="{{ asset('storage/product').'/'.$product->linkImg}}">
+                                        <img class="h-full w-full object-contain"
+                                            src="{{ asset('storage/product') . '/' . $product->linkImg }}">
                                     </div>
-                                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">{{ $product->name }}</div>
+                                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">
+                                        {{ $product->name }}</div>
                                     <div class="font-semibold"><br>{{ number_format($product->priceRoot) }} VND</div>
                                     <div class="mt-2">
                                         <button
                                             class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                                            <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
+                                            <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i
+                                                    class="fas fa-eye"></i> Xem thêm</a>
                                         </button>
                                         <button
                                             class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
-                                            <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}" class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
+                                            <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}"
+                                                class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
                                         </button>
                                     </div>
                                 </div>
@@ -256,26 +267,41 @@
         }
     </script>
     <script>
-        function addToCart(event){
+        setUpProductList();
+
+        function setUpProductList() {
+            console.log($(window).width());
+            if ($(window).width() < 1024) {
+                $('#productList').removeClass('product-slider');
+                $('#productList').addClass('product-slider-mobile');
+            } else {
+                $('#productList').removeClass('product-slider-mobile');
+                $('#productList').addClass('product-slider');
+            }
+        }
+        $(window).on("load resize", function() {
+            setUpProductList();
+        });
+
+        function addToCart(event) {
             event.preventDefault();
             let urlCart = $(this).data('url');
             $.ajax({
                 type: "GET",
                 url: urlCart,
                 dataType: 'json',
-                success: function(data){
-                    if(data.code === 200){
+                success: function(data) {
+                    if (data.code === 200) {
                         alert("Thêm sản phẩm thành công");
-                        $('#cartQuantity').html("("+data.quantity+")");
+                        $('#cartQuantity').html("(" + data.quantity + ")");
                     }
                 },
-                error: function(){
+                error: function() {
 
                 }
             });
         }
-
-        $(function(){
+        $(function() {
             $('.add_to_cart').on('click', addToCart);
         })
     </script>
