@@ -90,7 +90,7 @@
             </button>
             <div class="text-red-500 pt-3 pb-20">(Tư vấn viên sẽ gọi điện xác nhận, không mua không sao)</div>
         </div>
-        <script> // Đang lỗi ở đây anh ơi
+        <script>
             function displayDetailTypePay(){
                 var r0 = document.getElementById("typePay0");
                 var r1 = document.getElementById("typePay1");
@@ -105,65 +105,30 @@
                     text1.classList.add('full');
                 }
             }
-            function decrement(e) {
-                const btn = e.target.parentNode.parentElement.querySelector(
-                'button[data-action="decrement"]'
-                );
-                const target = btn.nextElementSibling;
-                let value = Number(target.value);
-                value--;
-                if(value <=0) {
-                    target.value = 1;
-                }
-                else{
-                    target.value = value;
-                }
-            }
-        
-            function increment(e) {
-                const btn = e.target.parentNode.parentElement.querySelector(
-                'button[data-action="decrement"]'
-                );
-                const target = btn.nextElementSibling;
-                let value = Number(target.value);
-                value++;
-                target.value = value;
-            }
-        
-            const decrementButtons = document.querySelectorAll(
-                `button[data-action="decrement"]`
-            );
-        
-            const incrementButtons = document.querySelectorAll(
-                `button[data-action="increment"]`
-            );
-        
-            decrementButtons.forEach(btn => {
-                btn.addEventListener("click", decrement);
-            });
-        
-            incrementButtons.forEach(btn => {
-                btn.addEventListener("click", increment);
-            });
+            
         </script>
         <script>
             function cartUpdate(event){
                 event.preventDefault();
-                let urlUpdate = $('.update_cart_url').data('url');
-                let id = $(this).data('id');
+                let id = $(this).parents('tr').attr('id');
                 let quantity = $(this).parents('tr').find('input.quantity').val();
-                
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
                 $.ajax({
-                    type: "GET",
-                    url: urlUpdate,
+                    type: "POST",
+                    url: "{{ route('updateCart') }}",
                     data: {
                         id: id,
                         quantity: quantity
                     },
                     success: function(data){
                         if(data.code === 200) {
-                            $('.cart_wrapper').html(data.cart_component);
-                            alert("Cập nhật thành công");
+                            document.getElementById(data.id).getElementsByTagName("p")[0].innerHTML = data.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            $('#cartQuantity').html("("+data.quantityTotal+")");
+                            $('#totalBill').html(data.totalBill.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
                         }
                     },
                     error: function(){
@@ -186,7 +151,8 @@
                     success: function(data){
                         if(data.code === 200) {
                             $('.cart_wrapper').html(data.cart_component);
-                            alert("Cập nhật thành công");
+                            $('#cartQuantity').html("("+data.quantityTotal+")");
+                            $('#totalBill').html(data.totalBill.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
                         }
                     },
                     error: function(){

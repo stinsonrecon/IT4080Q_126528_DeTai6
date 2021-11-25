@@ -24,6 +24,7 @@
   max-height: 1000px;
   transition: max-height 0.5s ease-in-out;
 }
+
 .myCate:hover .cateProduct{
   display: block !important;
   position: absolute;

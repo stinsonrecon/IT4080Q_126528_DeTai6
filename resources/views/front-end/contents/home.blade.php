@@ -266,6 +266,7 @@
                 success: function(data){
                     if(data.code === 200){
                         alert("Thêm sản phẩm thành công");
+                        $('#cartQuantity').html("("+data.quantity+")");
                     }
                 },
                 error: function(){
