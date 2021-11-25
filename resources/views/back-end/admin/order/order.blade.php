@@ -57,7 +57,7 @@
                 <tr class="border-b border-gray-200 hover:bg-gray-100">
                     <td class="py-3 px-6 text-left whitespace-nowrap">
                         <div class="flex items-center">
-                            <a href="{{route('order.orderDetail')}}" target="_blank" class="align-middle hover:text-gray-400 border-b-2 border-gray-800">
+                            <a href="{{route('orderDetail.index',['id' => $order->id])}}" target="_blank" class="align-middle hover:text-gray-400 border-b-2 border-gray-800">
                                 <span class="font-medium">{{$order->name}}</span>
                             </a>
                         </div>

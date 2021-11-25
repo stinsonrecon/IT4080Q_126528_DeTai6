@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController\PaymentMethodController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController\PromotionController;
 use App\Http\Controllers\AuthController\OrderController;
+use App\Http\Controllers\AuthController\OrderDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -151,9 +152,15 @@ Route::prefix('admin')->group(function () {
 
     //orderDetail
     Route::prefix('orderDetail')->group(function () {
-        Route::get('/', function () {
-            return view('back-end.admin.order.orderDetail');
-        })->name('order.orderDetail')->middleware('auth');
+        Route::get('/{id}', [
+            OrderDetailController::class, 'index'
+        ])->name('orderDetail.index');
+        Route::get('/create', [
+            OrderDetailController::class, 'create'
+        ])->name('orderDetai;.create');
+        Route::post('/create', [
+            OrdeDetailController::class, 'store'
+        ]);
     });
 
     //new
