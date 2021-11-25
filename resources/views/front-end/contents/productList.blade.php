@@ -61,8 +61,9 @@
                                     <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
                                 </button>
                                 <button
-                                    class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
-                                        class="fas fa-shopping-cart text-lg"></i></button>
+                                    class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
+                                    <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}" class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
+                                </button>
                             </div>
                         </div>
                     @else
@@ -78,8 +79,9 @@
                                     <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
                                 </button>
                                 <button
-                                    class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
-                                        class="fas fa-shopping-cart text-lg"></i></button>
+                                    class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
+                                    <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}" class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
+                                </button>
                             </div>
                         </div>
                     @endif
@@ -91,4 +93,27 @@
         </div>
     </div>
 </div>
+<script>
+    function addToCart(event){
+        event.preventDefault();
+        let urlCart = $(this).data('url');
+        $.ajax({
+            type: "GET",
+            url: urlCart,
+            dataType: 'json',
+            success: function(data){
+                if(data.code === 200){
+                    alert("Thêm sản phẩm thành công");
+                }
+            },
+            error: function(){
+
+            }
+        });
+    }
+
+    $(function(){
+        $('.add_to_cart').on('click', addToCart);
+    })
+</script>
 @endsection

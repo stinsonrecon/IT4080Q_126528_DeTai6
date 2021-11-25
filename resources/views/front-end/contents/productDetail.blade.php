@@ -96,7 +96,7 @@
                                 <button data-action="decrement" type="button" class=" bg-green-primary text-white hover:bg-green-primary_1 h-full w-20 rounded-l cursor-pointer outline-none">
                                     <span class="m-auto text-2xl font-thin">−</span>
                                 </button>
-                                <input type="number" class="focus:outline-none text-center w-full border border-gray-300 bg-gray-50 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-black  outline-none" name="amount" value="1">
+                                <input type="number" class="focus:outline-none text-center w-full border border-gray-300 bg-gray-50 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-black  outline-none" min="1" name="amount" value="1">
                                 <button data-action="increment" type="button" class="bg-green-primary text-white hover:bg-green-primary_1 h-full w-20 rounded-r cursor-pointer">
                                     <span class="m-auto text-2xl font-thin">+</span>
                                 </button>
@@ -156,8 +156,9 @@
                                             <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
                                         </button>
                                         <button
-                                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
-                                                class="fas fa-shopping-cart text-lg"></i></button>
+                                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
+                                            <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}" class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
+                                        </button>
                                     </div>
                                 </div>
                             @else
@@ -173,8 +174,9 @@
                                             <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
                                         </button>
                                         <button
-                                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4"><i
-                                                class="fas fa-shopping-cart text-lg"></i></button>
+                                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
+                                            <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}" class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
+                                        </button>
                                     </div>
                                 </div>
                             @endif
@@ -209,7 +211,12 @@
         const target = btn.nextElementSibling;
         let value = Number(target.value);
         value--;
-        target.value = value;
+        if(value <=0) {
+            target.value = 1;
+        }
+        else{
+            target.value = value;
+        }
     }
 
     function increment(e) {
@@ -300,5 +307,28 @@
             }
         }
     }
+</script>
+<script>
+    function addToCart(event){
+        event.preventDefault();
+        let urlCart = $(this).data('url');
+        $.ajax({
+            type: "GET",
+            url: urlCart,
+            dataType: 'json',
+            success: function(data){
+                if(data.code === 200){
+                    alert("Thêm sản phẩm thành công");
+                }
+            },
+            error: function(){
+
+            }
+        });
+    }
+
+    $(function(){
+        $('.add_to_cart').on('click', addToCart);
+    })
 </script>
 @endsection

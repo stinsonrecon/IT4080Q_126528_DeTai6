@@ -55,6 +55,13 @@ Route::get('/product_detail/{id}', [HomeController::class,'show']);
 
 Route::get('/product_list', [ProductClientController::class, 'index'])->name('productList');
 
+Route::get('/product/add_to_cart/{id}', [ProductClientController::class, 'addToCart'])->name('addToCart');
+
+Route::get('/product/update_cart', [ProductClientController::class, 'updateCart'])->name('updateCart');
+
+Route::get('/product/delete_cart', [ProductClientController::class, 'deleteCart'])->name('deleteCart');
+
+
 //back-end
 Route::get('/admin',function(){
     return view('back-end.login');
