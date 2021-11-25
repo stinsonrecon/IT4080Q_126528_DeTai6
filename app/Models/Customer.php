@@ -16,7 +16,10 @@ class Customer extends Model
         'email'
     ];
     protected $table = 'customer';
+    public $timestamps = FALSE;
     public function orders() {
         return $this->hasMany(Orders::class, 'customerID', 'id');
     }
 }
+
+

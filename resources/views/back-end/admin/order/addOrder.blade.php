@@ -17,11 +17,11 @@
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Tên khách hàng
       </label>
-      <input name="customerName" value="{{old('customerName')}}"  class="@error('customerName') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Nhập tên khách hàng">
+      <input name="name" value="{{old('name')}}"  class="@error('name') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Nhập tên khách hàng">
     </div>
 
     <div class="mb-4">
-        @error('customerName')
+        @error('name')
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                 <strong class="font-bold">{{$message}}</strong>
   
@@ -55,11 +55,11 @@
       <label class="block text-gray-700 text-sm font-bold mb-2" >
         Địa chỉ
       </label>
-      <input name="note" value="{{old('note')}}"  class="@error('note') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Nhập địa chỉ">
+      <input name="address" value="{{old('address')}}"  class="@error('address') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Nhập địa chỉ">
     </div>
 
     <div class="mb-4">
-        @error('note')
+        @error('address')
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                 <strong class="font-bold">{{$message}}</strong>
   
