@@ -81,8 +81,16 @@
                                 style="border-left: none; border-right: none">
                                 Giá:
                                 <span>
-                                    @if ($product->promoID != null)
-                                        {{ number_format($product->pricePromo) }} VND
+                                    @if ($promo != NULL)
+                                        @php
+                                            $now = \Carbon\Carbon::now();
+                                            $endTime = \Carbon\Carbon::create($promo->endTime);
+                                        @endphp
+                                        @if ($now < $endTime)
+                                            {{ number_format($product->pricePromo) }} VND
+                                        @else
+                                            {{ number_format($product->priceRoot) }} VND
+                                        @endif
                                     @else
                                         {{ number_format($product->priceRoot) }} VND
                                     @endif
@@ -139,7 +147,7 @@
             <div
                 class="flex justify-start mt-4 lg:mt-10 pb-2 mx-10 text-left border-b border-gray-500 font-semibold text-2xl text-green-primary_1">
                 Sản phẩm khác</div>
-            <div class="relative flex flex-wrap justify-end pt-2 pb-10 px-2 lg:px-10" id="product-slider">
+            <div class="relative flex flex-wrap justify-end pt-2 pb-10 px-2 lg:px-10 product-slider">
                 <div class="splide__arrows hidden lg:block w-1/2">
                     <button
                         class="splide__arrow splide__arrow--prev text-2xl hover:bg-green-primary text-black hover:text-white">
@@ -155,6 +163,11 @@
                         @foreach ($products as $product)
                             <li class="text-center w-full lg:w-1/3 lg:px-10 splide__slide" style="min-height: 350px;">
                                 @if ($product->promotion != null)
+                                @php
+                                    $now = \Carbon\Carbon::now();
+                                    $endTime = \Carbon\Carbon::create($product->promotion->endTime);
+                                @endphp
+                                @if ($now < $endTime)
                                     <div class="timer">
                                         <span class="text-red-500 text-lg">Chỉ còn: </span>
                                         <span id="hour" class="text-red-500 text-lg">00</span>
@@ -181,8 +194,8 @@
                                         <div class="mt-2">
                                             <button
                                                 class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                                                <a href="/product_detail/{{ $product->id }}"
-                                                    class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
+                                                <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i
+                                                        class="fas fa-eye"></i> Xem thêm</a>
                                             </button>
                                             <button
                                                 class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
@@ -199,13 +212,12 @@
                                         </div>
                                         <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">
                                             {{ $product->name }}</div>
-                                        <div class="font-semibold"><br>{{ number_format($product->priceRoot) }} VND
-                                        </div>
+                                        <div class="font-semibold"><br>{{ number_format($product->priceRoot) }} VND</div>
                                         <div class="mt-2">
                                             <button
                                                 class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                                                <a href="/product_detail/{{ $product->id }}"
-                                                    class="font-bold text-base"><i class="fas fa-eye"></i> Xem thêm</a>
+                                                <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i
+                                                        class="fas fa-eye"></i> Xem thêm</a>
                                             </button>
                                             <button
                                                 class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
@@ -215,6 +227,29 @@
                                         </div>
                                     </div>
                                 @endif
+                            @else
+                                <div class="mt-7">
+                                    <div>
+                                        <img class="h-full w-full object-contain"
+                                            src="{{ asset('storage/product') . '/' . $product->linkImg }}">
+                                    </div>
+                                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">
+                                        {{ $product->name }}</div>
+                                    <div class="font-semibold"><br>{{ number_format($product->priceRoot) }} VND</div>
+                                    <div class="mt-2">
+                                        <button
+                                            class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
+                                            <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i
+                                                    class="fas fa-eye"></i> Xem thêm</a>
+                                        </button>
+                                        <button
+                                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
+                                            <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}"
+                                                class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
+                                        </button>
+                                    </div>
+                                </div>
+                            @endif
                             </li>
                         @endforeach
                     </ul>
@@ -357,7 +392,7 @@
                     }
                 },
                 error: function() {
-
+                    alert("Thêm sản phẩm thất bại");
                 }
             });
         }
