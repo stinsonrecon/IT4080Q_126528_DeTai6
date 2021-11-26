@@ -98,11 +98,11 @@
       </label>
       <div class="flex @error('statusPay') is-invalid @enderror">
             <div class="flex items-center mb-2 mr-4">
-                <input @if(old('statusPay')) checked @endif type="radio" value="0" id="radio-example-1" name="statusPay" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
+                <input @if(old('statusPay')==0) checked @endif type="radio" value="0" id="radio-example-1" name="statusPay" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
                 <label for="radio-example-1" class="text-gray-600">Chưa thanh toán</label>
             </div>
             <div class="flex items-center mb-2">
-                <input @if(!old('statusPay')) checked @endif type="radio" value="1" id="radio-example-2" name="statusPay" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2"  >
+                <input @if(old('statusPay')==1) checked @endif type="radio" value="1" id="radio-example-2" name="statusPay" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2"  >
                
                 <label for="radio-example-2" class="text-gray-600">Đã thanh toán</label>
             </div>
@@ -127,15 +127,15 @@
         <label class="block text-gray-700 text-sm font-bold mb-2">Tình trạng vận chuyển </label>
         <div class="flex @error('statusDeli') is-invalid @enderror">
             <div class="flex items-center mb-2 mr-4">
-                <input  @if(old('statusDeli')) checked @endif type="radio" value="0" id="radio-example-1" name="statusDeli" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
+                <input @if(old('statusDeli')==0) checked @endif type="radio" value="0" id="radio-example-1" name="statusDeli" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
                 <label for="radio-example-1" class="text-gray-600">Chờ lấy hàng</label>
             </div>
             <div class="flex items-center mb-2 mr-4">
-                <input  @if(!old('statusDeli')) checked @endif type="radio" value="1" id="radio-example-2" name="statusDeli" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
+                <input @if(old('statusDeli')==1) checked @endif type="radio" value="1" id="radio-example-2" name="statusDeli" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
                 <label for="radio-example-2" class="text-gray-600">Đang vận chuyển</label>
             </div>
             <div class="flex items-center mb-2">
-                <input  @if(!old('statusDeli')) checked @endif type="radio" value="2" id="radio-example-3" name="statusDeli" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
+                <input @if(old('statusDeli')==2) checked @endif type="radio" value="2" id="radio-example-3" name="statusDeli" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
                 <label for="radio-example-3" class="text-gray-600">Đang vận chuyển</label>
             </div>
         </div>
@@ -159,11 +159,11 @@
       </label>
       <div class="flex @error('typePay') is-invalid @enderror">
             <div class="flex items-center mb-2 mr-4">
-                <input @if(old('typePay')) checked @endif type="radio" value="0" id="radio-example-1" name="typePay" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
+                <input @if(old('typePay')) checked @endif type="radio" value="1" id="radio-example-1" name="typePay" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2">
                 <label for="radio-example-1" class="text-gray-600">Tiền mặt</label>
             </div>
             <div class="flex items-center mb-2">
-                <input @if(!old('typePay')) checked @endif type="radio" value="1" id="radio-example-2" name="typePay" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2"  >
+                <input @if(!old('typePay')) checked @endif type="radio" value="0" id="radio-example-2" name="typePay" class="h-4 w-4 text-gray-700 px-3 py-3 border rounded mr-2"  >
                
                 <label for="radio-example-2" class="text-gray-600">Ngân hàng</label>
             </div>

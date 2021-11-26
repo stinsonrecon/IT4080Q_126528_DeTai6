@@ -39,10 +39,10 @@
                         <span class="font-medium">{{$orderDetail->quantity}}</span>
                     </td>
                     <td class="py-3 px-6 text-center">
-                        <span class="font-medium">number_format({{$orderDetail->price}})</span>
+                        <span class="font-medium">{{ number_format($orderDetail->price) }}</span>
                     </td>
                     <td class="py-3 px-6 text-center">
-                        <span class="font-medium">number_format({{($orderDetail->price)*($orderDetail->quantity)}})</span>
+                        <span class="font-medium">{{ number_format(($orderDetail->price)*($orderDetail->quantity)) }}</span>
                         <?php
                         $total = $total + $orderDetail->quantity * $orderDetail->price;
                         ?>
@@ -51,10 +51,11 @@
             </tbody>
             @endforeach
 
-            <tr class=" bg-gray-200 text-gray-600 leading-normal ">
-                <th class="py-3 px-6 text-center">Tổng tiền:</th>
-                <td class="py-3 px-6 text-center text-red-500">
-                    <span class="font-medium ">number_format({{$total}})</span>
+            <tr class=" bg-gray-100 text-gray-600 leading-normal ">
+                <td></td><td></td>
+                <th class="py-3 px-6 text-center bg-gray-200 border-black border-r">Tổng tiền:</th>
+                <td class="py-3 px-6 text-center bg-gray-200 text-red-500">
+                    <span class="font-medium ">{{ number_format($total) }}</span>
                 </td>
             </tr>
     </div>

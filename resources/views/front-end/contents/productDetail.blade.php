@@ -37,14 +37,14 @@
             </div>
             {{-- content --}}
             <div class="w-full justify-around items-center pt-8 lg:pl-7">
-                <div class="flex justify-between w-full">
+                <div class="flex-col lg:flex-row flex justify-between w-full">
                     <!-- Ảnh to để ở giữa trang -->
-                    <div class="w-1/2 px-10">
+                    <div class="w-full lg:w-1/2 lg:px-10">
                         <img class="w-full h-full object-contain"
                             src="{{ asset('storage/product') . '/' . $product->linkImg }}" alt="">
                     </div>
                     <!-- Phần thông tin sản phẩm -->
-                    <div class="w-1/2 px-10">
+                    <div class="w-full lg:w-1/2 lg:px-10">
                         <!-- Thông tin -->
                         <div class="flex-col flex-wrap">
                             <div class="pb-5">
@@ -114,7 +114,7 @@
                                 <div class="flex">
                                     <div class="flex justify-around items-center pr-5 text-xl text-green-primary_1">Số lượng
                                     </div>
-                                    <div class="flex flex-row h-10 w-1/6 rounded-lg relative bg-transparent mt-1 ">
+                                    <div class="flex flex-row h-10 w-2/5 lg:w-1/6 rounded-lg relative bg-transparent mt-1 ">
                                         <button data-action="decrement" type="button"
                                             class=" bg-green-primary text-white hover:bg-green-primary_1 h-full w-20 rounded-l cursor-pointer outline-none">
                                             <span class="m-auto text-2xl font-thin">−</span>

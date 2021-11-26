@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Orders;
 use App\Models\Customer;
+use App\Models\OrderDetail;
 
 class OrderController extends Controller
 {
@@ -19,7 +20,7 @@ class OrderController extends Controller
     {
         $orders = DB::table('orders')
             ->join('customer', 'customerID', '=', 'customer.id')
-            ->select( 'customer.name', 'customer.address', 'customer.city', 'customer.phoneNumber', 'orders.id', 'orders.statusPay', 'orders.statusDeli', 'orders.typePay', 'orders.note')
+            ->select('idBanking', 'customer.name', 'customer.address', 'customer.city', 'customer.phoneNumber', 'orders.id', 'orders.statusPay', 'orders.statusDeli', 'orders.typePay', 'orders.note')
             ->paginate(10);
 
         return view('back-end.admin.order.order', compact('orders'));
@@ -37,11 +38,10 @@ class OrderController extends Controller
             'name' => 'required|max:255',
             'address' => 'required|max:255',
             'city' => 'required|max:255',
-            'phoneNumber' => 'required|max:20|numeric',
+            'phoneNumber' => 'required|max:20',
             'statusPay' => 'required',
             'statusDeli' => 'required',
-            'typePay' => 'required|max:255',
-
+            'typePay' => 'required|max:255'
         ]);
 
         $customer = Customer::create([
@@ -51,16 +51,28 @@ class OrderController extends Controller
             'phoneNumber' => $request->phoneNumber,
         ]);
 
-
-        Orders::create([
+        $dh = new Orders([
             'statusPay' => $request->statusPay,
             'statusDeli' => $request->statusDeli,
             'typePay' => $request->typePay,
             'note' => $request->note,
             'customerID' => $customer->id,
         ]);
-
-
+        if($request->typePay == 0){
+            $digits = 5;
+            $number = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
+            $idBanking = 'DH'.$number;
+            $check = Orders::select('idBanking')->get();
+            for ($i=0; $i < $check->count(); $i++) { 
+                if ($idBanking == $check[$i]) {
+                    $number = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
+                    $idBanking = 'DH'.$number;
+                    $i=-1;
+                }
+            }
+            $dh->idBanking = $idBanking;
+        }
+        $dh->save();
         session()->flash('success', 'Thêm mới đơn hàng thành công!');
 
 
@@ -69,6 +81,7 @@ class OrderController extends Controller
 
     public function delete($id)
     {
+        OrderDetail::where('orderID',$id)->delete();
         Orders::where('id', $id)->delete();
 
         session()->flash('success', 'Xoá đơn hàng thành công!');
@@ -85,14 +98,35 @@ class OrderController extends Controller
 
     public function update(Request $request, $id)
     {
-        Orders::find($id)
-            ->update([
-                'statusPay' => $request->statusPay,
-                'statusDeli' => $request->statusDeli,
-                'typePay' => $request->typePay,
-                'note' => $request->note,
-            ]);
-
+        $request->validate([
+            'name' => 'required|max:255',
+            'address' => 'required|max:255',
+            'city' => 'required|max:255',
+            'phoneNumber' => 'required|max:20',
+            'statusPay' => 'required',
+            'statusDeli' => 'required',
+            'typePay' => 'required|max:255'
+        ]);
+        $dh = Orders::find($id);
+        if ($dh->typePay == 1 && $request->typePay == 0) {
+            $digits = 5;
+            $number = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
+            $idBanking = 'DH'.$number;
+            $check = Orders::select('idBanking')->get();
+            for ($i=0; $i < $check->count(); $i++) { 
+                if ($idBanking == $check[$i]) {
+                    $number = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
+                    $idBanking = 'DH'.$number;
+                    $i=-1;
+                }
+            }
+            $dh->idBanking = $idBanking;
+        }
+            $dh->statusPay = $request->statusPay;
+            $dh->statusDeli = $request->statusDeli;
+            $dh->typePay = $request->typePay;
+            $dh->note = $request->note;
+        $dh->save();
         Customer::where('customer.id', 'orders.customerID')
             ->update([
                 'name' => $request->name,

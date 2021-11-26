@@ -42,6 +42,7 @@
         <table class=" w-11/12  mx-auto mx-8  table-auto">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                    <th class="py-3 px-6 text-center">Mã đơn chuyển khoản</th>
                     <th class="py-3 px-6 text-left">Tên khách hàng</th>
                     <th class="py-3 px-6 text-center">Địa chỉ</th>
                     <th class="py-3 px-6 text-center">Số điện thoại</th>
@@ -55,6 +56,9 @@
             @foreach($orders as $order)
             <tbody class="text-gray-600 text-sm font-light">
                 <tr class="border-b border-gray-200 hover:bg-gray-100">
+                    <td class="py-3 px-2 text-center">
+                        <span class="font-medium">@if($order->typePay==0) {{$order->idBanking}} @endif</span>
+                    </td>
                     <td class="py-3 px-6 text-left whitespace-nowrap">
                         <div class="flex items-center">
                             <a href="{{route('orderDetail.index',['id' => $order->id])}}" target="_blank" class="align-middle hover:text-gray-400 border-b-2 border-gray-800">
@@ -72,9 +76,9 @@
 
                     <td class="py-3 px-6 text-center">
                         @if ($order->statusPay == 0)
-                        <span class="font-medium"> Chưa thanh toán </span>
+                        <span class="font-medium py-1 px-3 bg-red-200 rounded-full text-red-600"> Chưa thanh toán </span>
                         @else ($order->statusPay == 1)
-                        <span class="font-medium"> Đã thanh toán </span>
+                        <span class="font-medium py-1 px-3 bg-green-200 rounded-full text-green-600"> Đã thanh toán </span>
                         @endif
 
                     </td>
@@ -89,9 +93,9 @@
                     </td>
                     <td class="py-3 px-6 text-center">
                         @if ($order->typePay == 0)
+                        <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Chuyển khoản</span>
+                        @else
                         <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Tiền mặt</span>
-                        @else($order->typePay == 1)
-                        <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Ngân hàng</span>
                         @endif
                     </td>
 
@@ -109,7 +113,7 @@
                                 </a>
                             </div>
                             <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                <a class="first" href="{{route('order.delete',['id' => $order->id])}}">
+                                <a onclick="" class="first" href="{{route('order.delete',['id' => $order->id])}}">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
 

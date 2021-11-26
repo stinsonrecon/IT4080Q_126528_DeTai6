@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AuthController;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use App\Models\OrderDetail;
 use App\Models\Orders;
 use Illuminate\Http\Request;

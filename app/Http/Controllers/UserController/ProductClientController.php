@@ -41,6 +41,8 @@ class ProductClientController extends Controller
                 $now = Carbon::now();
                 if ($now > $endTime){
                     $cart[$id]['promoID'] = NULL;
+                } else {
+                    $cart[$id]['promoID'] = $product->promoID;
                 }
             }
             else{
@@ -75,6 +77,8 @@ class ProductClientController extends Controller
                 $now = Carbon::now();
                 if($now > $endTime){
                     $cart[$id]['promoID'] = NULL;
+                } else {
+                    $cart[$id]['promoID'] = $product->promoID;
                 }
             }
             else{
