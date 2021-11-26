@@ -19,7 +19,7 @@ class OrderController extends Controller
     {
         $orders = DB::table('orders')
             ->join('customer', 'customerID', '=', 'customer.id')
-            ->select('customer.id', 'customer.name', 'customer.address', 'customer.city', 'customer.phoneNumber', 'orders.id', 'orders.statusPay', 'orders.statusDeli', 'orders.typePay', 'orders.note')
+            ->select( 'customer.name', 'customer.address', 'customer.city', 'customer.phoneNumber', 'orders.id', 'orders.statusPay', 'orders.statusDeli', 'orders.typePay', 'orders.note')
             ->paginate(10);
 
         return view('back-end.admin.order.order', compact('orders'));
@@ -34,13 +34,13 @@ class OrderController extends Controller
     {
 
         $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'phoneNumber' => 'required',
+            'name' => 'required|max:255',
+            'address' => 'required|max:255',
+            'city' => 'required|max:255',
+            'phoneNumber' => 'required|max:20|numeric',
             'statusPay' => 'required',
             'statusDeli' => 'required',
-            'typePay' => 'required',
+            'typePay' => 'required|max:255',
 
         ]);
 
