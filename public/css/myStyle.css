@@ -44,6 +44,16 @@ input[type='number']::-webkit-outer-spin-button {
   outline: none !important;
 }
 
+.ui-dialog .ui-dialog-content {
+  padding: 0.5em 1em !important;
+  font-size: 150% !important;
+}
+
+.ui-dialog-title {
+  font-size: 160% !important;
+  color: #0c713d !important;
+}
+
 @media (min-width: 370px) {
   .search-mobile{
     width: 13rem;

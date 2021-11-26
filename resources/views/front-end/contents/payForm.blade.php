@@ -1,7 +1,54 @@
 @extends('front-end.app')
 @section('content')
+    @if (session('message') == 'tienmat')
+        <script>
+            $( function() {
+                $( "#dialog" ).dialog({
+                    width: 'auto',
+                    maxWidth: 500,
+                    height: 'auto',
+                    modal: true,
+                    resizable: false,
+                }).prev(".ui-dialog-titlebar").css("background","#91cc00");
+            } );
+        </script>
+        <div id="dialog" title="Đặt hàng thành công">
+            <p>Bạn vui lòng đợi. Nhân viên của Bách Diệp Trà sẽ liên lạc lại theo số điện thoại sớm nhất có thể</p>
+        </div>
+    @elseif(session('message') == 'fail')
+        <script>
+            $( function() {
+                $( "#dialog" ).dialog({
+                    width: 'auto',
+                    maxWidth: 500,
+                    height: 'auto',
+                    modal: true,
+                    resizable: false,
+                }).prev(".ui-dialog-titlebar").css("background","#91cc00");
+            } );
+        </script>
+        <div id="dialog" title="Đặt hàng thất bại">
+            <p>Mời bạn thêm sản phẩm vào giỏ hàng và thử lại. Hoặc gọi lên hotline 093.637.2609 để được hỗ trợ sớm nhất</p>
+        </div>
+    @elseif(session('message'))
+        <script>
+            $( function() {
+                $( "#dialog" ).dialog({
+                    width: 'auto',
+                    maxWidth: 500,
+                    height: 'auto',
+                    modal: true,
+                    resizable: false,
+                }).prev(".ui-dialog-titlebar").css("background","#91cc00");
+            } );
+        </script>
+        <div id="dialog" title="Đặt hàng thành công">
+            <p>Nhân viên của Bách Diệp Trà sẽ liên lạc lại theo số điện thoại sớm nhất có thể. Tiến hành thanh toán chuyển khoản theo nội dung là "thanh toan {{session('message')}}"</p>
+        </div>
+    @endif
     <form id="customerForm" action="{{ route('payCart') }}" method="POST">
         @csrf
+        @method('POST')
         <div class="w-full lg:px-6 pb-10 flex flex-col lg:flex-row lg:justify-around" style="background-color: white;">
             <div class="w-full lg:w-2/3 flex pt-4 lg:pt-10 lg:mx-10">
                 <div class="w-full px-4">
@@ -41,7 +88,7 @@
                             class="w-full border border-gray-300 rounded mt-3 resize-none outline-none p-2" rows="2"
                             placeholder="Ví dụ: thời gian, chỉ dẫn địa điểm giao hàng, thông tin xuất hóa đơn,..."></textarea>
                     </div>
-    </form>
+    
     <div class="font-bold text-lg pt-5 pb-3">Thông tin chuyển khoản</div>
     <div class="grid grid-cols-2 lg:justify-around items-center w-full pb-10 lg:px-10">
         @foreach ($banks as $bank)
@@ -97,10 +144,10 @@
 
         <button
             class="py-2 px-5 mb-2 items-center justify-center rounded-md bg-green-primary border-2 border-green-primary text-white hover:bg-white hover:text-green-primary"
-            type="submit" form="customerForm" onclick="!this.form&&$('#'+$(this).attr('form')).submit()">
+            type="submit">
             <p>Đặt hàng</p>
         </button>
-
+    </form>
         <div class="text-red-500 pt-3 pb-20">(Tư vấn viên sẽ gọi điện xác nhận, không mua không sao)</div>
     </div>
 

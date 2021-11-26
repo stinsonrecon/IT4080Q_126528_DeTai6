@@ -14,19 +14,21 @@ use Carbon\Carbon;
 
 class ProductClientController extends Controller
 {
-    function index(){
-        $products = Product::where('status','=','1')->paginate(4);
+    function index()
+    {
+        $products = Product::where('status', '=', '1')->paginate(4);
 
         return view('front-end.contents.productList', ['products' => $products]);
     }
 
-    function addCartByAmount(Request $request){
+    function addCartByAmount(Request $request)
+    {
         $id = $request->idProduct;
         $product = Product::find($id);
         $cart = session()->get('cart');
-        if(isset($cart[$id])){
+        if (isset($cart[$id])) {
             $cart[$id]['quantity'] +=  $request->amount;
-        } else{
+        } else {
             $cart[$id] = [
                 'id' => $id,
                 'name' => $product->name,
@@ -35,17 +37,16 @@ class ProductClientController extends Controller
                 'linkImg' => $product->linkImg,
                 'quantity' => $request->amount
             ];
-            
-            if($product->promoID != NULL){
+
+            if ($product->promoID != NULL) {
                 $endTime = Carbon::create($product->promotion->endTime);
                 $now = Carbon::now();
-                if ($now > $endTime){
+                if ($now > $endTime) {
                     $cart[$id]['promoID'] = NULL;
                 } else {
                     $cart[$id]['promoID'] = $product->promoID;
                 }
-            }
-            else{
+            } else {
                 $cart[$id]['promoID'] = $product->promoID;
             }
         }
@@ -55,14 +56,15 @@ class ProductClientController extends Controller
         return view('front-end.contents.payForm', ['banks' => $banks, 'carts' => $carts]);
     }
 
-    function addToCart($id){
+    function addToCart($id)
+    {
         $product = Product::find($id);
 
         $cart = session()->get('cart');
 
-        if(isset($cart[$id])){
+        if (isset($cart[$id])) {
             $cart[$id]['quantity'] +=  1;
-        } else{
+        } else {
             $cart[$id] = [
                 'id' => $id,
                 'name' => $product->name,
@@ -71,17 +73,16 @@ class ProductClientController extends Controller
                 'linkImg' => $product->linkImg,
                 'quantity' => 1
             ];
-            
-            if($product->promoID != NULL){
+
+            if ($product->promoID != NULL) {
                 $endTime = Carbon::create($product->promotion->endTime);
                 $now = Carbon::now();
-                if($now > $endTime){
+                if ($now > $endTime) {
                     $cart[$id]['promoID'] = NULL;
                 } else {
                     $cart[$id]['promoID'] = $product->promoID;
                 }
-            }
-            else{
+            } else {
                 $cart[$id]['promoID'] = $product->promoID;
             }
         }
@@ -98,17 +99,18 @@ class ProductClientController extends Controller
         ], 200);
     }
 
-    function updateCart(Request $request){
-        if($request->id && $request->quantity){
+    function updateCart(Request $request)
+    {
+        if ($request->id && $request->quantity) {
             $carts = session()->get('cart');
             $carts[$request->id]['quantity'] = $request->quantity;
             session()->put('cart', $carts);
             $carts = session()->get('cart');
             //tính tổng tiền cho riêng sản phẩm theo id đấy
-            if ($carts[$request->id]['promoID'] != NULL){
-                $total = $carts[$request->id]['quantity']*$carts[$request->id]['pricePromo'];
+            if ($carts[$request->id]['promoID'] != NULL) {
+                $total = $carts[$request->id]['quantity'] * $carts[$request->id]['pricePromo'];
             } else {
-                $total = $carts[$request->id]['quantity']*$carts[$request->id]['priceRoot'];
+                $total = $carts[$request->id]['quantity'] * $carts[$request->id]['priceRoot'];
             }
             //đếm số lượng tổng sản phẩm để cập nhật header
             $count = 0;
@@ -118,10 +120,10 @@ class ProductClientController extends Controller
             //tính tổng tiền cho hóa đơn
             $totalBill = 0;
             foreach ($carts as $c) {
-                if ($c['promoID'] != NULL){
-                    $totalBill += $c['quantity']*$c['pricePromo'];
+                if ($c['promoID'] != NULL) {
+                    $totalBill += $c['quantity'] * $c['pricePromo'];
                 } else {
-                    $totalBill += $c['quantity']*$c['priceRoot'];
+                    $totalBill += $c['quantity'] * $c['priceRoot'];
                 }
             }
             return response()->json([
@@ -134,11 +136,12 @@ class ProductClientController extends Controller
         }
     }
 
-    function deleteCart(Request $request){
-        if($request->id){
+    function deleteCart(Request $request)
+    {
+        if ($request->id) {
             $carts = session()->get('cart');
             unset($carts[$request->id]);
-            
+
             session()->put('cart', $carts);
 
             $carts = session()->get('cart');
@@ -148,15 +151,15 @@ class ProductClientController extends Controller
             }
             $totalBill = 0;
             foreach ($carts as $c) {
-                if ($c['promoID'] != NULL){
-                    $totalBill += $c['quantity']*$c['pricePromo'];
+                if ($c['promoID'] != NULL) {
+                    $totalBill += $c['quantity'] * $c['pricePromo'];
                 } else {
-                    $totalBill += $c['quantity']*$c['priceRoot'];
+                    $totalBill += $c['quantity'] * $c['priceRoot'];
                 }
             }
             $cart_component = view('front-end.components.cart_component', compact('carts'))->render();
             return response()->json([
-                'cart_component' => $cart_component, 
+                'cart_component' => $cart_component,
                 'quantityTotal' => $count,
                 'totalBill' => $totalBill,
                 'code' => 200
@@ -164,57 +167,69 @@ class ProductClientController extends Controller
         }
     }
 
-    function payCart(Request $request){
-        $request->validate([
-            'customerName' => 'required|max:255',
-            'address' => 'required|max:255',
-            'city' => 'required|max:255',
-            'phoneNum' => 'required|max:20',
-            'note' => 'max:255'
-        ]);
-        $c = new Customer([
-            'name' => $request->customerName,
-            'address' => $request->address,
-            'city' => $request->city,
-            'phoneNumber' => $request->phoneNum
-        ]);
-        $c->save();
-        $dh = new Orders([
-            'statusPay' => 0,
-            'statusDeli' => 0,
-            'typePay' => $request->typePay,
-            'note' => $request->note,
-            'customerID' => $c->id
-        ]);
-        if($request->typePay == 0){
-            $digits = 5;
-            $number = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
-            $idBanking = 'DH'.$number;
-            $check = Orders::select('idBanking')->get();
-            for ($i=0; $i < $check->count(); $i++) { 
-                if ($idBanking == $check[$i]) {
-                    $number = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
-                    $idBanking = 'DH'.$number;
-                    $i=-1;
-                }
-            }
-            $dh->idBanking = $idBanking;
-        }
-        $dh->save();
+    function payCart(Request $request)
+    {
         $cart = session()->get('cart');
-        foreach ($cart as $c) {
-            $detail = new OrderDetail([
-                'productID' => $c['id'],
-                'orderID' => $dh->id,
-                'quantity' => $c['quantity']
+        if ($cart) {
+
+
+            $request->validate([
+                'customerName' => 'required|max:255',
+                'address' => 'required|max:255',
+                'city' => 'required|max:255',
+                'phoneNum' => 'required|max:20',
+                'note' => 'max:255'
             ]);
-            if ($c['promoID'] != NULL){
-                $detail->price = $c['pricePromo'];
-            } else {
-                $detail->price = $c['priceRoot'];
+            $c = new Customer([
+                'name' => $request->customerName,
+                'address' => $request->address,
+                'city' => $request->city,
+                'phoneNumber' => $request->phoneNum
+            ]);
+            $c->save();
+            $dh = new Orders([
+                'statusPay' => 0,
+                'statusDeli' => 0,
+                'typePay' => $request->typePay,
+                'note' => $request->note,
+                'customerID' => $c->id
+            ]);
+            if ($request->typePay == 0) {
+                $digits = 5;
+                $number = str_pad(rand(0, pow(10, $digits) - 1), $digits, '0', STR_PAD_LEFT);
+                $idBanking = 'DH' . $number;
+                $check = Orders::select('idBanking')->get();
+                for ($i = 0; $i < $check->count(); $i++) {
+                    if ($idBanking == $check[$i]) {
+                        $number = str_pad(rand(0, pow(10, $digits) - 1), $digits, '0', STR_PAD_LEFT);
+                        $idBanking = 'DH' . $number;
+                        $i = -1;
+                    }
+                }
+                $dh->idBanking = $idBanking;
             }
-            $detail->save();
+            $dh->save();
+
+            foreach ($cart as $c) {
+                $detail = new OrderDetail([
+                    'productID' => $c['id'],
+                    'orderID' => $dh->id,
+                    'quantity' => $c['quantity']
+                ]);
+                if ($c['promoID'] != NULL) {
+                    $detail->price = $c['pricePromo'];
+                } else {
+                    $detail->price = $c['priceRoot'];
+                }
+                $detail->save();
+                session()->forget($c);
+            }
+            session()->flush();
+            if($dh->typePay == 0)
+                return redirect()->back()->with('message', $dh->idBanking);
+            else return redirect()->back()->with('message', 'tienmat');
+        } else {
+            return redirect()->back()->with('message', 'fail');
         }
-        return redirect()->back()->with('message', $dh->idBanking);
     }
 }

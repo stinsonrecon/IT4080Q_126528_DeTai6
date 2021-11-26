@@ -59,7 +59,7 @@ Route::get('/product_list', [ProductClientController::class, 'index'])->name('pr
 
 Route::get('/product/add_to_cart/{id}', [ProductClientController::class, 'addToCart'])->name('addToCart');
 
-Route::post('/product/add_to_cart', [ProductClientController::class, 'addCartByAmount'])->name('addCartByAmount');
+Route::post('/payment', [ProductClientController::class, 'addCartByAmount'])->name('addCartByAmount');
 
 Route::post('/product/update_cart', [ProductClientController::class, 'updateCart'])->name('updateCart');
 

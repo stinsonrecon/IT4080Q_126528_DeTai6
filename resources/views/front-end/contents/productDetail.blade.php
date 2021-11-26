@@ -111,6 +111,7 @@
                             </div>
                             <form action="{{ route('addCartByAmount') }}" method="POST">
                                 @csrf
+                                @method('POST')
                                 <div class="flex">
                                     <div class="flex justify-around items-center pr-5 text-xl text-green-primary_1">Số lượng
                                     </div>
