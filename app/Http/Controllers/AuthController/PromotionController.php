@@ -18,33 +18,66 @@ class PromotionController extends Controller
         $this->promotion = $promotion;
         $this->middleware(['auth']);
     }
-    public function index()
-    {
-        $p = $this->promotion->paginate('5');
-        return view('back-end.admin.promotion.index', compact('p'));
+
+    public function index(){
+       
+        $timeNow= Carbon::now();
+        $p=$this->promotion->paginate('5');
+        return view('back-end.admin.promotion.index',compact('p','timeNow'));
+
     }
     public function create()
     {
         return view('back-end.admin.promotion.add');
     }
-    public function store(PromotionRequest $request)
-    {
 
-
-        DB::beginTransaction();
-
-        if (
-            $request->limitTime == 1 &&
-            ($request->date_start < $request->date_end || (($request->date_start == $request->date_end) && $request->time_start < $request->time_end))
-        ) {
-            $data = [
-                'name' => $request->name,
-                'limitTime' => $request->limitTime,
-                'startTime' => ($request->date_start . ' ' . $request->time_start),
-                'endTime' => ($request->date_end . ' ' . $request->time_end),
-            ];
-
-            $this->promotion->create($data);
+    public function store(PromotionRequest $request){
+        
+       
+            DB::beginTransaction();
+            $timeNow= Carbon::now();
+            $endTime=$dt = Carbon::create($request->date_end.' '.$request->time_end);
+          
+            
+            if( $request->limitTime==1 && ($timeNow<$endTime) &&
+                ($request->date_start< $request->date_end ||(($request->date_start== $request->date_end)&&$request->time_start< $request->time_end))){
+                    $data=[
+                            'name'=>$request->name,
+                            'limitTime'=>$request->limitTime,
+                            'startTime'=>($request->date_start.' '.$request->time_start),
+                            'endTime'=>($request->date_end.' '.$request->time_end),
+                        ];
+            
+                    $this->promotion->create($data);
+                    
+                    session()->flash('success', 'Bạn đã thêm thành công.');
+                    DB::commit();
+                    return redirect()->route('promotion.index'); 
+                }
+            elseif($request->limitTime==0 )
+            {
+                    $data=[
+                            'name'=>$request->name,
+                            'limitTime'=>$request->limitTime,
+                            'startTime'=>null,
+                            'endTime'=>null,
+                        ];
+            
+                    $this->promotion->create($data);
+                    
+                    session()->flash('success', 'Bạn đã thêm thành công.');
+                    DB::commit();
+                    return redirect()->route('promotion.index'); 
+                    
+            }
+            else{
+                session()->flash('name', $request->name);
+                
+                session()->flash('fail', ' Vui lòng nhập lại thời gian (Thời gian kết thúc phải lớn hơn thời gian bắt đầu và thời gian hiện tại)');
+                DB::rollBack();
+                return redirect()->route('promotion.create');
+            }
+          
 
             session()->flash('success', 'Bạn đã thêm thành công.');
             DB::commit();
@@ -92,39 +125,45 @@ class PromotionController extends Controller
 
         DB::beginTransaction();
 
-        if (
-            $request->limitTime == 1 &&
-            ($request->date_start < $request->date_end || (($request->date_start == $request->date_end) && $request->time_start < $request->time_end))
-        ) {
-            $data = [
-                'name' => $request->name,
-                'limitTime' => $request->limitTime,
-                'startTime' => ($request->date_start . ' ' . $request->time_start),
-                'endTime' => ($request->date_end . ' ' . $request->time_end),
-            ];
-
-            $this->promotion->find($id)->update($data);
-
-            session()->flash('success', 'Bạn đã sửa thành công.');
-            DB::commit();
-            return redirect()->route('promotion.index');
-        } elseif ($request->limitTime == 0) {
-            $data = [
-                'name' => $request->name,
-                'limitTime' => $request->limitTime,
-                'startTime' => null,
-                'endTime' => null,
-            ];
-
-            $this->promotion->find($id)->update($data);
-
-            session()->flash('success', 'Bạn đã sửa thành công.');
-            DB::commit();
-            return redirect()->route('promotion.index');
-        } else {
+        $timeNow= Carbon::now();
+        $endTime=$dt = Carbon::create($request->date_end.' '.$request->time_end);
+      
+        if( $request->limitTime==1 && ($timeNow<$endTime) &&
+            ($request->date_start< $request->date_end ||(($request->date_start== $request->date_end)&&$request->time_start< $request->time_end))){
+                $data=[
+                        'name'=>$request->name,
+                        'limitTime'=>$request->limitTime,
+                        'startTime'=>($request->date_start.' '.$request->time_start),
+                        'endTime'=>($request->date_end.' '.$request->time_end),
+                    ];
+        
+                $this->promotion->find($id)->update($data);
+                
+                session()->flash('success', 'Bạn đã sửa thành công.');
+                DB::commit();
+                return redirect()->route('promotion.index'); 
+            }
+        elseif($request->limitTime==0 )
+        {
+                $data=[
+                        'name'=>$request->name,
+                        'limitTime'=>$request->limitTime,
+                        'startTime'=>null,
+                        'endTime'=>null,
+                    ];
+        
+                    $this->promotion->find($id)->update($data);
+                
+                session()->flash('success', 'Bạn đã sửa thành công.');
+                DB::commit();
+                return redirect()->route('promotion.index'); 
+                
+        }
+        else{
             session()->flash('name', $request->name);
+            
+            session()->flash('fail', '  Vui lòng nhập lại thời gian (Thời gian kết thúc phải lớn hơn thời gian bắt đầu và thời gian hiện tại)');
 
-            session()->flash('fail', ' Vui lòng nhập lại thời gian (Thời gian kết thúc phải lớn hơn thời gian bắt đầu)');
             DB::rollBack();
             return redirect()->route('promotion.edit', ['id' => $id]);
         }

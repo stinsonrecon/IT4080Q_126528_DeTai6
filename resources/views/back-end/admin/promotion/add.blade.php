@@ -82,7 +82,7 @@
                     <div>
                         <label for="appt-time" class="block text-gray-700 text-sm font-bold mb-2">Nhập thời gian bắt đầu
                         </label>
-                        <input id="appt-time" type="time" name="time_start" step="2">
+                        <input id="appt-time" type="time" name="time_start" step="1">
                     </div>
                     <div>
                         <label for="start">:</label>
@@ -94,7 +94,7 @@
                     <div>
                         <label for="appt-time" class="block text-gray-700 text-sm font-bold mb-2">Nhập thời gian kết thúc
                         </label>
-                        <input id="appt-time" type="time" name="time_end" step="2">
+                        <input id="appt-time" type="time" name="time_end" step="1">
                     </div>
                     <div>
                         <label for="start">:</label>

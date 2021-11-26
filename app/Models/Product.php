@@ -19,6 +19,7 @@ class Product extends Model
         'promoID'
     ];
     protected $table = 'product';
+    public $timestamps = false;
     public function promotion()
     {
         return $this->belongsTo(Promotion::class, 'promoID');
