@@ -11,10 +11,32 @@
 <!-- component -->
 <div class="overflow-x-auto flex flex-col">
     <div class="flex flex-row-reverse">
-        <div class="m-6"><button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+        <div class="m-6"><a href="{{route('order.create')}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                 Thêm
-            </button></div>
+            </a></div>
+    </div>
 
+    <div class=" w-11/12  mx-auto mx-8 bg-green-700  table-auto">
+        @if(session()->has('success'))
+
+        <div class="bg-green-300 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+            <div class="flex">
+                <div class="py-1"><i class=" fas fa-check-circle fill-current h-6 w-6 text-green-700 mr-4"> </i></div>
+
+                <div>
+
+                    <p class="text-lg">{{ session()->get('success') }}</p>
+                </div>
+            </div>
+        </div>
+        @endif
+
+    </div>
+
+    <div>
+        <div class=" w-11/12  mx-auto mx-8  table-auto">
+            {{ $orders->links() }}
+        </div>
     </div>
     <div>
         <table class=" w-11/12  mx-auto mx-8  table-auto">
@@ -23,55 +45,81 @@
                     <th class="py-3 px-6 text-left">Tên khách hàng</th>
                     <th class="py-3 px-6 text-center">Địa chỉ</th>
                     <th class="py-3 px-6 text-center">Số điện thoại</th>
-                    <th class="py-3 px-6 text-center">Tình trạng thanh toán</th>                   
+                    <th class="py-3 px-6 text-center">Tình trạng thanh toán</th>
                     <th class="py-3 px-6 text-center">Tình trạng vận chuyển</th>
                     <th class="py-3 px-6 text-center">Phương thức thanh toán</th>
                     <th class="py-3 px-6 text-center">Ghi chú</th>
+                    <th class="py-3 px-6 text-center">Hành động</th>
                 </tr>
             </thead>
+            @foreach($orders as $order)
             <tbody class="text-gray-600 text-sm font-light">
                 <tr class="border-b border-gray-200 hover:bg-gray-100">
                     <td class="py-3 px-6 text-left whitespace-nowrap">
                         <div class="flex items-center">
-                            <div class="mr-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48" style=" fill:#000000;">
-                                    <path fill="#80deea" d="M24,34C11.1,34,1,29.6,1,24c0-5.6,10.1-10,23-10c12.9,0,23,4.4,23,10C47,29.6,36.9,34,24,34z M24,16	c-12.6,0-21,4.1-21,8c0,3.9,8.4,8,21,8s21-4.1,21-8C45,20.1,36.6,16,24,16z"></path>
-                                    <path fill="#80deea" d="M15.1,44.6c-1,0-1.8-0.2-2.6-0.7C7.6,41.1,8.9,30.2,15.3,19l0,0c3-5.2,6.7-9.6,10.3-12.4c3.9-3,7.4-3.9,9.8-2.5	c2.5,1.4,3.4,4.9,2.8,9.8c-0.6,4.6-2.6,10-5.6,15.2c-3,5.2-6.7,9.6-10.3,12.4C19.7,43.5,17.2,44.6,15.1,44.6z M32.9,5.4	c-1.6,0-3.7,0.9-6,2.7c-3.4,2.7-6.9,6.9-9.8,11.9l0,0c-6.3,10.9-6.9,20.3-3.6,22.2c1.7,1,4.5,0.1,7.6-2.3c3.4-2.7,6.9-6.9,9.8-11.9	c2.9-5,4.8-10.1,5.4-14.4c0.5-4-0.1-6.8-1.8-7.8C34,5.6,33.5,5.4,32.9,5.4z"></path>
-                                    <path fill="#80deea" d="M33,44.6c-5,0-12.2-6.1-17.6-15.6C8.9,17.8,7.6,6.9,12.5,4.1l0,0C17.4,1.3,26.2,7.8,32.7,19	c3,5.2,5,10.6,5.6,15.2c0.7,4.9-0.3,8.3-2.8,9.8C34.7,44.4,33.9,44.6,33,44.6z M13.5,5.8c-3.3,1.9-2.7,11.3,3.6,22.2	c6.3,10.9,14.1,16.1,17.4,14.2c1.7-1,2.3-3.8,1.8-7.8c-0.6-4.3-2.5-9.4-5.4-14.4C24.6,9.1,16.8,3.9,13.5,5.8L13.5,5.8z"></path>
-                                    <circle cx="24" cy="24" r="4" fill="#80deea"></circle>
-                                </svg>
-                            </div>
-                            <a href="{{route('order.orderDetail')}}" target="_blank" class="align-middle hover:text-white border-b-2 border-gray-800">
-                            <span class="font-medium">React Project</span>
+                            <a href="{{route('orderDetail.index',['id' => $order->id])}}" target="_blank" class="align-middle hover:text-gray-400 border-b-2 border-gray-800">
+                                <span class="font-medium">{{$order->name}}</span>
                             </a>
                         </div>
                     </td>
                     <td class="py-3 px-6 text-center">
-                        <span class="font-medium">Nghệ An</span>
+                        <span class="font-medium">{{$order->address}}</span>
                     </td>
                     <td class="py-3 px-6 text-center">
-                        <span class="font-medium">0123456789</span>
+                        <span class="font-medium">{{$order->phoneNumber}}</span>
 
                     </td>
 
                     <td class="py-3 px-6 text-center">
-                        
-                            <span class="font-medium">Chưa trả</span>
-                        
+                        @if ($order->statusPay == 0)
+                        <span class="font-medium"> Chưa thanh toán </span>
+                        @else ($order->statusPay == 1)
+                        <span class="font-medium"> Đã thanh toán </span>
+                        @endif
+
                     </td>
                     <td class="py-3 px-6 text-center">
-                        <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Đã giao</span>
+                        @if ($order->statusDeli == 0)
+                        <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Chờ lấy hàng</span>
+                        @elseif($order->statusDeli == 1)
+                        <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Đang vận chuyển</span>
+                        @else($order->statusDeli == 2)
+                        <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Đã nhận hàng</span>
+                        @endif
                     </td>
                     <td class="py-3 px-6 text-center">
-                        <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Tien mat</span>
+                        @if ($order->typePay == 0)
+                        <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Tiền mặt</span>
+                        @else($order->typePay == 1)
+                        <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Ngân hàng</span>
+                        @endif
                     </td>
 
                     <td class="py-3 px-6 text-center">
-                        <span class="font-medium">Giao vào thứ 7 và chủ nhật</span>
+                        <span class="font-medium">{{$order->note}}</span>
+                    </td>
+
+                    <td class="py-3 px-6 text-center">
+                        <div class="flex item-center justify-center">
+                            <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                <a href="{{route('order.edit',['id' => $order->id])}}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                <a class="first" href="{{route('order.delete',['id' => $order->id])}}">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+
+                            </div>
+                        </div>
                     </td>
                 </tr>
 
             </tbody>
+            @endforeach
         </table>
     </div>
 
