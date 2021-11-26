@@ -1,7 +1,7 @@
 @extends('front-end.app')
 @section('content')
     <div style="background-color: #fafafa;">
-        <div class="w-full px-6 flex" style="background-color: #fafafa;">
+        <div class="pb-10 lg:pb-0 w-full px-6 flex" style="background-color: #fafafa;">
             {{-- side menu & banner --}}
             <div class="hidden lg:block w-1/6 pt-8">
                 <div><img src="{{ asset('images/front-end/common/chesen-ad.png') }}" alt=""
@@ -144,7 +144,7 @@
                 </div>
             </div>
         </div>
-        <div class="pb-10" style="background-color: #fafafa;">
+        <div class="hidden lg:block pb-10" style="background-color: #fafafa;">
             <div
                 class="flex justify-start mt-4 lg:mt-10 pb-2 mx-10 text-left border-b border-gray-500 font-semibold text-2xl text-green-primary_1">
                 Sản phẩm khác</div>

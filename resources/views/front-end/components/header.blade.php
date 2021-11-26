@@ -41,6 +41,11 @@
                 Trang chủ
             </a>
         </div>
+        <div class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('payment')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <a href="/payment">
+                Giỏ hàng 
+            </a>
+        </div>
         <div class="p-3 mb-2 border-b-2 border-green-secondary_1 {{ (request()->is('product_list')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('productList') }}">
                 Sản phẩm

@@ -67,8 +67,9 @@
         <div class="flex border-b border-gray-400 mb-5">
             <div class="w-1/2 text-2xl text-gray-500">Tổng tiền</div>
             <div id="totalBill" class="w-1/2 text-right">
-                <p>{{ number_format($total) }} </p><u class="text-green-primary">VND</u>
+                <p>{{ number_format($total) }} </p>
             </div>
+            &nbsp;<u class="text-green-primary">VND</u>
         </div>
     @else
         <div class="bg-gray-200 text-green-primary_1 text-xl text-center font-semibold p-7 my-5 items-center">
