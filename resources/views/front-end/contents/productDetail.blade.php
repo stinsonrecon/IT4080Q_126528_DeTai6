@@ -81,7 +81,7 @@
                                 style="border-left: none; border-right: none">
                                 Giá:
                                 <span>
-                                    @if ($promo != NULL)
+                                    @if ($promo != null)
                                         @php
                                             $now = \Carbon\Carbon::now();
                                             $endTime = \Carbon\Carbon::create($promo->endTime);
@@ -164,79 +164,25 @@
                         @foreach ($products as $product)
                             <li class="text-center w-full lg:w-1/3 lg:px-10 splide__slide" style="min-height: 350px;">
                                 @if ($product->promotion != null)
-                                @php
-                                    $now = \Carbon\Carbon::now();
-                                    $endTime = \Carbon\Carbon::create($product->promotion->endTime);
-                                @endphp
-                                @if ($now < $endTime)
-                                    <div class="timer">
-                                        <span class="text-red-500 text-lg">Chỉ còn: </span>
-                                        <span id="hour" class="text-red-500 text-lg">00</span>
-                                        <span class="text-red-500 text-lg">h</span>
-                                        <span id="minute" class="text-red-500 text-lg">00</span>
-                                        <span class="text-red-500 text-lg">p</span>
-                                        <span id="second" class="text-red-500 text-lg">00</span>
-                                    </div>
-                                    <div>
-                                        <div class="absolute float-left">
-                                            <img class="w-20 h-20" src="{{ asset('images/sale.png') }}" alt="">
+                                    <div class="flex justify-center">
+                                        <div class="absolute float-left mr-56 lg:mr-64 lg:-mt-6">
+                                            <img class="w-20 h-20 lg:w-32 lg:h-32" src="{{ asset('images/sale.png') }}"
+                                                alt="">
                                         </div>
-                                        <div><img class="h-full w-full object-contain"
+                                    </div>
+                                    <div class="flex justify-center">
+                                        <div><img class="h-80 w-80 object-contain"
                                                 src="{{ asset('storage/product') . '/' . $product->linkImg }}">
                                         </div>
-                                        <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">
-                                            {{ $product->name }}</div>
-                                        <div class="font-semibold">
-                                            <del class="text-xs">
-                                                {{ number_format($product->priceRoot) }} VND
-                                            </del>
-                                            <br>{{ number_format($product->pricePromo) }} VND
-                                        </div>
-                                        <div class="mt-2">
-                                            <button
-                                                class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                                                <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i
-                                                        class="fas fa-eye"></i> Xem thêm</a>
-                                            </button>
-                                            <button
-                                                class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
-                                                <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}"
-                                                    class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
-                                            </button>
-                                        </div>
-                                    </div>
-                                @else
-                                    <div class="mt-7">
-                                        <div>
-                                            <img class="h-full w-full object-contain"
-                                                src="{{ asset('storage/product') . '/' . $product->linkImg }}">
-                                        </div>
-                                        <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">
-                                            {{ $product->name }}</div>
-                                        <div class="font-semibold"><br>{{ number_format($product->priceRoot) }} VND</div>
-                                        <div class="mt-2">
-                                            <button
-                                                class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                                                <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i
-                                                        class="fas fa-eye"></i> Xem thêm</a>
-                                            </button>
-                                            <button
-                                                class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
-                                                <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}"
-                                                    class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
-                                            </button>
-                                        </div>
-                                    </div>
-                                @endif
-                            @else
-                                <div class="mt-7">
-                                    <div>
-                                        <img class="h-full w-full object-contain"
-                                            src="{{ asset('storage/product') . '/' . $product->linkImg }}">
                                     </div>
                                     <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">
                                         {{ $product->name }}</div>
-                                    <div class="font-semibold"><br>{{ number_format($product->priceRoot) }} VND</div>
+                                    <div class="font-semibold">
+                                        <del class="text-xs">
+                                            {{ number_format($product->priceRoot) }} VND
+                                        </del>
+                                        <br>{{ number_format($product->pricePromo) }} VND
+                                    </div>
                                     <div class="mt-2">
                                         <button
                                             class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
@@ -249,8 +195,29 @@
                                                 class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
                                         </button>
                                     </div>
-                                </div>
-                            @endif
+                                @else
+                                    <div class="flex justify-center">
+                                        <div><img class="h-80 w-80 object-contain"
+                                                src="{{ asset('storage/product') . '/' . $product->linkImg }}">
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 font-bold text-lg lg:text-xl text-green-primary font-lora">
+                                        {{ $product->name }}</div>
+                                    <div class="font-semibold"><br>{{ number_format($product->priceRoot) }} VND
+                                    </div>
+                                    <div class="mt-2">
+                                        <button
+                                            class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
+                                            <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i
+                                                    class="fas fa-eye"></i> Xem thêm</a>
+                                        </button>
+                                        <button
+                                            class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
+                                            <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}"
+                                                class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
+                                        </button>
+                                    </div>
+                                @endif
                             </li>
                         @endforeach
                     </ul>
@@ -315,69 +282,6 @@
         incrementButtons.forEach(btn => {
             btn.addEventListener("click", increment);
         });
-    </script>
-    <script>
-        var m = 1000; //define your minute
-        var s = 0;
-        var h;
-        var xx = 0;
-        var width = 100 / (m * 60);
-        var gio = document.getElementById('hour');
-        var phut = document.getElementById('minute');
-        var giay = document.getElementById('second');
-        var clearInter;
-        var tempW = 0;
-        minute = m % 60;
-        h = Math.floor(m / 60);
-        gio.innerHTML = h;
-        phut.innerHTML = minute;
-        clearInter = setInterval(function() {
-            timerCal();
-        }, 1000);
-
-
-        function timerCal() {
-            /*if((h==0)&&(m==0)&&(s==0)){
-            clearInterval(clearInter);
-            }*/
-            if (s > 0) {
-                s = s - 1;
-                //console.log(s);
-                if (s < 10) {
-                    giay.innerHTML = "0" + s;
-                } else {
-                    giay.innerHTML = s;
-                }
-            }
-            if (s == 0) {
-                s = 60;
-                var ss = s;
-                if (xx == 0) {
-                    s = 59;
-                    ss = s;
-                    xx = 1;
-                }
-                giay.innerHTML = s;
-                if (minute != 0) {
-                    minute = minute - 1;
-                    if (minute < 10) {
-                        phut.innerHTML = "0" + minute;
-                    } else {
-                        phut.innerHTML = minute;
-                    }
-                } else {
-                    if (h != 0) {
-                        h = h - 1;
-                        minute = 59;
-                        phut.innerHTML = minute;
-                        gio.innerHTML = h;
-                    } else {
-                        giay.innerHTML = '00';
-                        clearInterval(clearInter);
-                    }
-                }
-            }
-        }
     </script>
     <script>
         function addToCart(event) {

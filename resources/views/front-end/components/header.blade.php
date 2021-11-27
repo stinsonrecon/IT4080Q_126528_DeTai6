@@ -1,119 +1,153 @@
 <div class="w-full flex-col justify-between h-24 lg:h-40 min-h-full">
     <div class="h-full lg:h-4/6 flex items-center justify-between px-4">
         <div class="lg:hidden">
-            <span id="mobile-menu-button" class="p-3 px-4 rounded border-2 text-white border-green-primary bg-green-primary w-10 h-10 hover:bg-white hover:text-green-primary">
+            <span id="mobile-menu-button"
+                class="p-3 px-4 rounded border-2 text-white border-green-primary bg-green-primary w-10 h-10 hover:bg-white hover:text-green-primary">
                 <i class="fas fa-list"></i>
             </span>
         </div>
-        <div class="hidden lg:flex"><img class="h-20" src="{{ asset('images/logo.jpg') }}"/></div>
+        <div class="hidden lg:flex"><img class="h-20" src="{{ asset('images/logo.jpg') }}" /></div>
         <div>
-            <input class="search-mobile h-12 outline-none w-40 lg:w-80 px-2 border-2 border-green-primary rounded-l" type="text" placeholder="Tìm kiếm theo sản phẩm hoặc nhãn hàng..."/>
-            <span class="-ml-1.5 p-3 px-4 rounded-r border-2 text-white border-green-primary bg-green-primary w-10 h-10 hover:bg-white hover:text-green-primary">
+            <input class="search-mobile h-12 outline-none w-40 lg:w-80 px-2 border-2 border-green-primary rounded-l"
+                type="text" placeholder="Tìm kiếm theo sản phẩm hoặc nhãn hàng..." />
+            <span
+                class="-ml-1.5 p-3 px-4 rounded-r border-2 text-white border-green-primary bg-green-primary w-10 h-10 hover:bg-white hover:text-green-primary">
                 <i class="fas fa-search"></i>
             </span>
         </div>
-        <div class="hidden lg:flex"><img class="h-12" src="{{ asset('images/hotline.png') }}"/></div>
+        <div class="hidden lg:flex"><img class="h-12" src="{{ asset('images/hotline.png') }}" /></div>
         <div class="hidden lg:block text-black">
-            <i class="text-3xl fas fa-shopping-cart text-green-primary"></i> 
+            <i class="text-3xl fas fa-shopping-cart text-green-primary"></i>
             <a href="{{ route('payment') }}" class="hover:text-green-primary_1">&nbsp;Giỏ hàng
-                <span id="cartQuantity"><?php 
-                        $cart = session()->get('cart');
-                        if($cart != NULL){
-                            $count = 0;
-                            foreach ($cart as $c) {
-                                $count += $c['quantity'];
-                            }
-                            echo('('.$count.')');
-                        } else {
-                            echo('(0)');
-                        }
-                    ?></span>
+                <span id="cartQuantity"><?php
+$cart = session()->get('cart');
+if ($cart != null) {
+    $count = 0;
+    foreach ($cart as $c) {
+        $count += $c['quantity'];
+    }
+    echo '(' . $count . ')';
+} else {
+    echo '(0)';
+}
+?></span>
             </a>
         </div>
-        <div class="hidden lg:block text-black {{ (request()->is('contact')) ? 'cateActive' : '' }}">
-            <i class="text-3xl fas fa-map-marked-alt text-green-primary"></i> 
+        <div class="hidden lg:block text-black {{ request()->is('contact') ? 'cateActive' : '' }}">
+            <i class="text-3xl fas fa-map-marked-alt text-green-primary"></i>
             <a href="{{ route('contact') }}" class="hover:text-green-primary_1">Liên hệ</a>
         </div>
     </div>
     <div id="menu" class="sm:hidden hidden flex-col z-10 absolute bg-white w-full px-4 text-xl">
-        <div id="home" class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('/') || request()->is('home')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
-            <a href="/home">
+        <div id="home"
+            class="p-3 border-b-2 border-green-secondary_1 {{ request()->is('/') || request()->is('home') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <i class="mr-2 fas fa-home"></i><a href="/home">
                 Trang chủ
             </a>
         </div>
-        <div class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('payment')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
-            <a href="/payment">
-                Giỏ hàng 
+        <div
+            class="p-3 border-b-2 border-green-secondary_1 {{ request()->is('payment') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <i class="mr-2 fas fa-cart-plus"></i><a href="/payment">
+                Giỏ hàng
             </a>
         </div>
-        <div class="p-3 mb-2 border-b-2 border-green-secondary_1 {{ (request()->is('product_list')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
-            <a href="{{ route('productList') }}">
+        <div
+            class="p-3 mb-2 border-b-2 border-green-secondary_1 {{ request()->is('product_list') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <i class="mr-2 fas fa-leaf"></i><a href="{{ route('productList') }}">
                 Sản phẩm
             </a>
         </div>
-        <div class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('news')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
-            <a href="{{ route('news') }}">
+        <div
+            class="p-3 border-b-2 border-green-secondary_1 {{ request()->is('news') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <i class="mr-2 fas fa-wallet"></i><a href="{{ route('news') }}">
                 Tin tức khuyến mãi
             </a>
         </div>
-        <div class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('payment_method')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
-            <a href="{{ route('paymentMethod') }}">
+        <div
+            class="p-3 border-b-2 border-green-secondary_1 {{ request()->is('payment_method') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <i class="mr-2 far fa-credit-card"></i><a href="{{ route('paymentMethod') }}">
                 Phương thức thanh toán
             </a>
         </div>
-        <div class="p-3 border-b-2 border-green-secondary_1 {{ (request()->is('shipping_policy')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
-            <a href="{{ route('shippingPolicy') }}">
+        <div
+            class="p-3 border-b-2 border-green-secondary_1 {{ request()->is('shipping_policy') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <i class="mr-2 fas fa-truck"></i><a href="{{ route('shippingPolicy') }}">
                 Chính sách vận chuyển
             </a>
         </div>
-        <div class="p-3 mb-2 border-b-2 border-green-secondary_1 {{ (request()->is('aboutus')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
-            <a href="{{ route('aboutus') }}">
+        <div
+            class="p-3 mb-2 border-b-2 border-green-secondary_1 {{ request()->is('aboutus') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+            <i class="mr-3 far fa-smile-beam"></i><a href="{{ route('aboutus') }}">
                 Về chúng tôi
             </a>
         </div>
     </div>
-    <div class="hidden px-20 h-1/3 text-gray-50 lg:flex items-center justify-between" style="background-color: #91cc00;">
-        <div id="home" class="{{ (request()->is('/') || request()->is('home')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+    <div class="hidden px-20 h-1/3 text-gray-50 lg:flex items-center justify-between"
+        style="background-color: #91cc00;">
+        <div id="home"
+            class="{{ request()->is('/') || request()->is('home') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="/home">
                 Trang chủ
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('product_list')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+        <div
+            class="{{ request()->is('product_list') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('productList') }}">
                 Sản phẩm
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('news')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+        <div class="{{ request()->is('news') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('news') }}">
                 Tin tức khuyến mãi
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('payment_method')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+        <div
+            class="{{ request()->is('payment_method') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('paymentMethod') }}">
                 Phương thức thanh toán
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('shipping_policy')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+        <div
+            class="{{ request()->is('shipping_policy') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('shippingPolicy') }}">
                 Chính sách vận chuyển
             </a>
         </div>
         <div class=""> / </div>
-        <div class="{{ (request()->is('aboutus')) ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+        <div class="{{ request()->is('aboutus') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('aboutus') }}">
                 Về chúng tôi
             </a>
         </div>
     </div>
 </div>
+<button class="lg:hidden" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script>
     var btn = document.getElementById("mobile-menu-button");
     var menu = document.getElementById("menu");
-    btn.onclick = function(){
+    btn.onclick = function() {
         menu.classList.toggle("hidden");
     };
+
+    var mybutton = document.getElementById("myBtn");
+    window.onscroll = function() {
+        if (window.innerWidth < 1024) {
+            scrollFunction();
+        }
+    };
+    function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
 </script>
