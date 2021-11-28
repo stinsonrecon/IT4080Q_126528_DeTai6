@@ -57,6 +57,8 @@ Route::get('/product_detail/{id}', [HomeController::class,'show']);
 
 Route::get('/product_list', [ProductClientController::class, 'index'])->name('productList');
 
+Route::post('/product_list/search', [ProductClientController::class, 'search'])->name('productSearch');
+
 Route::get('/product/add_to_cart/{id}', [ProductClientController::class, 'addToCart'])->name('addToCart');
 
 Route::post('/payment', [ProductClientController::class, 'addCartByAmount'])->name('addCartByAmount');
@@ -69,9 +71,6 @@ Route::post('/payCart', [ProductClientController::class, 'payCart'])->name('payC
 
 
 //back-end
-Route::get('/admin', function () {
-    return view('back-end.login');
-});
 
 //register
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
@@ -86,18 +85,18 @@ Route::get('/logout', [RegisterController::class, 'logout'])->name('logout');
 
 Route::prefix('admin')->group(function () {
     //home
+    Route::get('/', function () {
+        return view('back-end.contents.home');
+    })->middleware('auth');
     Route::get('/home', function () {
         return view('back-end.contents.home');
     })->name('admin.home')->middleware('auth');
 
     //bank
     Route::prefix('bank')->group(function () {
-        Route::get(
-            '/',
-            [
-                BankController::class, 'index'
-            ]
-        )->name('bank.index');
+        Route::get('/',[
+            BankController::class, 'index'
+        ])->name('bank.index');
         Route::get('/create', [
             BankController::class, 'create'
         ])->name('bank.create');
@@ -163,6 +162,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/', [
             OrderController::class, 'index'
         ])->name('order.index');
+        Route::post('/search', [
+            OrderController::class, 'search'
+        ])->name('order.search');
         Route::get('/create', [
             OrderController::class, 'create'
         ])->name('order.create');

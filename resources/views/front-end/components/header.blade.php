@@ -8,12 +8,16 @@
         </div>
         <div class="hidden lg:flex"><img class="h-20" src="{{ asset('images/logo.jpg') }}" /></div>
         <div>
-            <input class="search-mobile h-12 outline-none w-40 lg:w-80 px-2 border-2 border-green-primary rounded-l"
-                type="text" placeholder="Tìm kiếm theo sản phẩm hoặc nhãn hàng..." />
-            <span
-                class="-ml-1.5 p-3 px-4 rounded-r border-2 text-white border-green-primary bg-green-primary w-10 h-10 hover:bg-white hover:text-green-primary">
-                <i class="fas fa-search"></i>
-            </span>
+            <form id="mySearch" method="POST" action="{{ route('productSearch') }}">
+                @csrf
+                @method('POST')
+                <input class="search-mobile h-12 outline-none w-40 lg:w-80 px-2 border-2 border-green-primary rounded-l"
+                    type="text" name="search" placeholder="Tìm kiếm theo sản phẩm hoặc nhãn hàng..." />
+                <a onclick="document.getElementById('mySearch').submit();"
+                    class="-ml-1.5 p-3 px-4 rounded-r border-2 text-white border-green-primary bg-green-primary w-10 h-10 hover:bg-white hover:text-green-primary">
+                    <i class="fas fa-search"></i>
+                </a>
+            </form>
         </div>
         <div class="hidden lg:flex"><img class="h-12" src="{{ asset('images/hotline.png') }}" /></div>
         <div class="hidden lg:block text-black">
@@ -91,8 +95,7 @@ if ($cart != null) {
             </a>
         </div>
         <div class=""> / </div>
-        <div
-            class="{{ request()->is('product_list') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
+        <div class="{{ request()->is('product_list') ? 'cateActive' : '' }} hover:text-green-primary_1 font-medium">
             <a href="{{ route('productList') }}">
                 Sản phẩm
             </a>
@@ -139,6 +142,7 @@ if ($cart != null) {
             scrollFunction();
         }
     };
+
     function scrollFunction() {
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             mybutton.style.display = "block";
@@ -146,6 +150,7 @@ if ($cart != null) {
             mybutton.style.display = "none";
         }
     }
+
     function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;

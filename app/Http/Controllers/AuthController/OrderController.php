@@ -26,6 +26,23 @@ class OrderController extends Controller
         return view('back-end.admin.order.order', compact('orders'));
     }
 
+    public function search(Request $request){
+        if($request->search){
+            $orders = DB::table('orders')
+            ->join('customer', 'customerID', '=', 'customer.id')
+            ->select('idBanking', 'customer.name', 'customer.address', 'customer.city', 'customer.phoneNumber', 'orders.id', 'orders.statusPay', 'orders.statusDeli', 'orders.typePay', 'orders.note')
+            ->where('idBanking', 'like', '%' . $request->get('search') . '%')
+            ->orWhere('customer.phoneNumber', 'like', '%' . $request->get('search') . '%')
+            ->paginate(10);
+        } else {
+            $orders = DB::table('orders')
+            ->join('customer', 'customerID', '=', 'customer.id')
+            ->select('idBanking', 'customer.name', 'customer.address', 'customer.city', 'customer.phoneNumber', 'orders.id', 'orders.statusPay', 'orders.statusDeli', 'orders.typePay', 'orders.note')
+            ->paginate(10);
+        }
+        return view('back-end.admin.order.order', compact('orders'));
+    }
+
     public function create()
     {
         return view('back-end.admin.order.addOrder');
