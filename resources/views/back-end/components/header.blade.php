@@ -41,7 +41,7 @@
                                </svg></button>
                            <div id="myDropdown"
                                class="w-full dropdownlist absolute bg-gray-800 text-white right-0 mt-3 p-3 overflow-auto z-30 invisible">
-                               <a href="#"
+                               <a href="{{ route('admin.index') }}"
                                    class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
                                        class="fa fa-user fa-fw"></i> Admin</a>
                                <div class="border border-gray-800"></div>
