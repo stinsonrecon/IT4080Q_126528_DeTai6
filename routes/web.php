@@ -193,10 +193,10 @@ Route::prefix('admin')->group(function () {
         Route::get('/create/{id}', [
             OrderDetailController::class, 'create'
         ])->name('orderDetail.create');
-        Route::get('/edit/{id}', [
+        Route::get('/edit/{id}/{oID}', [
             OrderDetailController::class, 'edit'
         ])->name('orderDetail.edit');
-        Route::post('/update/{id}', [
+        Route::post('/update', [
             OrderDetailController::class, 'update'
         ])->name('orderDetail.update');
         Route::get('/delete/{id}/{oID}', [

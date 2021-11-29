@@ -30,9 +30,7 @@
                             <div class="flex">
                                 <div class="py-1"><i
                                         class=" fas fa-check-circle fill-current h-6 w-6 text-green-700 mr-4"> </i></div>
-
                                 <div>
-
                                     <p class="text-lg">{{ session()->get('success') }}</p>
                                 </div>
                             </div>
@@ -76,7 +74,7 @@
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <a href="">
+                                            <a href="{{ route('orderDetail.edit', ['id' => $orderDetail->productID, 'oID' => $orderDetail->orderID]) }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

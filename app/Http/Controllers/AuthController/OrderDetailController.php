@@ -27,8 +27,8 @@ class OrderDetailController extends Controller
             ->where('orderID', $orderId)
             ->get();
         $data = Orders::join('customer', 'customerID', '=', 'customer.id')
-                            ->select('customer.name','idBanking')
-                            ->where('orders.id', '=', $orderId)->first();
+            ->select('customer.name', 'idBanking')
+            ->where('orders.id', '=', $orderId)->first();
         return view('back-end.admin.order.orderDetail', compact('orderDetails', 'data', 'orderId'));
     }
 
@@ -44,6 +44,7 @@ class OrderDetailController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate(['quantity' => 'required|min:1']);
         $detail = OrderDetail::where('orderID', '=', $request->orderID)
             ->where('productID', '=', $request->product)->first();
         if ($detail) {
@@ -66,7 +67,7 @@ class OrderDetailController extends Controller
                     } else {
                         $detail->price = $p->priceRoot;
                     }
-                } else{
+                } else {
                     $detail->price = $p->pricePromo;
                 }
             } else {
@@ -81,16 +82,58 @@ class OrderDetailController extends Controller
             ->where('orderID', $orderId)
             ->get();
         $data = Orders::join('customer', 'customerID', '=', 'customer.id')
-                            ->select('customer.name','idBanking')
-                            ->where('orders.id', '=', $orderId)->first();
-        
+            ->select('customer.name', 'idBanking')
+            ->where('orders.id', '=', $orderId)->first();
+        session()->flash('success', 'Bạn đã thêm thành công.');
         return view('back-end.admin.order.orderDetail', compact('orderDetails', 'data', 'orderId'));
     }
 
-    public function delete($id, $oID){
+    public function delete($id, $oID)
+    {
         $detail = OrderDetail::where('productID', '=', $id)->where('orderID', '=', $oID)->first();
         $detail->delete();
         session()->flash('success', 'Bạn đã xóa thành công.');
-        return redirect()->back();
+        $orderDetails =  DB::table('orderDetail')
+            ->join('product', 'productID', '=', 'product.id')
+            ->select('orderID', 'product.name', 'orderDetail.price', 'orderDetail.quantity', 'orderDetail.productID')
+            ->where('orderID', $oID)
+            ->get();
+        $data = Orders::join('customer', 'customerID', '=', 'customer.id')
+            ->select('customer.name', 'idBanking')
+            ->where('orders.id', '=', $oID)->first();
+        $orderId = $oID;
+        return view('back-end.admin.order.orderDetail', compact('orderDetails', 'data', 'orderId'));
+    }
+
+    public function edit($id, $oID)
+    {
+        $detail = OrderDetail::join('product', 'productID', '=', 'product.id')
+            ->select('*', 'orderdetail.quantity')
+            ->where('productID', '=', $id)
+            ->where('orderID', '=', $oID)->first();
+        $orders = Orders::join('customer', 'customerID', '=', 'customer.id')
+            ->select('idBanking', 'name', 'phoneNumber', 'orders.id')
+            ->where('orders.id', '=', $oID)
+            ->first();
+        return view('back-end.admin.order.editOrderDetail', compact('detail', 'orders'));
+    }
+
+    public function update(Request $request){
+        $request->validate(['quantity' => 'required|min:1']);
+        $orderId = $request->orderID;
+        $detail = OrderDetail::where('orderID', '=', $orderId)
+                            ->where('productID', '=', $request->productID)->first();
+        $detail->quantity = $request->quantity;
+        $detail->save();
+        session()->flash('success', 'Bạn đã sửa thành công.');
+        $orderDetails =  DB::table('orderDetail')
+            ->join('product', 'productID', '=', 'product.id')
+            ->select('orderID', 'product.name', 'orderDetail.price', 'orderDetail.quantity', 'orderDetail.productID')
+            ->where('orderID', $orderId)
+            ->get();
+        $data = Orders::join('customer', 'customerID', '=', 'customer.id')
+            ->select('customer.name', 'idBanking')
+            ->where('orders.id', '=', $orderId)->first();
+        return view('back-end.admin.order.orderDetail', compact('orderDetails', 'data', 'orderId'));
     }
 }
