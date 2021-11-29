@@ -20,11 +20,12 @@ class ProductClientController extends Controller
         return view('front-end.contents.productList', ['products' => $products]);
     }
 
-    function search(Request $request){
-        if($request->search){
+    function search(Request $request)
+    {
+        if ($request->search) {
             $products = Product::where('status', '=', '1')
-                    ->where('name', 'like', '%' . $request->get('search') . '%')
-                    ->paginate(4);
+                ->where('name', 'like', '%' . $request->get('search') . '%')
+                ->paginate(4);
         } else {
             $products = Product::where('status', '=', '1')->paginate(4);
         }
@@ -49,10 +50,14 @@ class ProductClientController extends Controller
             ];
 
             if ($product->promoID != NULL) {
-                $endTime = Carbon::create($product->promotion->endTime);
-                $now = Carbon::now();
-                if ($now > $endTime) {
-                    $cart[$id]['promoID'] = NULL;
+                if ($product->promotion->endTime) {
+                    $endTime = Carbon::create($product->promotion->endTime, 7);
+                    $now = Carbon::now(7);
+                    if ($now > $endTime) {
+                        $cart[$id]['promoID'] = NULL;
+                    } else {
+                        $cart[$id]['promoID'] = $product->promoID;
+                    }
                 } else {
                     $cart[$id]['promoID'] = $product->promoID;
                 }
@@ -85,10 +90,14 @@ class ProductClientController extends Controller
             ];
 
             if ($product->promoID != NULL) {
-                $endTime = Carbon::create($product->promotion->endTime);
-                $now = Carbon::now();
-                if ($now > $endTime) {
-                    $cart[$id]['promoID'] = NULL;
+                if ($product->promotion->endTime) {
+                    $endTime = Carbon::create($product->promotion->endTime, 7);
+                    $now = Carbon::now(7);
+                    if ($now > $endTime) {
+                        $cart[$id]['promoID'] = NULL;
+                    } else {
+                        $cart[$id]['promoID'] = $product->promoID;
+                    }
                 } else {
                     $cart[$id]['promoID'] = $product->promoID;
                 }
@@ -235,7 +244,7 @@ class ProductClientController extends Controller
                 session()->forget($c);
             }
             session()->flush();
-            if($dh->typePay == 0)
+            if ($dh->typePay == 0)
                 return redirect()->back()->with('message', $dh->idBanking);
             else return redirect()->back()->with('message', 'tienmat');
         } else {

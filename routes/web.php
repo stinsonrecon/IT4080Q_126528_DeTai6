@@ -187,12 +187,21 @@ Route::prefix('admin')->group(function () {
         Route::get('/{id}', [
             OrderDetailController::class, 'index'
         ])->name('orderDetail.index');
-        Route::get('/create', [
-            OrderDetailController::class, 'create'
-        ])->name('orderDetai;.create');
         Route::post('/create', [
-            OrdeDetailController::class, 'store'
-        ]);
+            OrderDetailController::class, 'store'
+        ])->name('orderDetail.store');
+        Route::get('/create/{id}', [
+            OrderDetailController::class, 'create'
+        ])->name('orderDetail.create');
+        Route::get('/edit/{id}', [
+            OrderDetailController::class, 'edit'
+        ])->name('orderDetail.edit');
+        Route::post('/update/{id}', [
+            OrderDetailController::class, 'update'
+        ])->name('orderDetail.update');
+        Route::get('/delete/{id}/{oID}', [
+            OrderDetailController::class, 'delete'
+        ])->name('orderDetail.delete');
     });
 
     //new

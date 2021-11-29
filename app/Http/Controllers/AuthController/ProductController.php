@@ -31,6 +31,10 @@ class ProductController extends Controller
         return view('back-end.admin.product.add',compact('promotions'));
     }
     public function store(ProductRequest $request){
+        if ($request->quantity <= 0) {
+            session()->flash('success', 'Số lượng sản phẩm phải > 0');
+            return redirect()->route('product.index'); 
+        }
         try{
             DB::beginTransaction();
             $data= [
@@ -84,6 +88,10 @@ class ProductController extends Controller
     }
 
     public function update(ProductRequest $request,$id){
+        if ($request->quantity <= 0) {
+            session()->flash('success', 'Số lượng sản phẩm phải > 0');
+            return redirect()->route('product.index'); 
+        }
         try{
             DB::beginTransaction();
             $data= [

@@ -144,7 +144,7 @@ class OrderController extends Controller
             $dh->typePay = $request->typePay;
             $dh->note = $request->note;
         $dh->save();
-        Customer::where('customer.id', 'orders.customerID')
+        Customer::where('id', '=', $dh->customerID)
             ->update([
                 'name' => $request->name,
                 'address' => $request->address,
