@@ -98,9 +98,10 @@ class OrderController extends Controller
 
     public function delete($id)
     {
+        $c = Orders::where('customerID', $id)->first()->customer();
         OrderDetail::where('orderID',$id)->delete();
         Orders::where('id', $id)->delete();
-
+        $c->delete();
         session()->flash('success', 'Xoá đơn hàng thành công!');
 
         return redirect()->route('order.index');

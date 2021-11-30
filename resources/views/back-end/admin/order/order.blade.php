@@ -16,7 +16,7 @@
             </a></div>
     </div>
 
-    <div class=" w-11/12  mx-auto mx-8 bg-green-700  table-auto">
+    <div class=" w-full  mx-auto mx-8 bg-green-700  table-auto">
         @if(session()->has('success'))
 
         <div class="bg-green-300 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
@@ -34,23 +34,23 @@
     </div>
 
     <div>
-        <div class=" w-11/12  mx-auto mx-8  table-auto">
+        <div class=" w-full  mx-auto mx-8  table-auto">
             {{ $orders->links() }}
         </div>
     </div>
     <div>
-        <table class=" w-11/12  mx-auto mx-8  table-auto">
+        <table class=" w-full  mx-auto mx-8  table-auto">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 text-center">Mã đơn chuyển khoản</th>
-                    <th class="py-3 px-6 text-left">Tên khách hàng</th>
-                    <th class="py-3 px-6 text-center">Địa chỉ</th>
-                    <th class="py-3 px-6 text-center">Số điện thoại</th>
-                    <th class="py-3 px-6 text-center">Tình trạng thanh toán</th>
-                    <th class="py-3 px-6 text-center">Tình trạng vận chuyển</th>
-                    <th class="py-3 px-6 text-center">Phương thức thanh toán</th>
-                    <th class="py-3 px-6 text-center">Ghi chú</th>
-                    <th class="py-3 px-6 text-center">Hành động</th>
+                    <th class="py-3 px-4 text-center">Mã đơn chuyển khoản</th>
+                    <th class="py-3 px-4 text-left">Tên khách hàng</th>
+                    <th class="py-3 px-4 text-center">Địa chỉ</th>
+                    <th class="py-3 px-4 text-center">Số điện thoại</th>
+                    <th class="py-3 px-4 text-center">Tình trạng thanh toán</th>
+                    <th class="py-3 px-4 text-center">Tình trạng vận chuyển</th>
+                    <th class="py-3 px-4 text-center">Phương thức thanh toán</th>
+                    <th class="py-3 px-4 text-center">Ghi chú</th>
+                    <th class="py-3 px-4 text-center">Hành động</th>
                 </tr>
             </thead>
             @foreach($orders as $order)
@@ -59,7 +59,7 @@
                     <td class="py-3 px-2 text-center">
                         <span class="font-medium">@if($order->typePay==0) {{$order->idBanking}} @endif</span>
                     </td>
-                    <td class="py-3 px-6 text-left whitespace-nowrap">
+                    <td class="py-3 text-left whitespace-nowrap">
                         <div class="flex items-center">
                             <a href="{{route('orderDetail.index',['id' => $order->id])}}" target="_blank" class="align-middle hover:text-gray-400 border-b-2 border-gray-800">
                                 <span class="font-medium">{{$order->name}}</span>
@@ -74,15 +74,15 @@
 
                     </td>
 
-                    <td class="py-3 px-6 text-center">
+                    <td class="py-3 text-center text-xs">
                         @if ($order->statusPay == 0)
-                        <span class="font-medium py-1 px-3 bg-red-200 rounded-full text-red-600"> Chưa thanh toán </span>
+                        <span class="font-medium py-1 bg-red-200 rounded-full text-red-600"> Chưa thanh toán </span>
                         @else ($order->statusPay == 1)
-                        <span class="font-medium py-1 px-3 bg-green-200 rounded-full text-green-600"> Đã thanh toán </span>
+                        <span class="font-medium py-1 bg-green-200 rounded-full text-green-600"> Đã thanh toán </span>
                         @endif
 
                     </td>
-                    <td class="py-3 px-6 text-center">
+                    <td class="py-3 text-center">
                         @if ($order->statusDeli == 0)
                         <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Chờ lấy hàng</span>
                         @elseif($order->statusDeli == 1)
@@ -91,7 +91,7 @@
                         <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Đã nhận hàng</span>
                         @endif
                     </td>
-                    <td class="py-3 px-6 text-center">
+                    <td class="py-3 text-center">
                         @if ($order->typePay == 0)
                         <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Chuyển khoản</span>
                         @else
