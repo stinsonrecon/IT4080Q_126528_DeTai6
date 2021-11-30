@@ -74,7 +74,7 @@
 
                     </td>
 
-                    <td class="py-3 text-center text-xs">
+                    <td class="py-3 2xl:px-6 text-center text-xs">
                         @if ($order->statusPay == 0)
                         <span class="font-medium py-1 bg-red-200 rounded-full text-red-600"> Chưa thanh toán </span>
                         @else ($order->statusPay == 1)
@@ -82,7 +82,7 @@
                         @endif
 
                     </td>
-                    <td class="py-3 text-center">
+                    <td class="py-3 2xl:px-6 text-center">
                         @if ($order->statusDeli == 0)
                         <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Chờ lấy hàng</span>
                         @elseif($order->statusDeli == 1)
