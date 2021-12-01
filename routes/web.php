@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController\AdminController;
 use App\Http\Controllers\AuthController\BankController;
 use App\Http\Controllers\AuthController\Csvc_Pttt_Controller;
 use App\Http\Controllers\AuthController\RegisterController;
@@ -91,6 +92,26 @@ Route::prefix('admin')->group(function () {
     Route::get('/home', function () {
         return view('back-end.contents.home');
     })->name('admin.home')->middleware('auth');
+    //admin
+    route::get('/index',[
+       AdminController::class,'index'
+    ])->name('admin.index');
+    route::get('/create',[
+        AdminController::class,'create'
+     ])->name('admin.create');
+     route::post('/store',[
+        AdminController::class,'store'
+     ])->name('admin.store');
+     route::get('/delete/{id}',[
+        AdminController::class,'delete'
+     ])->name('admin.delete');
+     route::get('/edit/{id}',[
+        AdminController::class,'edit'
+     ])->name('admin.edit');
+     route::post('/update/{id}',[
+        AdminController::class,'update'
+     ])->name('admin.update');
+
 
     //bank
     Route::prefix('bank')->group(function () {
