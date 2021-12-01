@@ -25,9 +25,10 @@ class AdminRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'username' => 'required|max:255',
+            'username' => 'required|max:255|unique:admin',
             'password' => 'required|min:6',
-            'password_confirm'=>'required|same:password|min:6'
+            'password_confirm'=>'required|same:password|min:6',
+            'linkImg'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }
 }

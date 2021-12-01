@@ -73,10 +73,6 @@ Route::post('/payCart', [ProductClientController::class, 'payCart'])->name('payC
 
 //back-end
 
-//register
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'store']);
-
 //login
 Route::get('/login', [RegisterController::class, 'login'])->name('login');
 Route::post('/login', [RegisterController::class, 'customerLogin']);

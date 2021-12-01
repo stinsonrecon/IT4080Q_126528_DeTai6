@@ -14,23 +14,6 @@ class RegisterController extends Controller
         return view('back-end.auth.register');
     }
 
-    public function store(Request $request){
-        $request->validate([
-            'name' => 'required|max:255',
-            'username' => 'required|max:255',
-            'password' => 'required|confirmed|min:6',
-        ]);
-
-        Admin::create([
-            'name' => $request->name,
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
-        ]);
-
-        return redirect()->route('admin.home');
-       
-    }
-
     public function login(){
         return view('back-end.login');
     }

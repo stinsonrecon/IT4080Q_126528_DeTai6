@@ -25,9 +25,8 @@ class AdminEditRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'username' => 'required|max:255',
-            'password' => 'nullable|min:6',
-            'password_confirm'=>'nullable|same:password|min:6'
+            'password_confirm'=>'nullable|min:6',
+            'linkImg'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }
 }

@@ -52,16 +52,8 @@
                         <label for="remember">Remember me</label>
                     </div>
                 </div>
-                <a href="#" class="text-xs text-gray-500 float-right mb-4">Forgot Password?</a>
                 <button type="submit" class="w-full py-2 rounded-full bg-green-600 text-gray-100  focus:outline-none">
                     Log in</button>
-
-                <div class="mt-6 text-grey-dark">
-                    Do you have an account?
-                    <a class="text-blue-600 hover:underline" href="{{route('register')}}">
-                        Register here
-                    </a>
-                </div>
         </form>
     </div>
 </body>

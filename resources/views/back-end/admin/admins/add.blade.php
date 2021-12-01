@@ -78,7 +78,7 @@
         Nhập lại mật khẩu
         <span class="text-red-500 text-base">*</span>
       </label>
-      <input name="password_confirm" value="{{old('password_confirm')}}"  class="@error('password_confirm') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="password" placeholder="Mật khẩu từ 6 kí tự">
+      <input name="password_confirm"  class="@error('password_confirm') is-invalid @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="password" placeholder="Mật khẩu từ 6 kí tự">
     </div>
 
     <div class="mb-4">

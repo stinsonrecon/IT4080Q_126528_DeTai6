@@ -113,7 +113,7 @@
                                 </a>
                             </div>
                             <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                <a onclick="" class="first" href="{{route('order.delete',['id' => $order->id])}}">
+                                <a onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="first" href="{{route('order.delete',['id' => $order->id])}}">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
 
