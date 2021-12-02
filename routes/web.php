@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController\PromotionController;
 use App\Http\Controllers\AuthController\OrderController;
 use App\Http\Controllers\AuthController\OrderDetailController;
+use App\Http\Controllers\AuthController\AdminHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,12 +86,9 @@ Route::get('/logout', [RegisterController::class, 'logout'])->name('logout');
 
 Route::prefix('admin')->group(function () {
     //home
-    Route::get('/', function () {
-        return view('back-end.contents.home');
-    })->middleware('auth');
-    Route::get('/home', function () {
-        return view('back-end.contents.home');
-    })->name('admin.home')->middleware('auth');
+    Route::get('/home', [
+        AdminHomeController::class, 'index'
+    ])->name('admin.home')->middleware('auth');
 
     //bank
     Route::prefix('bank')->group(function () {

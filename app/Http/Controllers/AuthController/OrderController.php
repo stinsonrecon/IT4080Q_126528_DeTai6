@@ -20,7 +20,8 @@ class OrderController extends Controller
     {
         $orders = DB::table('orders')
             ->join('customer', 'customerID', '=', 'customer.id')
-            ->select('idBanking', 'customer.name', 'customer.address', 'customer.city', 'customer.phoneNumber', 'orders.id', 'orders.statusPay', 'orders.statusDeli', 'orders.typePay', 'orders.note')
+            ->select('idBanking', 'customer.name', 'customer.address', 'customer.phoneNumber', 'orders.id', 'orders.statusPay', 'orders.statusDeli', 'orders.typePay', 'orders.note', 'orders.created_at')
+            ->orderBy('statusPay', 'asc')->latest()
             ->paginate(10);
 
         return view('back-end.admin.order.order', compact('orders'));

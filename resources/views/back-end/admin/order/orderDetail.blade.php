@@ -42,6 +42,7 @@
                     <thead>
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">Tên sản phẩm</th>
+                            <th class="py-3 px-6 text-left">Thời gian đặt hàng</th>
                             <th class="py-3 px-6 text-center">Số lượng</th>
                             <th class="py-3 px-6 text-center">Đơn giá</th>
                             <th class="py-3 px-6 text-center">Thành tiền</th>
@@ -57,6 +58,9 @@
                                     <div class="flex items-center">
                                         <span class="font-medium">{{ $orderDetail->name }}</span>
                                     </div>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                    <span class="font-medium">{{ $data->created_at }}</span>
                                 </td>
                                 <td class="py-3 px-6 text-center">
                                     <span class="font-medium">{{ $orderDetail->quantity }}</span>

@@ -51,6 +51,7 @@
                     <th class="py-3 px-6 text-center">Phương thức thanh toán</th>
                     <th class="py-3 px-6 text-center">Ghi chú</th>
                     <th class="py-3 px-6 text-center">Hành động</th>
+
                 </tr>
             </thead>
             @foreach($orders as $order)
@@ -102,7 +103,6 @@
                     <td class="py-3 px-6 text-center">
                         <span class="font-medium">{{$order->note}}</span>
                     </td>
-
                     <td class="py-3 px-6 text-center">
                         <div class="flex item-center justify-center">
                             <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
