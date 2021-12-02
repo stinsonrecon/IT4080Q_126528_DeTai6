@@ -74,8 +74,8 @@
                             <td class="py-3 px-6 text-center">
                                 <div class="flex items-center">
                                     @if ($admin->linkImg)
-                                        <img class="img_index" src="{{ asset('storage/admins') . '/' . $admin->linkImg }}"
-                                            alt="">
+                                        <img class="img_index"
+                                            src="{{ asset('storage/admins') . '/' . $admin->linkImg }}" alt="">
                                     @else
                                         <img class="img_index" src="{{ asset('storage/admins/adminDefault.jpg') }}"
                                             alt="">
@@ -85,32 +85,29 @@
                             <td class="py-3 px-6 text-center">
                                 <span class="font-medium">
                                     {{ $admin->created_at }}
-
                                 </span>
                             </td>
                             <td class="py-3 px-6 text-center">
                                 <span class="font-medium">
-
                                     {{ $admin->updated_at }}
                                 </span>
                             </td>
                             <td class="py-3 px-6 text-center">
                                 @if (auth()->user()->id == $idCheck || auth()->user()->id == $admin->id)
-                                <div class="flex item-center justify-center">
-                                    <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                        <a href="{{ route('admin.edit', ['id' => $admin->id]) }}">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
+                                    <div class="flex item-center justify-center">
+                                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                            <a href="{{ route('admin.edit', ['id' => $admin->id]) }}">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </div>
+                                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                            <a class="" onclick="return myFunction();"
+                                                href="{{ route('admin.delete', ['id' => $admin->id]) }}">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                        <a class="" onclick="return myFunction();"
-                                            href="{{ route('admin.delete', ['id' => $admin->id]) }}">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </div>
-                                </div>
                                 @endif
-                                
                             </td>
                         </tr>
                     @endforeach
