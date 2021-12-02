@@ -51,7 +51,6 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'name' => 'required|max:255',
             'address' => 'required|max:255',
@@ -61,7 +60,7 @@ class OrderController extends Controller
             'statusDeli' => 'required',
             'typePay' => 'required|max:255'
         ]);
-
+        //dữ liệu đã oke
         $customer = Customer::create([
             'name' => $request->name,
             'address' => $request->address,
@@ -92,16 +91,15 @@ class OrderController extends Controller
         }
         $dh->save();
         session()->flash('success', 'Thêm mới đơn hàng thành công!');
-
-
         return redirect()->route('order.index');
     }
 
     public function delete($id)
     {
+        $c = Orders::where('customerID', $id)->first()->customer();
         OrderDetail::where('orderID',$id)->delete();
         Orders::where('id', $id)->delete();
-
+        $c->delete();
         session()->flash('success', 'Xoá đơn hàng thành công!');
 
         return redirect()->route('order.index');

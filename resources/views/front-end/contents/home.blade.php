@@ -115,7 +115,7 @@
                             @if ($product->promoID != null)
                                 <div>
                                     <div class="flex justify-center">
-                                        <div class="absolute float-left mr-56 lg:mr-64 lg:-mt-6">
+                                        <div class="absolute float-left mr-56 lg:mr-64 2xl:-mt-6">
                                             <img class="w-20 h-20 lg:w-32 lg:h-32" src="{{ asset('images/sale.png') }}"
                                                 alt="">
                                         </div>
@@ -156,16 +156,15 @@
                                     {{ $product->name }}</div>
                                 <div class="font-semibold"><br>{{ number_format($product->priceRoot) }} VND</div>
                                 <div class="mt-2">
-                                    <button
+                                    <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><button
                                         class="text-center border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-5 py-1 mt-4">
-                                        <a href="/product_detail/{{ $product->id }}" class="font-bold text-base"><i
-                                                class="fas fa-eye"></i> Xem thêm</a>
-                                    </button>
-                                    <button
+                                        <i class="fas fa-eye"></i> Xem thêm
+                                    </button></a>
+                                    <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}"
+                                        class="add_to_cart"><button
                                         class="btn border-2 rounded-lg border-green-primary bg-white text-green-primary hover:bg-green-primary hover:text-white px-3 py-1 mt-4">
-                                        <a href="#" data-url="{{ route('addToCart', ['id' => $product->id]) }}"
-                                            class="add_to_cart"><i class="fas fa-shopping-cart text-lg"></i></a>
-                                    </button>
+                                        <i class="fas fa-shopping-cart text-lg"></i>
+                                    </button></a>
                                 </div>
                             @endif
                         </li>

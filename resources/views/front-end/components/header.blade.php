@@ -6,7 +6,7 @@
                 <i class="fas fa-list"></i>
             </span>
         </div>
-        <div class="hidden lg:flex"><img class="h-20" src="{{ asset('images/logo.jpg') }}" /></div>
+        <div class="hidden lg:flex"><img class="h-20" src="{{ asset('images/logo.png') }}" /></div>
         <div>
             <form id="mySearch" method="POST" action="{{ route('productSearch') }}">
                 @csrf
@@ -19,7 +19,7 @@
                 </a>
             </form>
         </div>
-        <div class="hidden lg:flex"><img class="h-12" src="{{ asset('images/hotline.png') }}" /></div>
+        <div class="hidden lg:flex"><img class="h-12" src="{{ asset('images/hotline1.png') }}" /></div>
         <div class="hidden lg:block text-black">
             <i class="text-3xl fas fa-shopping-cart text-green-primary"></i>
             <a href="{{ route('payment') }}" class="hover:text-green-primary_1">&nbsp;Giỏ hàng
