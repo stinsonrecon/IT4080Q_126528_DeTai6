@@ -29,6 +29,6 @@
     @yield('content')
     @include('front-end.components.footer')
     <div class="hidden lg:block zalo-chat-widget" data-oaid="3227447948609774968" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="300" data-height="300"> </div> 
-    a duc anh<div id="overlay" class="hidden"></div>
+    <div id="overlay" class="hidden"></div>
 </body>
 </html>
