@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController\PromotionController;
 use App\Http\Controllers\AuthController\OrderController;
 use App\Http\Controllers\AuthController\OrderDetailController;
+use App\Http\Controllers\AuthController\AdminHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,12 +83,15 @@ Route::get('/logout', [RegisterController::class, 'logout'])->name('logout');
 
 Route::prefix('admin')->group(function () {
     //home
+
+    Route::get('/home', [
+        AdminHomeController::class, 'index'
+    ])->name('admin.home')->middleware('auth');
+
     Route::get('/', function () {
-        return view('back-end.contents.home');
+       AdminHomeController::class, 'index'
     })->middleware('auth');
-    Route::get('/home', function () {
-        return view('back-end.contents.home');
-    })->name('admin.home')->middleware('auth');
+
     //admin
     route::get('/index',[
        AdminController::class,'index'
@@ -107,6 +111,7 @@ Route::prefix('admin')->group(function () {
      route::post('/update/{id}',[
         AdminController::class,'update'
      ])->name('admin.update');
+
 
 
     //bank
