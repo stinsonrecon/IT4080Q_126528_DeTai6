@@ -96,7 +96,7 @@ class OrderController extends Controller
 
     public function delete($id)
     {
-        $c = Orders::where('customerID', $id)->first()->customer();
+        $c = Orders::where('id', $id)->first()->customer();
         OrderDetail::where('orderID',$id)->delete();
         Orders::where('id', $id)->delete();
         $c->delete();

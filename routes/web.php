@@ -88,9 +88,9 @@ Route::prefix('admin')->group(function () {
         AdminHomeController::class, 'index'
     ])->name('admin.home')->middleware('auth');
 
-    Route::get('/', function () {
+    Route::get('/', [
        AdminHomeController::class, 'index'
-    })->middleware('auth');
+    ])->middleware('auth');
 
     //admin
     route::get('/index',[

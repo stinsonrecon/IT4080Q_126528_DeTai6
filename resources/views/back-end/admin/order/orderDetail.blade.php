@@ -59,7 +59,7 @@
                                         <span class="font-medium">{{ $orderDetail->name }}</span>
                                     </div>
                                 </td>
-                                <td class="py-3 px-6 text-center">
+                                <td class="py-3 px-6 text-left">
                                     <span class="font-medium">{{ $data->created_at }}</span>
                                 </td>
                                 <td class="py-3 px-6 text-center">
@@ -99,8 +99,7 @@
                         </tbody>
                     @endforeach
                     <tr class=" bg-gray-100 text-gray-600 leading-normal ">
-                        <td></td>
-                        <td></td>
+                        <td></td><td></td><td></td>
                         <th class="py-3 px-6 text-center bg-gray-200 border-black border-r">Tổng tiền:</th>
                         <td class="py-3 px-6 text-center bg-gray-200 text-red-500">
                             <span class="font-medium ">{{ number_format($total) }}</span>

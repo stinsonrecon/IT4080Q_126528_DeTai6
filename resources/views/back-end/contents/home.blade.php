@@ -12,11 +12,11 @@
     @php $revenue = 0
     @endphp
 
-    @foreach($orderDetails as $orderDetail)
-    @php
-    $revenue += (orderDetail->price)*(orderDetail->quantity);
-    @endphp
-    @endforeach
+        @foreach($orderDetails as $orderDetail)
+        @php
+            $revenue += ($orderDetail->price)*($orderDetail->quantity);
+        @endphp
+        @endforeach
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
         <!--Metric Card-->
         <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
@@ -77,7 +77,7 @@
                 </div>
                 <div class="flex-1 text-right md:text-center">
                     <h5 class="font-bold uppercase text-gray-600">Số sản phẩm còn trong kho</h5>
-                    <h3 class="font-bold text-3xl">{{$sumOfQuantity}} sản phẩm <span class="text-red-500"><i class="fas fa-caret-up"></i></span></h3>
+                    <h3 class="font-bold text-3xl">{{$sumOfQuantity}} <span class="text-red-500"><i class="fas fa-caret-up"></i></span></h3>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
         <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-xl">
             <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
-                <h5 class="font-bold uppercase text-gray-600">Tổng đơn hàng theo tháng </h5>
+                <h5 class="font-bold uppercase text-gray-600">Tổng đơn hàng theo tháng năm {{ \Carbon\Carbon::now(7)->year}}</h5>
             </div>
             <div class="p-5">
                 <canvas id="chartjs-1" class="chartjs" width="undefined" height="undefined"></canvas>
@@ -134,16 +134,16 @@
         <!--Graph Card-->
         <div class="bg-white border-transparent rounded-lg shadow-xl">
             <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
-                <h5 class="font-bold uppercase text-gray-600">Graph </h5>
+                <h5 class="font-bold uppercase text-gray-600">số lượng theo từng loại sản phẩm </h5>
             </div>
 
-            <div class="p-5"><canvas id="chartjs-4" class="chartjs" width="undefined" height="undefined"></canvas>
+            <div class="p-5 text-left"><canvas id="chartjs-4" class="chartjs" width="undefined" height="undefined"></canvas>
             
                 <script>
                     var _name = JSON.parse('{!! json_encode($productN) !!}');
                     var _data = JSON.parse('{!! json_encode($productQ) !!}');
                     var _colour = JSON.parse('{!! json_encode($colours) !!}');
-             new Chart(document.getElementById("chartjs-4"), {
+                    new Chart(document.getElementById("chartjs-4"), {
 
                             "type": "doughnut",
                             "data": {
@@ -169,11 +169,7 @@
                 <h5 class="font-bold uppercase text-gray-600">Advert</h5>
             </div>
             <div class="p-5 text-center">
-
-
                 <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7D52JJ&placement=wwwtailwindtoolboxcom" id="_carbonads_js"></script>
-
-
             </div>
         </div>
         <!--/Advert Card-->

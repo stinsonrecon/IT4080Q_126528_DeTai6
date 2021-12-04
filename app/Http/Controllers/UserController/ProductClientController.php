@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\UserController;
 
+use App\Events\OrderTask;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\BankAccount;
@@ -243,6 +244,7 @@ class ProductClientController extends Controller
                 $detail->save();
                 session()->forget($c);
             }
+            event(new OrderTask('Có đơn hàng mới, vui lòng kiểm tra!'));
             session()->flush();
             if ($dh->typePay == 0)
                 return redirect()->back()->with('message', $dh->idBanking);

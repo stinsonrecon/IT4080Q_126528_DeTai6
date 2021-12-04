@@ -82,7 +82,7 @@ class OrderDetailController extends Controller
             ->where('orderID', $orderId)
             ->get();
         $data = Orders::join('customer', 'customerID', '=', 'customer.id')
-            ->select('customer.name', 'idBanking')
+            ->select('customer.name', 'idBanking', 'created_at')
             ->where('orders.id', '=', $orderId)->first();
         session()->flash('success', 'Bạn đã thêm thành công.');
         return view('back-end.admin.order.orderDetail', compact('orderDetails', 'data', 'orderId'));
@@ -99,7 +99,7 @@ class OrderDetailController extends Controller
             ->where('orderID', $oID)
             ->get();
         $data = Orders::join('customer', 'customerID', '=', 'customer.id')
-            ->select('customer.name', 'idBanking')
+            ->select('customer.name', 'idBanking', 'created_at')
             ->where('orders.id', '=', $oID)->first();
         $orderId = $oID;
         return view('back-end.admin.order.orderDetail', compact('orderDetails', 'data', 'orderId'));
@@ -132,7 +132,7 @@ class OrderDetailController extends Controller
             ->where('orderID', $orderId)
             ->get();
         $data = Orders::join('customer', 'customerID', '=', 'customer.id')
-            ->select('customer.name', 'idBanking')
+            ->select('customer.name', 'idBanking', 'created_at')
             ->where('orders.id', '=', $orderId)->first();
         return view('back-end.admin.order.orderDetail', compact('orderDetails', 'data', 'orderId'));
     }
