@@ -61,7 +61,7 @@
                     </select>
 
                     <label class="form-label"></label>
-                    <select name="ward" id="ward" class="border border-gray-300 rounded outline-none bg-gray-100 py-1 px-2 w-1/3">
+                    <select name="ward" id="ward" class="border border-gray-300 rounded outline-none bg-gray-100 py-1 px-2 w-1/3" required>
                         <option value="">Chọn phường/xã</option>
                     </select>
                 </div>
