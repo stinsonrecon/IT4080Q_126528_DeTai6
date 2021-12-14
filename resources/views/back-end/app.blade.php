@@ -10,14 +10,14 @@
     <meta name="keywords" content="keywords,here">
    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> <!--Replace with your tailwind.css once created-->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> <!--Replace with your tailwind.css once created-->
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> <!--Totally optional : -->
     <script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
     <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
     <script>
-        Pusher.logToConsole = true;
+        Pusher.logToConsole = false;
         var pusher = new Pusher('f4bb259bb9530ce8d0cd', {
           cluster: 'ap1',
           forceTLS: true

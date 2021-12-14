@@ -5,6 +5,8 @@ namespace App\Http\Controllers\AuthController;
 use App\Http\Controllers\Controller;
 use App\Models\OrderDetail;
 use App\Models\Orders;
+use App\Models\Petition;
+use App\Models\PetitionTag;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -20,44 +22,43 @@ class AdminHomeController extends Controller
     }
     
     public function index(){
-        $products = Product::select('quantity')->get();
+        $petitions = Petition::all();
         $colours = [];
-        for ($i=0; $i<=count($products); $i++) {
+        for ($i=0; $i<=count($petitions); $i++) {
             $colours[] = '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
         }
 
-        $productName = Product::select(DB::raw("name as nameOfProduct")) 
-                        ->pluck('nameOfProduct');
-        $productQty = Product::select(DB::raw("quantity as qtyOfProduct"))
-                        ->pluck('qtyOfProduct');
-        $productN = [];
-        foreach($productName as $index=>$value){
-            $productN[] = $value;
+        $petitionTag = PetitionTag::select(DB::raw("name as nameOfTag"))
+                        ->pluck('nameOfTag');
+        $idTagList = PetitionTag::select(DB::raw("id_tag as id"))
+                        ->pluck('id');
+        $petitionName = [];
+        foreach($petitionTag as $index=>$value){
+            $petitionName[] = $value;
         }
-       /// dd($productN);
-        $productQ = [];
-        foreach($productQty as $index=>$value){
-            $productQ[] = $value;
+        //dd($petitionName);
+        $petitionQuantity = [];
+        foreach($idTagList as $index=>$value){
+            $quantity = Petition::select(DB::raw("COUNT(*) as count"))->where('id_tag', '=', $value)->pluck('count');
+            $petitionQuantity[] = $quantity[0];
         }
-        //dd($productQ);
+        //dd($petitionQuantity);
 
-        $orders = Orders::select('statusDeli')->get();
+        $petitionStatus = Petition::select('status')->get();
 
-        $orderCount = Orders::select(DB::raw("COUNT(*) as count"))
+        $petitionCount = Petition::select(DB::raw("COUNT(*) as count"))
                 ->whereYear('created_at', date('Y'))
                 ->groupBy(DB::raw("month(created_at)"))
                 ->pluck('count');
-        $months = Orders::select(DB::raw("month(created_at) as count"))
+        $months = Petition::select(DB::raw("month(created_at) as count"))
                 ->whereYear('created_at', date('Y'))
                 ->groupBy(DB::raw("month(created_at)"))
                 ->pluck('count');
         $data = [0,0,0,0,0,0,0,0,0,0,0,0];
         foreach($months as $index => $month){
             --$month;
-            $data[$month] = $orderCount[$index];
+            $data[$month] = $petitionCount[$index];
         }
-        
-        $orderDetails = OrderDetail::select('quantity', 'price')->get();
-        return view('back-end.contents.home', compact('products', 'orders', 'orderDetails', 'data', 'months', 'orderCount', 'productName', 'productN','productQty', 'productQ', 'colours'));        
+        return view('back-end.contents.home', compact('petitions', 'petitionStatus', 'data', 'months', 'petitionCount', 'petitionTag', 'petitionName', 'petitionQuantity', 'colours'));       
     }
 }

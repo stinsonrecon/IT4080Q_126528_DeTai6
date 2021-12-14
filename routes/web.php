@@ -1,20 +1,18 @@
 <?php
 
 use App\Http\Controllers\AuthController\AdminController;
-use App\Http\Controllers\AuthController\BankController;
-use App\Http\Controllers\AuthController\Csvc_Pttt_Controller;
 use App\Http\Controllers\AuthController\RegisterController;
-use App\Http\Controllers\AuthController\NewController;
-use App\Http\Controllers\AuthController\ProductController;
-use App\Http\Controllers\UserController\HomeController;
-use App\Http\Controllers\UserController\NewsController;
-use App\Http\Controllers\UserController\PaymentMethodController;
-use App\Http\Controllers\UserController\ProductClientController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController\PromotionController;
-use App\Http\Controllers\AuthController\OrderController;
-use App\Http\Controllers\AuthController\OrderDetailController;
 use App\Http\Controllers\AuthController\AdminHomeController;
+use App\Http\Controllers\AuthController\AdminProceduresController;
+use App\Http\Controllers\AuthController\PetitionController;
+use App\Http\Controllers\AuthController\PetitionDetailController;
+use App\Http\Controllers\AuthController\PetitionTagController;
+use App\Http\Controllers\UserController\AdminProceduresClientController;
+use App\Http\Controllers\UserController\PetitionClientController;
+use App\Http\Controllers\UserController\CityController;
+use App\Http\Controllers\UserController\DistrictController;
+use App\Http\Controllers\UserController\WardsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,53 +24,55 @@ use App\Http\Controllers\AuthController\AdminHomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//front-end
+Route::get('/', function () {
+    return view('frontend.content.home');
+});
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', function () {
+    return view('frontend.content.home');
+});
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/aboutus', function () {
+    return view('frontend.content.aboutus');
+})->name('aboutUs');
 
-Route::get('/aboutus', [PaymentMethodController::class, 'aboutUs'])->name("aboutus");
+Route::get('/petition_form', [CityController::class,'index'])->name('petitionForm');
 
-Route::get('/payment_method', [PaymentMethodController::class, 'paymentMethod'])->name("paymentMethod");
+Route::post('/petition_form', [PetitionClientController::class, 'store'])->name('petitionStore');
 
-Route::get('/news', [NewsController::class, 'index'])->name("news");
+Route::post('getStates',[DistrictController::class,'getDistricts'])->name('getDistricts');
 
-Route::get('/shipping_policy', [PaymentMethodController::class, 'shippingPolicy'])->name("shippingPolicy");
+Route::post('getWards',[WardsController::class,'getWards'])->name('getWards');
 
-Route::get('/shopping_guide', function () {
-    return view('front-end.contents.shoppingGuide');
-})->name("shoppingGuide");
+Route::prefix('find_petition')->group(function(){
+   Route::get("/",[PetitionClientController::class, 'index'])->name('clientPetition.index');
 
-Route::get('/refund_regulation', function () {
-    return view('front-end.contents.refundRegulation');
-})->name('refundRegulation');
+   Route::post("/search", [PetitionClientController::class, 'search'])->name('clientPetition.search');
 
-Route::get('/payment', [PaymentMethodController::class, 'payment'])->name('payment');
+   Route::get("/petition_detail/{id}", [PetitionClientController::class, 'petitionDetail'])->name('clientPetition.detail');
 
-Route::get('/contact', function () {
-    return view('front-end.contents.contactMap');
-})->name('contact');
+   Route::get("/petition_reply", [PetitionClientController::class, 'getAllReplied'])->name('client.allReplied');
+});
 
-Route::get('/news/{id}', [NewsController::class, 'show']);
+Route::prefix('admin_procedure')->group(function(){
+   Route::get("/",[AdminProceduresClientController::class, 'index'])->name('clientProcedure.index');
 
-Route::get('/product_detail/{id}', [HomeController::class,'show']);
+   Route::post("/search", [AdminProceduresClientController::class, 'search'])->name('clientProcedure.search');
 
-Route::get('/product_list', [ProductClientController::class, 'index'])->name('productList');
+   Route::get("/detail/{id}", [AdminProceduresClientController::class, 'show'])->name('clientProcedure.detail');
+});
 
-Route::post('/product_list/search', [ProductClientController::class, 'search'])->name('productSearch');
-
-Route::get('/product/add_to_cart/{id}', [ProductClientController::class, 'addToCart'])->name('addToCart');
-
-Route::post('/payment', [ProductClientController::class, 'addCartByAmount'])->name('addCartByAmount');
-
-Route::post('/product/update_cart', [ProductClientController::class, 'updateCart'])->name('updateCart');
-
-Route::get('/product/delete_cart', [ProductClientController::class, 'deleteCart'])->name('deleteCart');
-
-Route::post('/payCart', [ProductClientController::class, 'payCart'])->name('payCart');
+Route::get('/testForm', function(){
+   return view('frontend.content.testForm');
+});
 
 
 //back-end
+
+//register
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
 
 //login
 Route::get('/login', [RegisterController::class, 'login'])->name('login');
@@ -93,180 +93,85 @@ Route::prefix('admin')->group(function () {
     ])->middleware('auth');
 
     //admin
-    route::get('/index',[
-       AdminController::class,'index'
-    ])->name('admin.index');
-    route::get('/create',[
-        AdminController::class,'create'
-     ])->name('admin.create');
-     route::post('/store',[
-        AdminController::class,'store'
-     ])->name('admin.store');
-     route::get('/delete/{id}',[
-        AdminController::class,'delete'
-     ])->name('admin.delete');
-     route::get('/edit/{id}',[
-        AdminController::class,'edit'
-     ])->name('admin.edit');
-     route::post('/update/{id}',[
-        AdminController::class,'update'
-     ])->name('admin.update');
+   route::get('/index',[
+      AdminController::class,'index'
+   ])->name('admin.index');
+   route::get('/create',[
+      AdminController::class,'create'
+   ])->name('admin.create');
+   route::post('/store',[
+      AdminController::class,'store'
+   ])->name('admin.store');
+   route::get('/delete/{id}',[
+      AdminController::class,'delete'
+   ])->name('admin.delete');
+   route::get('/edit/{id}',[
+      AdminController::class,'edit'
+   ])->name('admin.edit');
+   route::post('/update/{id}',[
+      AdminController::class,'update'
+   ])->name('admin.update');
 
+    //petition
+   Route::prefix('petition')->group(function () {
+      Route::get('/', [
+         PetitionController::class, 'index'
+      ])->name('petition.index');
+      Route::get('/test', [PetitionController::class, 'test']);
+      Route::post('/search', [
+         PetitionController::class, 'search'
+      ])->name('petition.search');
+      Route::post('/sort', [PetitionController::class, 'sort'])->name('petition.sort');
+   });
 
+    //petitionDetail
+   Route::prefix('petitionDetail')->group(function () {
+      Route::get('/{id}', [
+         PetitionDetailController::class, 'index'
+      ])->name('petitionDetail.index');
+      Route::post('/update/{id}', [
+         PetitionDetailController::class, 'update'
+      ])->name('petitionDetail.update');
+   });
 
-    //bank
-    Route::prefix('bank')->group(function () {
-        Route::get('/',[
-            BankController::class, 'index'
-        ])->name('bank.index');
-        Route::get('/create', [
-            BankController::class, 'create'
-        ])->name('bank.create');
-        Route::post('/store', [
-            BankController::class, 'store'
-        ])->name('bank.store');
-        Route::get('/edit/{id}', [
-            BankController::class, 'edit'
-        ])->name('bank.edit');
-        Route::post('/update/{id}', [
-            BankController::class, 'update'
-        ])->name('bank.update');
-        Route::get('/delete/{id}', [
-            BankController::class, 'delete'
-        ])->name('bank.delete');
-    });
-    //product
-    Route::prefix('product')->group(function(){
-        Route::get('/',[
-            ProductController::class,'index']
-        )->name('product.index');
-        Route::get('/create', [
-            ProductController::class, 'create'
-        ])->name('product.create');
-        Route::post('/store', [
-            ProductController::class, 'store'
-        ])->name('product.store');
-        Route::get('/edit/{id}', [
-            ProductController::class, 'edit'
-        ])->name('product.edit');
-        Route::post('/update/{id}', [
-            ProductController::class, 'update'
-        ])->name('product.update');
-        Route::get('/delete/{id}', [
-            ProductController::class, 'delete'
-        ])->name('product.delete');
-    });
+    //petitionTag
+   Route::prefix('petitionTag')->group(function () {
+      Route::get('/', [
+          PetitionTagController::class, 'index'
+      ])->name('petitionTag.index');
+      Route::get('/create', [
+         PetitionTagController::class, 'create'
+      ])->name('petitionTag.create');
+      Route::post('/store', [
+         PetitionTagController::class, 'store'
+      ])->name('petitionTag.store');
+      Route::get('/edit/{id}', [
+         PetitionTagController::class, 'edit'
+     ])->name('petitionTag.edit');
+     Route::post('/update/{id}', [
+      PetitionTagController::class, 'update'
+     ])->name('petitionTag.update');
+   });
 
-    //promotion
-    Route::prefix('promotion')->group(function () {
-        Route::get('/', [
-            PromotionController::class, 'index'
-        ])->name('promotion.index');
-        Route::get('/create', [
-            PromotionController::class, 'create'
-        ])->name('promotion.create');
-        Route::post('/store', [
-            PromotionController::class, 'store'
-        ])->name('promotion.store');
-        Route::get('/delete/{id}', [
-            PromotionController::class, 'delete'
-        ])->name('promotion.delete');
-        Route::post('/update/{id}', [
-            PromotionController::class, 'update'
-        ])->name('promotion.update');
-        Route::get('/edit/{id}', [
-            PromotionController::class, 'edit'
-        ])->name('promotion.edit');
-    });
-
-    //order
-    Route::prefix('order')->group(function () {
-        Route::get('/', [
-            OrderController::class, 'index'
-        ])->name('order.index');
-        Route::post('/search', [
-            OrderController::class, 'search'
-        ])->name('order.search');
-        Route::get('/create', [
-            OrderController::class, 'create'
-        ])->name('order.create');
-        Route::post('/create', [
-            OrderController::class, 'store'
-        ]);
-        Route::get('/delete/{id}', [
-            OrderController::class, 'delete'
-        ])->name('order.delete');
-        Route::get('/edit/{id}', [
-            OrderController::class, 'edit'
-        ])->name('order.edit');
-        Route::post('/update/{id}', [
-            OrderController::class, 'update'
-        ])->name('order.update');
-    });
-
-    //orderDetail
-    Route::prefix('orderDetail')->group(function () {
-        Route::get('/{id}', [
-            OrderDetailController::class, 'index'
-        ])->name('orderDetail.index');
-        Route::post('/create', [
-            OrderDetailController::class, 'store'
-        ])->name('orderDetail.store');
-        Route::get('/create/{id}', [
-            OrderDetailController::class, 'create'
-        ])->name('orderDetail.create');
-        Route::get('/edit/{id}/{oID}', [
-            OrderDetailController::class, 'edit'
-        ])->name('orderDetail.edit');
-        Route::post('/update', [
-            OrderDetailController::class, 'update'
-        ])->name('orderDetail.update');
-        Route::get('/delete/{id}/{oID}', [
-            OrderDetailController::class, 'delete'
-        ])->name('orderDetail.delete');
-    });
-
-    //new
-    Route::prefix('news')->group(function () {
-        Route::get('/', [
-            NewController::class, 'index'
-        ])->name('new.index');
-        Route::get('/create', [
-            NewController::class, 'create'
-        ])->name('new.create');
-        Route::post('/store', [
-            NewController::class, 'store'
-        ])->name('new.store');
-        Route::get('/edit/{id}', [
-            NewController::class, 'edit'
-        ])->name('new.edit');
-        Route::post('/update/{id}', [
-            NewController::class, 'update'
-        ])->name('new.update');
-        Route::get('/delete/{id}', [
-            NewController::class, 'delete'
-        ])->name('new.delete');
-    });
-
-    //chinh sach van chuyen va phuong thuc thanh toan
-    Route::prefix('csvcandpttt')->group(function () {
-        Route::get('/csvc', [
-            Csvc_Pttt_Controller::class, 'indexa'
-        ])->name('a.index');
-        Route::post('/csvc/store', [
-            Csvc_Pttt_Controller::class, 'storea'
-        ])->name('a.store');
-        Route::get('/pttt', [
-            Csvc_Pttt_Controller::class, 'indexb'
-        ])->name('b.index');
-        Route::post('/pttt/store', [
-            Csvc_Pttt_Controller::class, 'storeb'
-        ])->name('b.store');
-        Route::get('/vvct', [
-            Csvc_Pttt_Controller::class, 'indexc'
-        ])->name('c.index');
-        Route::post('/vvct/store', [
-            Csvc_Pttt_Controller::class, 'storec'
-        ])->name('c.store');
-    });
+   //adminProcedure
+   Route::prefix('admin_procedure')->group(function(){
+      Route::get('/', [
+         AdminProceduresController::class, 'index'
+      ])->name('adminProcedure.index');
+      Route::get('/create', [
+         AdminProceduresController::class, 'create'
+      ])->name('adminProcedure.create');
+      Route::get('/edit/{id}', [
+         AdminProceduresController::class, 'edit'
+      ])->name('adminProcedure.edit');
+      Route::post('/store', [
+         AdminProceduresController::class, 'store'
+      ])->name('adminProcedure.store');
+      Route::post('/update/{id}', [
+         AdminProceduresController::class, 'update'
+      ])->name('adminProcedure.update');
+      Route::get('/delete/{id}', [
+         AdminProceduresController::class, 'delete'
+      ])->name('adminProcedure.delete');
+   });
 });
