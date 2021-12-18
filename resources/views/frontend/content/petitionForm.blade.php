@@ -141,7 +141,7 @@
                 Tra cứu thông tin PAKN
             </div>
             <div class="flex justify-around items-center py-5">
-                <form id="mySearch" method="POST" action="">
+                <form id="mySearch" method="POST" action="{{ route('clientPetition.search') }}">
                     @csrf
                     @method('POST')
                     <input class="search-mobile h-12 outline-none w-40 lg:w-80 px-2 border-2 border-red-primary rounded-l"
